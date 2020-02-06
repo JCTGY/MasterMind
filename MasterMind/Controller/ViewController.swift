@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     @IBOutlet var rowNine : [UIButton]?
     @IBOutlet var rowTen : [UIButton]?
     var outletButtons = [[UIButton]]()
-    var outletIndex = 0
+    var globalIndex = 0
     var replaceButton: UIButton?
     var lastReplaceButton: UIButton?
     
@@ -42,42 +42,42 @@ class ViewController: UIViewController {
     @IBOutlet var pinRowNine: [UIImageView]?
     @IBOutlet var pinRowTen: [UIImageView]?
     var pinUIImageViews = [[UIImageView]]()
-    let pinFillBlack = UIImage(systemName: "pin.fill")?.withTintColor(UIColor.black)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         appendOutLetButtons()
-        appendPinUIImageViews()
+        appendPinImageViews()
     }
+    //MARK: Buttons func
     @IBAction func actionForButtons(_ sender: UIButton) {
         if lastReplaceButton != nil {
             lastReplaceButton?.setTitle("", for: .normal)
         }
         replaceButton = sender
-        sender.showsTouchWhenHighlighted = true
-        sender.setTitle("O", for: .normal)
-        sender.setTitleColor(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), for: .normal)
-        sender.backgroundColor = UIColor.white
+        setButtonToSelectImage()
         lastReplaceButton = sender
     }
     @IBAction func colorSelectButtons(_ sender: UIButton){
-        replaceButton?.setTitle("", for: .normal)
         replaceButton?.backgroundColor = sender.imageView?.tintColor
     }
     
     @IBAction func submitButton(_ sender: UIButton) {
-        // Check if every bottons is selec with a color
-        for button in outletButtons[outletIndex] {
-            if button.backgroundColor == UIColor.white {
+        // Check if every bottons is selected with a color
+        for button in outletButtons[globalIndex] {
+            guard button.backgroundColor != UIColor.white else {
                 return ;
             }
         }
         assignPinColor()
         disableButtons()
-        outletIndex = outletIndex < 10 ? outletIndex + 1 : outletIndex
+        // Increment the globalIndex
+        globalIndex = globalIndex < 10 ? globalIndex + 1 : globalIndex
         enableButtons()
-        replaceButton = outletButtons[outletIndex][0]
+        lastReplaceButton?.setTitle("", for: .normal)
+        replaceButton = outletButtons[globalIndex][0]
+        lastReplaceButton = replaceButton
+        setButtonToSelectImage()
     }
     // Append all the IBoutlet Buttons
     func appendOutLetButtons() {
@@ -93,15 +93,26 @@ class ViewController: UIViewController {
         outletButtons.append(rowTen!)
     }
     func enableButtons() {
-        outletButtons[outletIndex].forEach {
+        guard globalIndex < 10 else {
+            return ;
+        }
+        outletButtons[globalIndex].forEach {
             $0.isUserInteractionEnabled = true
         }
     }
     func disableButtons() {
-        outletButtons[outletIndex].forEach{ $0.isUserInteractionEnabled = false
+        outletButtons[globalIndex].forEach{ $0.isUserInteractionEnabled = false
         }
     }
-    func appendPinUIImageViews() {
+    // Indicate which buttons is currently selected
+    func setButtonToSelectImage() {
+        replaceButton?.showsTouchWhenHighlighted = true
+        replaceButton?.setTitle("O", for: .normal)
+        replaceButton?.setTitleColor(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), for: .normal)
+        replaceButton?.backgroundColor = UIColor.white
+    }
+    // MARK: pinImageViews func
+    func appendPinImageViews() {
         pinUIImageViews.append(pinRowOne!)
         pinUIImageViews.append(pinRowTwo!)
         pinUIImageViews.append(pinRowThree!)
@@ -114,11 +125,27 @@ class ViewController: UIViewController {
         pinUIImageViews.append(pinRowTen!)
     }
     func assignPinColor() {
-        pinUIImageViews[outletIndex
+        var indexForNumPinColor = 0
+        let tmpBlack = 2
+        pinUIImageViews[globalIndex
         ].forEach {
-            $0.image = pinFillBlack
+            $0.image = UIImage(systemName: "pin.fill")
+            if indexForNumPinColor < tmpBlack {
+                $0.setImageColor(color: UIColor.black)
+            } else {
+                $0.setImageColor(color: UIColor.white)
+            }
+            indexForNumPinColor += 1
         }
     }
+}
 
+//MARK: Set extension for change UIImageView color
+extension UIImageView {
+  func setImageColor(color: UIColor) {
+    let templateImage = self.image?.withRenderingMode(.alwaysTemplate)
+    self.image = templateImage
+    self.tintColor = color
+  }
 }
 
