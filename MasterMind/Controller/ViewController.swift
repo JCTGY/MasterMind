@@ -10,11 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var replaceButton : UIButton?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func rawOne(_ sender: UIButton) {
+        replaceButton = sender
+        sender.backgroundColor = UIColor.white
+    }
+    
+    @IBAction func colorSelectButtons(_ sender: UIButton){
+        replaceButton?.backgroundColor = sender.imageView?.tintColor
+    }
+    
 }
 
