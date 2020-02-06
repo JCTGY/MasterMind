@@ -43,11 +43,13 @@ class ViewController: UIViewController {
     @IBOutlet var pinRowTen: [UIImageView]?
     var pinUIImageViews = [[UIImageView]]()
     
+    let masterMindManager = MasterMindManager()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         appendOutLetButtons()
         appendPinImageViews()
+        masterMindManager.randomIntAPI.fetchRandomInt()
     }
     //MARK: Buttons func
     @IBAction func actionForButtons(_ sender: UIButton) {
