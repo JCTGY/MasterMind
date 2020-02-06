@@ -25,9 +25,9 @@ class ViewController: UIViewController {
     @IBOutlet var rowTen : [UIButton]?
     var outletButtons = [[UIButton]]()
     var outletIndex = 0
-    
     var replaceButton : UIButton?
     var buttons : [UIButton] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -35,9 +35,13 @@ class ViewController: UIViewController {
     }
     @IBAction func actionForButtons(_ sender: UIButton) {
         replaceButton = sender
+        sender.showsTouchWhenHighlighted = true
+        sender.setTitle("O", for: .normal)
+        sender.setTitleColor(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), for: .normal)
         sender.backgroundColor = UIColor.white
     }
     @IBAction func colorSelectButtons(_ sender: UIButton){
+        replaceButton?.setTitle("", for: .normal)
         replaceButton?.backgroundColor = sender.imageView?.tintColor
     }
     
