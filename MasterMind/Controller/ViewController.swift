@@ -79,7 +79,7 @@ class ViewController: UIViewController {
         globalIndex = globalIndex < 10 ? globalIndex + 1 : globalIndex
         enableButtons()
         lastReplaceButton?.setTitle("", for: .normal)
-        replaceButton = outletButtons[globalIndex][0]
+        replaceButton = outletButtons[globalIndex].first
         lastReplaceButton = replaceButton
         setButtonToSelectImage()
     }

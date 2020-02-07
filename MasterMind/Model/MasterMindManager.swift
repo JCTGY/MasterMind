@@ -58,10 +58,12 @@ class MasterMindManager: randomAPIDelegate {
             return 5
         } else if color == UIColor.systemTeal {
             return 6
+        } else if color == UIColor.systemIndigo {
+            return 7
         }
         return -1
     }
-    // TODO Not calculate correct
+    //TODO: Not calculate correct
     func calculateResult() {
         var total = 0
         var exact = 0
@@ -78,21 +80,21 @@ class MasterMindManager: randomAPIDelegate {
             index += 1
             counts[gN] = (counts[gN] ?? 0) + 1
         }
+        print("couts: \(counts)")
         for cN in correctKey {
-            total += counts[cN] ?? 0
             if counts[cN] != nil && counts[cN] != 0 {
+                total += 1
                 counts[cN]! -= 1
             }
-            print("couts: \(counts)")
             print("total: \(total)")
             print("CN: \(cN)")
         }
-        print("exact\(exact)")
+        print("exact: \(exact)")
         white = total - exact
         black = exact
     }
 }
-// Extension for comparing UIColor
+//MARK: Extension for comparing UIColor
 extension UIColor {
   static func == (l: UIColor, r: UIColor) -> Bool {
     var r1: CGFloat = 0
