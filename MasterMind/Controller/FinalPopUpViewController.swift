@@ -8,23 +8,19 @@
 
 import UIKit
 
-protocol tryAraginDelegate {
-    func didClickTryButton()
-}
-
 class FinalPopUpViewController: UIViewController {
 
     @IBOutlet weak var finalDisplay: UILabel!
-    var delegate: tryAraginDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    @IBAction func tryButton(_ sender: UIButton) {
-        self.delegate?.didClickTryButton()
-        self.performSegue(withIdentifier: "goToStart", sender: self)
+    @IBAction func tryAgainButton(_ sender: UIButton) {
+        // Set to the rootViewController
+        let viewController = UIApplication.shared.windows.first!.rootViewController as! StartViewController
+        viewController.dismissStackViews()
     }
     
 

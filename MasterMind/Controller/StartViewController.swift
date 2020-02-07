@@ -13,17 +13,13 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
     }
     
-
     @IBAction func startButton(_ sender: UIButton) {
         self.performSegue(withIdentifier: "goToGame", sender: self)
     }
-}
-
-extension StartViewController: tryAraginDelegate {
-    func didClickTryButton() {
+    
+    func dismissStackViews() {
         dismiss(animated: true)
     }
 }

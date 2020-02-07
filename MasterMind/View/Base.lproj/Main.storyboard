@@ -1048,7 +1048,7 @@
                                             <color key="titleShadowColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
-                                            <action selector="tryButton:" destination="pF2-Mm-j2u" eventType="touchUpInside" id="v6Y-IS-F9N"/>
+                                            <action selector="tryAgainButton:" destination="pF2-Mm-j2u" eventType="touchUpInside" id="v6Y-IS-F9N"/>
                                         </connections>
                                     </button>
                                 </subviews>
