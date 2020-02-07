@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		355E3C4023EDC78C00EE09D7 /* FinalPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355E3C3F23EDC78C00EE09D7 /* FinalPopUpViewController.swift */; };
+		355E3C4223EDCC8C00EE09D7 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355E3C4123EDCC8C00EE09D7 /* StartViewController.swift */; };
 		35A4468F23EB4617002FCEDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4468E23EB4617002FCEDF /* AppDelegate.swift */; };
 		35A4469123EB4617002FCEDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4469023EB4617002FCEDF /* SceneDelegate.swift */; };
-		35A4469323EB4617002FCEDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4469223EB4617002FCEDF /* ViewController.swift */; };
+		35A4469323EB4617002FCEDF /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4469223EB4617002FCEDF /* GameViewController.swift */; };
 		35A4469623EB4617002FCEDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35A4469423EB4617002FCEDF /* Main.storyboard */; };
 		35A4469823EB4617002FCEDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35A4469723EB4617002FCEDF /* Assets.xcassets */; };
 		35A4469B23EB4617002FCEDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35A4469923EB4617002FCEDF /* LaunchScreen.storyboard */; };
@@ -18,10 +20,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		355E3C3F23EDC78C00EE09D7 /* FinalPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalPopUpViewController.swift; sourceTree = "<group>"; };
+		355E3C4123EDCC8C00EE09D7 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		35A4468B23EB4617002FCEDF /* MasterMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35A4468E23EB4617002FCEDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35A4469023EB4617002FCEDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		35A4469223EB4617002FCEDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		35A4469223EB4617002FCEDF /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		35A4469523EB4617002FCEDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		35A4469723EB4617002FCEDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35A4469A23EB4617002FCEDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -75,7 +79,9 @@
 		35A446A223EB4724002FCEDF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				35A4469223EB4617002FCEDF /* ViewController.swift */,
+				35A4469223EB4617002FCEDF /* GameViewController.swift */,
+				355E3C3F23EDC78C00EE09D7 /* FinalPopUpViewController.swift */,
+				355E3C4123EDCC8C00EE09D7 /* StartViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -168,7 +174,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35A4469323EB4617002FCEDF /* ViewController.swift in Sources */,
+				355E3C4023EDC78C00EE09D7 /* FinalPopUpViewController.swift in Sources */,
+				355E3C4223EDCC8C00EE09D7 /* StartViewController.swift in Sources */,
+				35A4469323EB4617002FCEDF /* GameViewController.swift in Sources */,
 				35A4468F23EB4617002FCEDF /* AppDelegate.swift in Sources */,
 				35A4469123EB4617002FCEDF /* SceneDelegate.swift in Sources */,
 				35A446A823ECB2D1002FCEDF /* RandomIntAPI.swift in Sources */,

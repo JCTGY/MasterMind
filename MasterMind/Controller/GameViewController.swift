@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class GameViewController: UIViewController {
 
     /* =========================== */
     /*       IBoutlet Buttons      */
@@ -44,6 +44,7 @@ class ViewController: UIViewController {
     var pinUIImageViews = [[UIImageView]]()
     
     let masterMindManager = MasterMindManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -71,6 +72,9 @@ class ViewController: UIViewController {
                 return ;
             }
         }
+        if globalIndex == 1 {
+            self.performSegue(withIdentifier: "goToPopUp", sender: self)
+        }
         assignGuessKey()
         masterMindManager.calculateResult()
         assignPinColor()
@@ -83,6 +87,7 @@ class ViewController: UIViewController {
         lastReplaceButton = replaceButton
         setButtonToSelectImage()
     }
+
     // Append all the IBoutlet Buttons
     func appendOutLetButtons() {
         outletButtons.append(rowOne!)
@@ -175,3 +180,27 @@ extension UIImageView {
   }
 }
 
+//extension UIViewController {
+//    func topMostViewController() -> UIViewController {
+//        
+//        if let presented = self.presentedViewController {
+//            return presented.topMostViewController()
+//        }
+//        
+//        if let navigation = self as? UINavigationController {
+//            return navigation.visibleViewController?.topMostViewController() ?? navigation
+//        }
+//        
+//        if let tab = self as? UITabBarController {
+//            return tab.selectedViewController?.topMostViewController() ?? tab
+//        }
+//        
+//        return self
+//    }
+//}
+//
+//extension UIApplication {
+//    func topMostViewController() -> UIViewController? {
+//        return self.keyWindow?.rootViewController?.topMostViewController()
+//    }
+//}

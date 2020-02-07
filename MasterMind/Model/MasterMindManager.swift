@@ -27,7 +27,7 @@ class MasterMindManager: randomAPIDelegate {
     // randomAPIDelegate func didUpdateRandomAPI
     func didUpdateRandomAPI(stringData: String) {
         DispatchQueue.main.async {
-            self.assignKeyToAnswerKey(stringData)
+            self.assignKeyToCorrectKey(stringData)
         }
     }
     // randomAPIDelegate func didFailWithError
@@ -35,7 +35,7 @@ class MasterMindManager: randomAPIDelegate {
         print(error)
     }
     
-    func assignKeyToAnswerKey(_ stringData: String) {
+    func assignKeyToCorrectKey(_ stringData: String) {
         correctKey.removeAll()
         let splitString = stringData.split(separator: "\n")
         splitString.forEach {
@@ -63,7 +63,6 @@ class MasterMindManager: randomAPIDelegate {
         }
         return -1
     }
-    //TODO: Not calculate correct
     func calculateResult() {
         var total = 0
         var exact = 0
@@ -73,6 +72,7 @@ class MasterMindManager: randomAPIDelegate {
         }
         var counts: [Int: Int] = [:]
         var index = 0
+        guard correctKey.count != 0 else { return }
         for gN in guessKey {
             if gN == correctKey[index] {
                 exact += 1
@@ -80,16 +80,12 @@ class MasterMindManager: randomAPIDelegate {
             index += 1
             counts[gN] = (counts[gN] ?? 0) + 1
         }
-        print("couts: \(counts)")
         for cN in correctKey {
             if counts[cN] != nil && counts[cN] != 0 {
                 total += 1
                 counts[cN]! -= 1
             }
-            print("total: \(total)")
-            print("CN: \(cN)")
         }
-        print("exact: \(exact)")
         white = total - exact
         black = exact
     }
