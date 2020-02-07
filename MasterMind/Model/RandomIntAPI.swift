@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol randomAPIDelegate {
+protocol RandomAPIDelegate {
     func didUpdateRandomAPI(stringData: String)
     func didFailWithError(error: Error)
 }
@@ -20,7 +20,7 @@ struct RandomIntAPI {
     let min: Int
     let max: Int
     
-    var delegate: randomAPIDelegate?
+    var delegate: RandomAPIDelegate?
 
     func fetchRandomInt() {
         

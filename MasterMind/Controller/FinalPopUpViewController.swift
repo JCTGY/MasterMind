@@ -14,12 +14,13 @@ class FinalPopUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
+    
     @IBAction func tryAgainButton(_ sender: UIButton) {
         // Set to the rootViewController
         let viewController = UIApplication.shared.windows.first!.rootViewController as! StartViewController
+        viewController.randomIntAPI.fetchRandomInt()
         viewController.dismissStackViews()
     }
     

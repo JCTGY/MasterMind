@@ -44,13 +44,16 @@ class GameViewController: UIViewController {
     var pinUIImageViews = [[UIImageView]]()
     
     let masterMindManager = MasterMindManager()
+    var correctKeyString: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         appendOutLetButtons()
         appendPinImageViews()
-        masterMindManager.randomIntAPI?.fetchRandomInt()
+        guard let correctKeyString = correctKeyString else { return }
+        masterMindManager.assignKeyToCorrectKey(correctKeyString)
+    //    masterMindManager.randomIntAPI?.fetchRandomInt()
     }
     //MARK: Buttons func
     @IBAction func actionForButtons(_ sender: UIButton) {
@@ -143,9 +146,6 @@ class GameViewController: UIViewController {
     }
     func assignPinColor() {
         var indexForNumPinColor = 0
-       // let tmpBlack = 2
-        print(masterMindManager.black)
-        print(masterMindManager.white)
         pinUIImageViews[globalIndex
         ].forEach {
             //TODO Number Not Correct

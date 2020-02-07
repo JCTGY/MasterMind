@@ -9,31 +9,12 @@
 import Foundation
 import UIKit
 
-class MasterMindManager: randomAPIDelegate {
+class MasterMindManager {
     
-    let num = 4
-    let min = 0
-    let max = 7
-    var randomIntAPI: RandomIntAPI?
     private var correctKey = [Int]()
     var guessKey = [Int]()
     var white = 0
     var black = 0
-    
-    init(){
-        randomIntAPI = RandomIntAPI(num: num, min: min, max: max)
-        randomIntAPI?.delegate = self
-    }
-    // randomAPIDelegate func didUpdateRandomAPI
-    func didUpdateRandomAPI(stringData: String) {
-        DispatchQueue.main.async {
-            self.assignKeyToCorrectKey(stringData)
-        }
-    }
-    // randomAPIDelegate func didFailWithError
-    func didFailWithError(error: Error) {
-        print(error)
-    }
     
     func assignKeyToCorrectKey(_ stringData: String) {
         correctKey.removeAll()
