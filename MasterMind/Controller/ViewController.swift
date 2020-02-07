@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         appendOutLetButtons()
         appendPinImageViews()
-        masterMindManager.randomIntAPI.fetchRandomInt()
+        masterMindManager.randomIntAPI?.fetchRandomInt()
     }
     //MARK: Buttons func
     @IBAction func actionForButtons(_ sender: UIButton) {
@@ -71,6 +71,8 @@ class ViewController: UIViewController {
                 return ;
             }
         }
+        assignGuessKey()
+        masterMindManager.calculateResult()
         assignPinColor()
         disableButtons()
         // Increment the globalIndex
@@ -113,6 +115,14 @@ class ViewController: UIViewController {
         replaceButton?.setTitleColor(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), for: .normal)
         replaceButton?.backgroundColor = UIColor.white
     }
+    // Return the position of the buttons
+    func getPositionButton() -> Int {
+        guard let button = replaceButton else { return -1 }
+        if let index = outletButtons[globalIndex].firstIndex(of: button) {
+            return index
+        }
+        return -1
+    }
     // MARK: pinImageViews func
     func appendPinImageViews() {
         pinUIImageViews.append(pinRowOne!)
@@ -128,16 +138,30 @@ class ViewController: UIViewController {
     }
     func assignPinColor() {
         var indexForNumPinColor = 0
-        let tmpBlack = 2
+       // let tmpBlack = 2
+        print(masterMindManager.black)
+        print(masterMindManager.white)
         pinUIImageViews[globalIndex
         ].forEach {
-            $0.image = UIImage(systemName: "pin.fill")
-            if indexForNumPinColor < tmpBlack {
+            //TODO Number Not Correct
+            if indexForNumPinColor < masterMindManager.black {
+                $0.image = UIImage(systemName: "pin.fill")
                 $0.setImageColor(color: UIColor.black)
-            } else {
+            } else if indexForNumPinColor < masterMindManager.black + masterMindManager.white{
+                $0.image = UIImage(systemName: "pin.fill")
                 $0.setImageColor(color: UIColor.white)
             }
             indexForNumPinColor += 1
+        }
+    }
+    
+    func assignGuessKey() {
+        masterMindManager.guessKey.removeAll()
+        outletButtons[globalIndex].forEach {
+            if let color = $0.backgroundColor {
+                let key = masterMindManager.getNumberFromColor(color)
+                masterMindManager.guessKey.append(key)
+            }
         }
     }
 }

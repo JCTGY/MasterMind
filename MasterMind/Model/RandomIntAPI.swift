@@ -10,6 +10,7 @@ import Foundation
 
 protocol randomAPIDelegate {
     func didUpdateRandomAPI(stringData: String)
+    func didFailWithError(error: Error)
 }
 
 struct RandomIntAPI {
@@ -27,7 +28,7 @@ struct RandomIntAPI {
         let url = URL(string: urlString)!
         let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
             if let error = error {
-                print("Error with fetching randomInteger: \(error)")
+                self.delegate?.didFailWithError(error: error)
                 return
             }
             guard let httpResponse = response as? HTTPURLResponse,
