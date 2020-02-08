@@ -53,21 +53,31 @@ class GameViewController: UIViewController {
     var timer: Timer?
     var currentTime = 300
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    func startGame() {
+        
         appendtableOfButtons()
         appendtableOfPinsImageView()
-        guard let correctKeyString = correctKeyString
+        guard let correctKeyString = correctKeyString,
+            let firstRowButton = tableOfButtons.first
             else {
                 return
         }
+        currentSelectButton = firstRowButton.first
+        lastReplaceButton = firstRowButton.first
+        setButtonToSelectImage()
         intitailGameTimer()
         startGameTimer()
         masterMindManager.assignKeyToCorrectKey(correctKeyString)
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        startGame()
+    }
+    
     // MARK: - IBAction functions for buttons
+    
     @IBAction func actionForButtons(_ sender: UIButton) {
         if lastReplaceButton != nil {
             lastReplaceButton?.setTitle("", for: .normal)
@@ -114,16 +124,8 @@ class GameViewController: UIViewController {
         setButtonToSelectImage()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // send result to `FinalPopUpViewController`
-        if segue.identifier == "goToPopUp" {
-            let destinationVC = segue.destination as! FinalPopUpViewController
-            destinationVC.delegate = self
-            destinationVC.gameResult = masterMindManager.getFinalResult()
-        }
-    }
-    
     // MARK: - Buttons functions
+    
     func appendtableOfButtons() {
         // Append all the IBoutlet Buttons
         tableOfButtons.append(rowOne!)
@@ -250,9 +252,18 @@ class GameViewController: UIViewController {
     func gameFinish() {
         
         timer?.invalidate()
-        masterMindManager.claculateFinalScore(numberOfTries: tableRowIndex)
+        masterMindManager.claculateFinalScore(numberOfTries: tableRowIndex, gameTimeRemain: currentTime)
         scoreLabel.text = "Score: " + masterMindManager.scoreCalculator.getFinalScore()
         self.performSegue(withIdentifier: "goToPopUp", sender: self)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // send result to `FinalPopUpViewController`
+        if segue.identifier == "goToPopUp" {
+            let destinationVC = segue.destination as! FinalPopUpViewController
+            destinationVC.delegate = self
+            destinationVC.gameResult = masterMindManager.getFinalResult()
+        }
     }
     
     // MARK: - reset functions
