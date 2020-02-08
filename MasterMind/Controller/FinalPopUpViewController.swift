@@ -8,20 +8,50 @@
 
 import UIKit
 
+protocol resetGameDelegate {
+    func didResetGame(newKey: String)
+}
+
 class FinalPopUpViewController: UIViewController {
 
     @IBOutlet weak var finalDisplay: UILabel!
+    @IBOutlet weak var popUpButton: UIButton!
     
+    var gameResult: GameResult?
+    var delegate: resetGameDelegate?
+    let viewController = UIApplication.shared.windows.first!.rootViewController as! StartViewController
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        viewController.randomIntAPI.fetchRandomInt()
+        guard let finalScore = gameResult?.finalScore
+            else {
+                return
+        }
+        if gameResult?.didWin == true {
+            print("You Win!\nScore: \(finalScore)")
+            finalDisplay.text = "You Win!\nScore: \(finalScore)"
+            popUpButton.setTitle("Continue", for: .normal)
+        } else {
+            finalDisplay.text = "You Lose!\nScore: \(finalScore)"
+            popUpButton.setTitle("End Game", for: .normal)
+        }
     }
     
-    @IBAction func tryAgainButton(_ sender: UIButton) {
+    @IBAction func popUpButton(_ sender: UIButton) {
         // Set to the rootViewController
-        let viewController = UIApplication.shared.windows.first!.rootViewController as! StartViewController
-        viewController.randomIntAPI.fetchRandomInt()
-        viewController.dismissStackViews()
+//        let viewController = UIApplication.shared.windows.first!.rootViewController as! StartViewController
+//        viewController.randomIntAPI.fetchRandomInt()
+        if gameResult?.didWin == true {
+            guard let correctKeyString = viewController.correctKeyString
+                else {
+                    return
+            }
+            self.delegate?.didResetGame(newKey: correctKeyString)
+        } else {
+            viewController.dismissStackViews()
+        }
     }
     
 

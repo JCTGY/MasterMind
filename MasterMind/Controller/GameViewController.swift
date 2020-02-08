@@ -45,8 +45,11 @@ class GameViewController: UIViewController {
     var tableOfPinsImageView = [[UIImageView]]()
     var currentRowPin = [UIImageView]()
     
+    @IBOutlet weak var scoreLabel: UILabel!
+    
     let masterMindManager = MasterMindManager()
     var correctKeyString: String?
+    var resetGameDelegate: resetGameDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,9 +60,11 @@ class GameViewController: UIViewController {
             else {
                 return
         }
+        print(correctKeyString)
         masterMindManager.assignKeyToCorrectKey(correctKeyString)
     }
-    //MARK: Buttons func
+    
+    // MARK: - Buttons functions
     @IBAction func actionForButtons(_ sender: UIButton) {
         if lastReplaceButton != nil {
             lastReplaceButton?.setTitle("", for: .normal)
@@ -92,12 +97,13 @@ class GameViewController: UIViewController {
         masterMindManager.calculateResult()
         assignPinColor(tableOfPinsImageView[globalIndex])
         disableButtons(tableOfButtons[globalIndex])
-        // Increment the globalIndex
+        
+        // MARK: - Increment the globalIndex
         globalIndex += 1
-        guard tableOfButtons.count > globalIndex
-            else {
-                self.performSegue(withIdentifier: "goToPopUp", sender: self)
-                return
+        if tableOfButtons.count <= globalIndex || masterMindManager.black == 4 {
+            masterMindManager.scoreCalculator.calculateScore(numberOfTries: globalIndex)
+            scoreLabel.text = "Score: " + masterMindManager.scoreCalculator.getFinalScore()
+            self.performSegue(withIdentifier: "goToPopUp", sender: self)
         }
         enableButtons(tableOfButtons[globalIndex])
         lastReplaceButton?.setTitle("", for: .normal)
@@ -105,9 +111,17 @@ class GameViewController: UIViewController {
         lastReplaceButton = currentSelectButton
         setButtonToSelectImage()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToPopUp" {
+            let destinationVC = segue.destination as! FinalPopUpViewController
+            destinationVC.delegate = self
+            destinationVC.gameResult = masterMindManager.getFinalResult()
+        }
+    }
 
-    // Append all the IBoutlet Buttons
     func appendOutLetButtons() {
+        // Append all the IBoutlet Buttons
         tableOfButtons.append(rowOne!)
         tableOfButtons.append(rowTwo!)
         tableOfButtons.append(rowThree!)
@@ -132,8 +146,8 @@ class GameViewController: UIViewController {
         }
     }
     
-    // Indicate which buttons is currently selected
     func setButtonToSelectImage() {
+        // Indicate which buttons is currently selected
         guard let currentSelectButton = currentSelectButton
             else {
                 return
@@ -144,7 +158,8 @@ class GameViewController: UIViewController {
         currentSelectButton.backgroundColor = UIColor.white
     }
     
-    // MARK: pinImageViews func
+    // MARK: - pinImageViews functions
+    
     func appendPinImageViews() {
         tableOfPinsImageView.append(pinRowOne!)
         tableOfPinsImageView.append(pinRowTwo!)
@@ -158,8 +173,8 @@ class GameViewController: UIViewController {
         tableOfPinsImageView.append(pinRowTen!)
     }
     
-    // Replace the Pin image after get the number from the Manager
     func assignPinColor(_ currentRowPins: [UIImageView]) {
+        // Replace the Pin image after get the number from the Manager
         var indexForNumPinColor = 0
         tableOfPinsImageView[globalIndex
         ].forEach {
@@ -174,8 +189,9 @@ class GameViewController: UIViewController {
             indexForNumPinColor += 1
         }
     }
-    // assigned the guesskey to the Manager
+    
     func assignGuessKey(_ currentRowButton: [UIButton]) {
+        // assigned the guesskey to the Manager
         masterMindManager.guessKey.removeAll()
         currentRowButton.forEach {
             if let color = $0.backgroundColor {
@@ -184,13 +200,56 @@ class GameViewController: UIViewController {
             }
         }
     }
+    
+    // MARK: - reset functions
+    
+    func resetTablePinsImage() {
+        // resetPinsColor to original state
+        tableOfPinsImageView.forEach {
+            $0.forEach {
+                $0.image = UIImage(systemName: "pin")
+                $0.setImageColor(color: UIColor.black)
+            }
+        }
+    }
+    
+    func resetTableButtons() {
+        // reset all the buttons to original state
+        tableOfButtons.forEach {
+            $0.forEach {
+                $0.backgroundColor = UIColor.white
+            }
+        }
+    }
 }
 
-//MARK: Set extension for change UIImageView color
+extension GameViewController: resetGameDelegate {
+    
+    func didResetGame(newKey: String) {
+        globalIndex = 0
+        guard let firstRowButton = tableOfButtons.first
+            else {
+                return
+        }
+        enableButtons(firstRowButton)
+        currentSelectButton?.setTitle("", for: .normal)
+        currentSelectButton = firstRowButton.first
+        lastReplaceButton = firstRowButton.first
+        resetTableButtons()
+        resetTablePinsImage()
+        setButtonToSelectImage()
+        masterMindManager.assignKeyToCorrectKey(newKey)
+        dismiss(animated: true, completion: nil)
+    }
+}
+
 extension UIImageView {
-  func setImageColor(color: UIColor) {
-    let templateImage = self.image?.withRenderingMode(.alwaysTemplate)
-    self.image = templateImage
-    self.tintColor = color
-  }
+    
+    // MARK: - Set extension for change UIImageView color
+    
+    func setImageColor(color: UIColor) {
+        let templateImage = self.image?.withRenderingMode(.alwaysTemplate)
+        self.image = templateImage
+        self.tintColor = color
+    }
 }

@@ -36,15 +36,19 @@ class StartViewController: UIViewController {
     }
 }
 
-//MARK: delegate for randomIntAPI fetching data
 extension StartViewController: RandomAPIDelegate {
+    
+    //MARK: delegate for randomIntAPI fetching data
+
     func didUpdateRandomAPI(stringData: String) {
+        // async fetching random API data
         DispatchQueue.main.async {
             self.correctKeyString = stringData
+            print(stringData)
         }
     }
-    // randomAPIDelegate func didFailWithError
     func didFailWithError(error: Error) {
+        // randomAPIDelegate func didFailWithError
         print(error)
     }
 }

@@ -15,6 +15,7 @@ class MasterMindManager {
     var guessKey = [Int]()
     var white = 0
     var black = 0
+    var scoreCalculator = ScoreCalculate()
     
     func assignKeyToCorrectKey(_ stringData: String) {
         correctKey.removeAll()
@@ -24,8 +25,8 @@ class MasterMindManager {
         }
     }
     
-    // Return the Int that pair with each color
     func getNumberFromColor(_ color: UIColor) -> Int {
+        // Return the Int that pair with each color
         if color == UIColor.black {
             return 0
         } else if color == UIColor.systemBlue {
@@ -47,34 +48,45 @@ class MasterMindManager {
     }
     
     func calculateResult() {
+        // calculate the result of the player guess
         var total = 0
         var exact = 0
-        var index = 0
         var counts: [Int: Int] = [:]
         guard correctKey.count != 0 || guessKey.count != 0
             else {
                 return
         }
-        for gN in guessKey {
-            if gN == correctKey[index] {
+        for (eachGuessKey, eachCorrectKey) in zip(guessKey, correctKey) {
+            if eachGuessKey == eachCorrectKey {
                 exact += 1
             }
-            index += 1
-            counts[gN] = (counts[gN] ?? 0) + 1
+            counts[eachGuessKey] = (counts[eachGuessKey] ?? 0) + 1
         }
-        for cN in correctKey {
-            if counts[cN] != nil && counts[cN] != 0 {
+        correctKey.forEach {
+            let index = $0
+            if counts[index] != nil && counts[index]! > 0 {
                 total += 1
-                counts[cN]! -= 1
+                counts[index]! -= 1
             }
         }
         white = total - exact
         black = exact
     }
+    
+    func getFinalResult() -> GameResult {
+        // return the fianl game result
+        if black == 4 {
+            let gameResult = GameResult(didWin: true, finalScore: scoreCalculator.getFinalScore())
+            return gameResult
+        } else {
+            let gameResult = GameResult(didWin: false, finalScore: scoreCalculator.getFinalScore())
+            return gameResult
+        }
+    }
 }
 
-//MARK: Extension for comparing UIColor
 extension UIColor {
+    // MARK: - Extension for comparing UIColor
   static func == (l: UIColor, r: UIColor) -> Bool {
     var r1: CGFloat = 0
     var g1: CGFloat = 0
