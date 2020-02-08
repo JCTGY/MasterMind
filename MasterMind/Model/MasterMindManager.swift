@@ -13,8 +13,8 @@ class MasterMindManager {
     
     private var correctKey = [Int]()
     var guessKey = [Int]()
-    var white = 0
-    var black = 0
+    var numberOfWhitePins = 0
+    var numberOfBlackPins = 0
     var scoreCalculator = ScoreCalculate()
     
     func assignKeyToCorrectKey(_ stringData: String) {
@@ -69,13 +69,20 @@ class MasterMindManager {
                 counts[index]! -= 1
             }
         }
-        white = total - exact
-        black = exact
+        numberOfWhitePins = total - exact
+        numberOfBlackPins = exact
+    }
+    
+    func claculateFinalScore(numberOfTries: Int) {
+        
+        if numberOfBlackPins == 4 {
+            scoreCalculator.calculateScore(numberOfTries: numberOfTries)
+        }
     }
     
     func getFinalResult() -> GameResult {
         // return the fianl game result
-        if black == 4 {
+        if numberOfBlackPins == 4 {
             let gameResult = GameResult(didWin: true, finalScore: scoreCalculator.getFinalScore())
             return gameResult
         } else {

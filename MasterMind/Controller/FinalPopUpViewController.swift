@@ -41,8 +41,6 @@ class FinalPopUpViewController: UIViewController {
     
     @IBAction func popUpButton(_ sender: UIButton) {
         // Set to the rootViewController
-//        let viewController = UIApplication.shared.windows.first!.rootViewController as! StartViewController
-//        viewController.randomIntAPI.fetchRandomInt()
         if gameResult?.didWin == true {
             guard let correctKeyString = viewController.correctKeyString
                 else {
