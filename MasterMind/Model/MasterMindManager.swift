@@ -23,7 +23,8 @@ class MasterMindManager {
             if let number = Int($0) { correctKey.append(number) }
         }
     }
-    // Return the Int that pair with color
+    
+    // Return the Int that pair with each color
     func getNumberFromColor(_ color: UIColor) -> Int {
         if color == UIColor.black {
             return 0
@@ -44,16 +45,16 @@ class MasterMindManager {
         }
         return -1
     }
+    
     func calculateResult() {
         var total = 0
         var exact = 0
-        var array = [Int]()
-        for i in 0...7 {
-            array.append(i)
-        }
-        var counts: [Int: Int] = [:]
         var index = 0
-        guard correctKey.count != 0 else { return }
+        var counts: [Int: Int] = [:]
+        guard correctKey.count != 0 || guessKey.count != 0
+            else {
+                return
+        }
         for gN in guessKey {
             if gN == correctKey[index] {
                 exact += 1
@@ -71,6 +72,7 @@ class MasterMindManager {
         black = exact
     }
 }
+
 //MARK: Extension for comparing UIColor
 extension UIColor {
   static func == (l: UIColor, r: UIColor) -> Bool {

@@ -23,9 +23,10 @@ class GameViewController: UIViewController {
     @IBOutlet var rowEight : [UIButton]?
     @IBOutlet var rowNine : [UIButton]?
     @IBOutlet var rowTen : [UIButton]?
-    var outletButtons = [[UIButton]]()
+    var tableOfButtons = [[UIButton]]()
+    var currentRowButtons: [UIButton]?
     var globalIndex = 0
-    var replaceButton: UIButton?
+    var currentSelectButton: UIButton?
     var lastReplaceButton: UIButton?
     
     /* =========================== */
@@ -41,7 +42,8 @@ class GameViewController: UIViewController {
     @IBOutlet var pinRowEight: [UIImageView]?
     @IBOutlet var pinRowNine: [UIImageView]?
     @IBOutlet var pinRowTen: [UIImageView]?
-    var pinUIImageViews = [[UIImageView]]()
+    var tableOfPinsImageView = [[UIImageView]]()
+    var currentRowPin = [UIImageView]()
     
     let masterMindManager = MasterMindManager()
     var correctKeyString: String?
@@ -51,102 +53,115 @@ class GameViewController: UIViewController {
         // Do any additional setup after loading the view.
         appendOutLetButtons()
         appendPinImageViews()
-        guard let correctKeyString = correctKeyString else { return }
+        guard let correctKeyString = correctKeyString
+            else {
+                return
+        }
         masterMindManager.assignKeyToCorrectKey(correctKeyString)
-    //    masterMindManager.randomIntAPI?.fetchRandomInt()
     }
     //MARK: Buttons func
     @IBAction func actionForButtons(_ sender: UIButton) {
         if lastReplaceButton != nil {
             lastReplaceButton?.setTitle("", for: .normal)
         }
-        replaceButton = sender
+        currentSelectButton = sender
         setButtonToSelectImage()
         lastReplaceButton = sender
     }
-    @IBAction func colorSelectButtons(_ sender: UIButton){
-        replaceButton?.backgroundColor = sender.imageView?.tintColor
+    
+    @IBAction func colorSelectButtons(_ sender: UIButton) {
+        guard let currentSelectButton = currentSelectButton
+            else {
+                return
+        }
+        currentSelectButton.backgroundColor = sender.imageView?.tintColor
     }
     
     @IBAction func submitButton(_ sender: UIButton) {
         // Check if every bottons is selected with a color
-        for button in outletButtons[globalIndex] {
+        guard tableOfButtons.count > globalIndex || tableOfPinsImageView.count > globalIndex
+            else {
+                return
+        }
+        for button in tableOfButtons[globalIndex] {
             guard button.backgroundColor != UIColor.white else {
                 return ;
             }
         }
-        if globalIndex == 1 {
-            self.performSegue(withIdentifier: "goToPopUp", sender: self)
-        }
-        assignGuessKey()
+        assignGuessKey(tableOfButtons[globalIndex])
         masterMindManager.calculateResult()
-        assignPinColor()
-        disableButtons()
+        assignPinColor(tableOfPinsImageView[globalIndex])
+        disableButtons(tableOfButtons[globalIndex])
         // Increment the globalIndex
-        globalIndex = globalIndex < 10 ? globalIndex + 1 : globalIndex
-        enableButtons()
+        globalIndex += 1
+        guard tableOfButtons.count > globalIndex
+            else {
+                self.performSegue(withIdentifier: "goToPopUp", sender: self)
+                return
+        }
+        enableButtons(tableOfButtons[globalIndex])
         lastReplaceButton?.setTitle("", for: .normal)
-        replaceButton = outletButtons[globalIndex].first
-        lastReplaceButton = replaceButton
+        currentSelectButton = tableOfButtons[globalIndex].first
+        lastReplaceButton = currentSelectButton
         setButtonToSelectImage()
     }
 
     // Append all the IBoutlet Buttons
     func appendOutLetButtons() {
-        outletButtons.append(rowOne!)
-        outletButtons.append(rowTwo!)
-        outletButtons.append(rowThree!)
-        outletButtons.append(rowFour!)
-        outletButtons.append(rowFive!)
-        outletButtons.append(rowSix!)
-        outletButtons.append(rowSeven!)
-        outletButtons.append(rowEight!)
-        outletButtons.append(rowNine!)
-        outletButtons.append(rowTen!)
+        tableOfButtons.append(rowOne!)
+        tableOfButtons.append(rowTwo!)
+        tableOfButtons.append(rowThree!)
+        tableOfButtons.append(rowFour!)
+        tableOfButtons.append(rowFive!)
+        tableOfButtons.append(rowSix!)
+        tableOfButtons.append(rowSeven!)
+        tableOfButtons.append(rowEight!)
+        tableOfButtons.append(rowNine!)
+        tableOfButtons.append(rowTen!)
     }
-    func enableButtons() {
-        guard globalIndex < 10 else {
-            return ;
-        }
-        outletButtons[globalIndex].forEach {
+    
+    func enableButtons(_ currentRowButton: [UIButton]) {
+        currentRowButton.forEach {
             $0.isUserInteractionEnabled = true
         }
     }
-    func disableButtons() {
-        outletButtons[globalIndex].forEach{ $0.isUserInteractionEnabled = false
+    
+    func disableButtons(_ currentRowButton: [UIButton]) {
+        currentRowButton.forEach {
+            $0.isUserInteractionEnabled = false
         }
     }
+    
     // Indicate which buttons is currently selected
     func setButtonToSelectImage() {
-        replaceButton?.showsTouchWhenHighlighted = true
-        replaceButton?.setTitle("O", for: .normal)
-        replaceButton?.setTitleColor(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), for: .normal)
-        replaceButton?.backgroundColor = UIColor.white
-    }
-    // Return the position of the buttons
-    func getPositionButton() -> Int {
-        guard let button = replaceButton else { return -1 }
-        if let index = outletButtons[globalIndex].firstIndex(of: button) {
-            return index
+        guard let currentSelectButton = currentSelectButton
+            else {
+                return
         }
-        return -1
+        currentSelectButton.showsTouchWhenHighlighted = true
+        currentSelectButton.setTitle("O", for: .normal)
+        currentSelectButton.setTitleColor(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), for: .normal)
+        currentSelectButton.backgroundColor = UIColor.white
     }
+    
     // MARK: pinImageViews func
     func appendPinImageViews() {
-        pinUIImageViews.append(pinRowOne!)
-        pinUIImageViews.append(pinRowTwo!)
-        pinUIImageViews.append(pinRowThree!)
-        pinUIImageViews.append(pinRowFour!)
-        pinUIImageViews.append(pinRowFive!)
-        pinUIImageViews.append(pinRowSix!)
-        pinUIImageViews.append(pinRowSeven!)
-        pinUIImageViews.append(pinRowEight!)
-        pinUIImageViews.append(pinRowNine!)
-        pinUIImageViews.append(pinRowTen!)
+        tableOfPinsImageView.append(pinRowOne!)
+        tableOfPinsImageView.append(pinRowTwo!)
+        tableOfPinsImageView.append(pinRowThree!)
+        tableOfPinsImageView.append(pinRowFour!)
+        tableOfPinsImageView.append(pinRowFive!)
+        tableOfPinsImageView.append(pinRowSix!)
+        tableOfPinsImageView.append(pinRowSeven!)
+        tableOfPinsImageView.append(pinRowEight!)
+        tableOfPinsImageView.append(pinRowNine!)
+        tableOfPinsImageView.append(pinRowTen!)
     }
-    func assignPinColor() {
+    
+    // Replace the Pin image after get the number from the Manager
+    func assignPinColor(_ currentRowPins: [UIImageView]) {
         var indexForNumPinColor = 0
-        pinUIImageViews[globalIndex
+        tableOfPinsImageView[globalIndex
         ].forEach {
             //TODO Number Not Correct
             if indexForNumPinColor < masterMindManager.black {
@@ -159,10 +174,10 @@ class GameViewController: UIViewController {
             indexForNumPinColor += 1
         }
     }
-    
-    func assignGuessKey() {
+    // assigned the guesskey to the Manager
+    func assignGuessKey(_ currentRowButton: [UIButton]) {
         masterMindManager.guessKey.removeAll()
-        outletButtons[globalIndex].forEach {
+        currentRowButton.forEach {
             if let color = $0.backgroundColor {
                 let key = masterMindManager.getNumberFromColor(color)
                 masterMindManager.guessKey.append(key)
