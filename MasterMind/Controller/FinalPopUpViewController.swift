@@ -9,6 +9,7 @@
 import UIKit
 
 protocol resetGameDelegate {
+    
     func didResetGame(newKey: String)
 }
 

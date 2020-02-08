@@ -11,7 +11,6 @@ import UIKit
 class StartViewController: UIViewController {
 
     var randomIntAPI = RandomIntAPI(num: 4, min: 0, max: 7)
-    var masterMindManager = MasterMindManager()
     var correctKeyString: String?
     
     override func viewDidLoad() {
@@ -20,6 +19,7 @@ class StartViewController: UIViewController {
         randomIntAPI.delegate = self
         randomIntAPI.fetchRandomInt()
     }
+    
     @IBAction func startButton(_ sender: UIButton) {
         self.performSegue(withIdentifier: "goToGame", sender: self)
     }
@@ -29,6 +29,10 @@ class StartViewController: UIViewController {
             let destinationVC = segue.destination as! GameViewController
             destinationVC.correctKeyString = self.correctKeyString
         }
+    }
+    
+    @IBAction func ruleButton(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "goToRule", sender: self)
     }
     
     func dismissStackViews() {

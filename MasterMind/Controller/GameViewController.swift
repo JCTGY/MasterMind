@@ -78,6 +78,11 @@ class GameViewController: UIViewController {
     
     // MARK: - IBAction functions for buttons
     
+    @IBAction func stopGameButton(_ sender: UIButton) {
+        
+        timer?.invalidate()
+    }
+    
     @IBAction func actionForButtons(_ sender: UIButton) {
         if lastReplaceButton != nil {
             lastReplaceButton?.setTitle("", for: .normal)
@@ -187,6 +192,7 @@ class GameViewController: UIViewController {
     // MARK: - pinImageViews functions
     
     func appendtableOfPinsImageView() {
+        
         tableOfPinsImageView.append(pinRowOne!)
         tableOfPinsImageView.append(pinRowTwo!)
         tableOfPinsImageView.append(pinRowThree!)
@@ -254,15 +260,19 @@ class GameViewController: UIViewController {
         timer?.invalidate()
         masterMindManager.claculateFinalScore(numberOfTries: tableRowIndex, gameTimeRemain: currentTime)
         scoreLabel.text = "Score: " + masterMindManager.scoreCalculator.getFinalScore()
-        self.performSegue(withIdentifier: "goToPopUp", sender: self)
+        self.performSegue(withIdentifier: "goToEndPopUp", sender: self)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // send result to `FinalPopUpViewController`
-        if segue.identifier == "goToPopUp" {
+        if segue.identifier == "goToEndPopUp" {
             let destinationVC = segue.destination as! FinalPopUpViewController
             destinationVC.delegate = self
             destinationVC.gameResult = masterMindManager.getFinalResult()
+        }
+        if segue.identifier == "goToStopPopUp" {
+            let destinationVC = segue.destination as! stopPopUpViewController
+            destinationVC.delegate = self
         }
     }
     
@@ -308,6 +318,15 @@ extension GameViewController: resetGameDelegate {
         setButtonToSelectImage()
         masterMindManager.assignKeyToCorrectKey(newKey)
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension GameViewController: resumeGameTimerDelegate {
+    
+    func resumeGameTimer() {
+        
+        intitailGameTimer()
+        startGameTimer()
     }
 }
 
