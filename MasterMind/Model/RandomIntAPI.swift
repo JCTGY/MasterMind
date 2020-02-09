@@ -8,8 +8,9 @@
 
 import Foundation
 
-// MAKR: - RandomAPIDelegate to transfer fetch data
 protocol RandomAPIDelegate {
+    // MAKR: - RandomAPIDelegate to transfer fetch data
+
     func didUpdateRandomAPI(stringData: String)
     func didFailWithError(error: Error)
 }

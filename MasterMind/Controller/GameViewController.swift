@@ -68,6 +68,7 @@ class GameViewController: UIViewController {
         intitailGameTimer()
         startGameTimer()
         masterMindManager.assignKeyToCorrectKey(correctKeyString)
+        masterMindManager.gameSoundController.playBackgroundSong()
     }
     
     override func viewDidLoad() {

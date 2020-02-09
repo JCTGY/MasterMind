@@ -9,6 +9,7 @@
 import UIKit
 
 protocol resumeGameTimerDelegate {
+    // MARK: - protocol for resumimg GameTimer, back to `GameViewController`
     
     func resumeGameTimer()
 }

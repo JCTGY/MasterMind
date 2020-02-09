@@ -9,6 +9,7 @@
 import UIKit
 
 protocol resetGameDelegate {
+    // MARK: - protocol for receting game while press continue button
     
     func didResetGame(newKey: String)
 }

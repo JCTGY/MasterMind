@@ -16,6 +16,7 @@ class MasterMindManager {
     var numberOfWhitePins = 0
     var numberOfBlackPins = 0
     var scoreCalculator = ScoreCalculate()
+    let gameSoundController = GameSound()
     
     func assignKeyToCorrectKey(_ stringData: String) {
         correctKey.removeAll()
