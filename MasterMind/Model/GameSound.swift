@@ -11,19 +11,94 @@ import AVFoundation
 
 class GameSound {
     
-    var audioPlayer: AVAudioPlayer?
+    var audioBackgroundPlayer: AVAudioPlayer?
+    var soundEffectPlayer: AVAudioPlayer?
+    var disableSound = false
     
     func playBackgroundSong() {
-        guard let audioSourcePath = Bundle.main.path(forResource: "Easy_Seas", ofType: "mp3")
+        guard let audioSourcePath = Bundle.main.path(forResource: "Background", ofType: "mp3")
             else {
                 return
         }
-        let audioSourceURL = URL(fileURLWithPath: audioSourcePath)
         do {
-            print("play sound")
-            audioPlayer = try AVAudioPlayer.init(contentsOf: audioSourceURL)
-            audioPlayer?.prepareToPlay()
-            audioPlayer?.play()
+            audioBackgroundPlayer = try AVAudioPlayer.init(contentsOf: URL(fileURLWithPath: audioSourcePath))
+            audioBackgroundPlayer?.volume = 0.3
+            audioBackgroundPlayer?.prepareToPlay()
+            audioBackgroundPlayer?.play()
+            audioBackgroundPlayer?.numberOfLoops = -1
+        } catch {
+            print(error)
+        }
+    }
+    
+    func diableSoundPlayer() {
+        
+        disableSound = true
+        guard audioBackgroundPlayer != nil
+            else {
+                return
+        }
+        audioBackgroundPlayer?.stop()
+    }
+    
+    func enableSoundPlayer() {
+        
+        disableSound = false
+        playBackgroundSong()
+    }
+    
+    func soundForPlayerSelect() {
+        
+        if disableSound == true {
+            return
+        }
+        guard let audioSourcePath = Bundle.main.path(forResource: "playerSelect", ofType: "wav")
+            else {
+                return
+        }
+        do {
+            soundEffectPlayer = try AVAudioPlayer.init(contentsOf: URL(fileURLWithPath: audioSourcePath))
+            soundEffectPlayer?.volume = 1.0
+            soundEffectPlayer?.prepareToPlay()
+            soundEffectPlayer?.play()
+        } catch {
+            print(error)
+        }
+    }
+    
+    func soundForPlayerDeselect() {
+        
+        if disableSound == true {
+            return
+        }
+        guard let audioSourcePath = Bundle.main.path(forResource: "playerDeselect", ofType: "wav")
+            else {
+                return
+        }
+        do {
+            soundEffectPlayer = try AVAudioPlayer.init(contentsOf: URL(fileURLWithPath: audioSourcePath))
+            soundEffectPlayer?.volume = 1.0
+            soundEffectPlayer?.prepareToPlay()
+            soundEffectPlayer?.play()
+        } catch {
+            print(error)
+        }
+    }
+    
+    func soundForPlayerSubmit() {
+        
+        if disableSound == true {
+            return
+        }
+        guard let audioSourcePath = Bundle.main.path(forResource: "submit", ofType: "wav")
+            else {
+                return
+        }
+        do {
+            soundEffectPlayer = try AVAudioPlayer.init(contentsOf: URL(fileURLWithPath: audioSourcePath))
+            soundEffectPlayer?.volume = 1.0
+            soundEffectPlayer?.prepareToPlay()
+            soundEffectPlayer?.play()
         } catch {
             print(error)
         }

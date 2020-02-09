@@ -92,7 +92,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RuleImage" translatesAutoresizingMaskIntoConstraints="NO" id="WuT-Tx-Xw3">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414.00000000000023" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="rnI-qU-eVL"/>
                                 </constraints>
@@ -160,19 +160,38 @@
                                                     <action selector="resumeButton:" destination="oXP-TY-Qw7" eventType="touchUpInside" id="D1V-qw-aMA"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fS-uq-m7H">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HMK-em-9Fg">
                                                 <rect key="frame" x="0.0" y="164.5" width="374" height="72.5"/>
-                                                <color key="backgroundColor" red="0.88800734280000004" green="0.66911560299999995" blue="0.55683869119999996" alpha="0.67294784330000001" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
-                                                <size key="titleShadowOffset" width="1" height="1"/>
-                                                <state key="normal" title="End Game">
-                                                    <color key="titleColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <color key="titleShadowColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="endGameButton:" destination="oXP-TY-Qw7" eventType="touchUpInside" id="Ve8-Gl-TxZ"/>
-                                                </connections>
-                                            </button>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fS-uq-m7H">
+                                                        <rect key="frame" x="0.0" y="0.0" width="182" height="72.5"/>
+                                                        <color key="backgroundColor" red="0.88800734280000004" green="0.66911560299999995" blue="0.55683869119999996" alpha="0.67294784330000001" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
+                                                        <size key="titleShadowOffset" width="1" height="1"/>
+                                                        <state key="normal" title="End Game">
+                                                            <color key="titleColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="titleShadowColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="endGameButton:" destination="oXP-TY-Qw7" eventType="touchUpInside" id="Ve8-Gl-TxZ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ho-9b-9jI">
+                                                        <rect key="frame" x="192" y="0.0" width="182" height="72.5"/>
+                                                        <color key="backgroundColor" red="0.88800734280000004" green="0.66911560299999995" blue="0.55683869119999996" alpha="0.67294784330000001" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
+                                                        <color key="tintColor" red="0.47173935169999998" green="0.18963261649999999" blue="0.37328446929999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <size key="titleShadowOffset" width="1" height="1"/>
+                                                        <state key="normal" title="Mute">
+                                                            <color key="titleColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <color key="titleShadowColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="muteButton:" destination="oXP-TY-Qw7" eventType="touchUpInside" id="FXW-6s-0xR"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.88800734280000004" green="0.66911560299999995" blue="0.55683869119999996" alpha="0.67294784330000001" colorSpace="custom" customColorSpace="displayP3"/>
                                     </stackView>
@@ -195,6 +214,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ATc-1U-EKs"/>
                     </view>
+                    <connections>
+                        <outlet property="muteButtonLabel" destination="3Ho-9b-9jI" id="vOd-Uq-VNU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXg-KS-s2D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -220,7 +242,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1DL-LW-JKY">
                                                 <rect key="frame" x="0.0" y="0.0" width="95" height="61.5"/>
                                                 <color key="tintColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" image="stop.fill" catalog="system"/>
+                                                <state key="normal" image="pause.fill" catalog="system"/>
                                                 <connections>
                                                     <action selector="stopGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Std-g0-lVV"/>
                                                     <segue destination="oXP-TY-Qw7" kind="presentation" identifier="goToStopPopUp" id="4eg-Ad-qAS"/>
@@ -263,28 +285,28 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pmS-hc-nRe"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pmS-hc-nRe"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Air-gO-8Ef">
                                                 <rect key="frame" x="115" y="16" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I6C-ag-YtM"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I6C-ag-YtM"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFx-CF-rmE">
                                                 <rect key="frame" x="175" y="16" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="atc-nG-tKL"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="atc-nG-tKL"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5UX-Do-zV8">
                                                 <rect key="frame" x="235" y="16" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LKG-pn-Sgj"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LKG-pn-Sgj"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="gcY-vE-UqA">
@@ -336,28 +358,28 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kSY-vf-JL5"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kSY-vf-JL5"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o02-ZP-nDh">
                                                 <rect key="frame" x="124.5" y="15.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vMg-0F-pSL"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vMg-0F-pSL"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRi-A3-Lt3">
                                                 <rect key="frame" x="184.5" y="15.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z1y-D6-cRr"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z1y-D6-cRr"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCq-dA-8Z7">
                                                 <rect key="frame" x="244.5" y="15.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KeL-0l-9R9"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KeL-0l-9R9"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="MTA-uk-vrI">
@@ -409,28 +431,28 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="USq-d1-tTA"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="USq-d1-tTA"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltd-sR-UqC">
                                                 <rect key="frame" x="119" y="16" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vaK-Yl-zzh"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vaK-Yl-zzh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7A-qU-eJR">
                                                 <rect key="frame" x="179" y="16" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L1R-tu-p6c"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L1R-tu-p6c"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmA-8b-EDD">
                                                 <rect key="frame" x="239" y="16" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CxU-oW-bhn"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CxU-oW-bhn"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="mGM-Ke-hTb">
@@ -482,28 +504,28 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iHR-T0-UAp"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iHR-T0-UAp"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pP-FT-zQj">
                                                 <rect key="frame" x="118.5" y="15.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6oe-E9-96r"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6oe-E9-96r"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mno-V1-ssD">
                                                 <rect key="frame" x="178.5" y="15.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fIe-kc-fU2"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fIe-kc-fU2"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meD-3x-PnR">
                                                 <rect key="frame" x="238.5" y="15.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6bA-N8-yKb"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6bA-N8-yKb"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="wGg-54-WQc">
@@ -555,28 +577,28 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ly8-rH-WEr"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ly8-rH-WEr"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHB-8L-gVb">
                                                 <rect key="frame" x="123" y="16" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PlZ-1B-3LX"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PlZ-1B-3LX"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctU-kL-NT0">
                                                 <rect key="frame" x="183" y="16" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DhZ-Ox-zDQ"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DhZ-Ox-zDQ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKL-Qh-LDK">
                                                 <rect key="frame" x="243" y="16" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gFV-dt-obs"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gFV-dt-obs"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="bb2-Ql-FYo">
@@ -628,28 +650,28 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n9J-3n-nf4"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n9J-3n-nf4"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4Y-ne-GHo">
                                                 <rect key="frame" x="118.5" y="16" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9vl-Yk-KvD"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9vl-Yk-KvD"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doi-VP-6oL">
                                                 <rect key="frame" x="178.5" y="16" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v6j-XD-xSm"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v6j-XD-xSm"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ddm-aP-hnW">
                                                 <rect key="frame" x="238.5" y="16" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RLB-8w-7dj"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RLB-8w-7dj"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="TYf-Fs-AJo">
@@ -701,28 +723,28 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wIJ-tW-2GH"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wIJ-tW-2GH"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPF-HQ-ghO">
                                                 <rect key="frame" x="121.5" y="15.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bqa-DF-Ca9"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bqa-DF-Ca9"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Xn-7q-K3A">
                                                 <rect key="frame" x="181.5" y="15.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eeR-TI-xt9"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eeR-TI-xt9"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIK-Be-SX2">
                                                 <rect key="frame" x="241.5" y="15.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ahH-3e-WB7"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ahH-3e-WB7"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="v8W-cv-HK0">
@@ -774,28 +796,28 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0ed-nn-OBo"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0ed-nn-OBo"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0d0-UF-8tK">
                                                 <rect key="frame" x="120" y="16" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ex5-xR-kAc"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ex5-xR-kAc"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWT-PP-HW1">
                                                 <rect key="frame" x="180" y="16" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UUA-6E-mfb"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UUA-6E-mfb"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DV1-c2-Ov6">
                                                 <rect key="frame" x="240" y="16" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pPc-Zt-5LE"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pPc-Zt-5LE"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="gFC-HR-PPb">
@@ -847,28 +869,28 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G7I-ee-XQC"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G7I-ee-XQC"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFO-Wy-dic">
                                                 <rect key="frame" x="119.5" y="16" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WiE-RC-2GG"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WiE-RC-2GG"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZe-y4-dhp">
                                                 <rect key="frame" x="179.5" y="16" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1UP-li-gdL"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1UP-li-gdL"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Tf-XW-c0H">
                                                 <rect key="frame" x="239.5" y="16" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0bJ-Hh-FOx"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0bJ-Hh-FOx"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="6EA-kO-psU">
@@ -920,28 +942,28 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NzN-Jj-59F"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NzN-Jj-59F"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5l-I6-vpr">
                                                 <rect key="frame" x="115" y="16" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oKb-nw-tk8"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oKb-nw-tk8"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbq-kf-4fA">
                                                 <rect key="frame" x="175" y="16" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YLz-M0-FDl"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YLz-M0-FDl"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2Y-qe-0Ly">
                                                 <rect key="frame" x="235" y="16" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="actionForButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3N6-bL-Eqj"/>
+                                                    <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3N6-bL-Eqj"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="C1S-s2-g6b">
@@ -1256,11 +1278,11 @@
         <image name="RuleImage" width="784" height="464"/>
         <image name="background_1" width="640" height="1136"/>
         <image name="circle.fill" catalog="system" width="64" height="60"/>
+        <image name="pause.fill" catalog="system" width="58" height="64"/>
         <image name="pin" catalog="system" width="58" height="64"/>
         <image name="questionmark.square.fill" catalog="system" width="64" height="56"/>
-        <image name="stop.fill" catalog="system" width="64" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="36F-uV-8vY"/>
+        <segue reference="zgt-YR-dwQ"/>
     </inferredMetricsTieBreakers>
 </document>

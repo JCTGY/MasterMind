@@ -84,10 +84,12 @@ class GameViewController: UIViewController {
         timer?.invalidate()
     }
     
-    @IBAction func actionForButtons(_ sender: UIButton) {
+    @IBAction func deselectColorButtons(_ sender: UIButton) {
+        
         if lastReplaceButton != nil {
             lastReplaceButton?.setTitle("", for: .normal)
         }
+        masterMindManager.gameSoundController.soundForPlayerSelect()
         currentSelectButton = sender
         setButtonToSelectImage()
         lastReplaceButton = sender
@@ -98,6 +100,7 @@ class GameViewController: UIViewController {
             else {
                 return
         }
+        masterMindManager.gameSoundController.soundForPlayerSelect()
         currentSelectButton.backgroundColor = sender.imageView?.tintColor
         moveToNextButton()
     }
@@ -108,6 +111,7 @@ class GameViewController: UIViewController {
             else {
                 return
         }
+        masterMindManager.gameSoundController.soundForPlayerSubmit()
         for button in tableOfButtons[tableRowIndex] {
             guard button.backgroundColor != UIColor.white else {
                 return ;
@@ -274,6 +278,7 @@ class GameViewController: UIViewController {
         if segue.identifier == "goToStopPopUp" {
             let destinationVC = segue.destination as! stopPopUpViewController
             destinationVC.delegate = self
+            destinationVC.isSoundDiable = masterMindManager.gameSoundController.disableSound
         }
     }
     
@@ -322,12 +327,21 @@ extension GameViewController: resetGameDelegate {
     }
 }
 
-extension GameViewController: resumeGameTimerDelegate {
+extension GameViewController: stopPopUpViewControllerDelegate {
     
     func resumeGameTimer() {
         
         intitailGameTimer()
         startGameTimer()
+    }
+    func stopGameSound(isSound: Bool) {
+        
+        if isSound == true {
+            masterMindManager.gameSoundController.diableSoundPlayer()
+        } else {
+            masterMindManager.gameSoundController.enableSoundPlayer()
+        }
+        
     }
 }
 
