@@ -8,18 +8,18 @@
 
 import UIKit
 
-protocol stopPopUpViewControllerDelegate {
+protocol StopPopUpViewControllerDelegate {
     // MARK: - protocol for resumimg GameTimer and stop gameSound
     
     func resumeGameTimer()
     func stopGameSound(isSound: Bool)
 }
 
-class stopPopUpViewController: UIViewController {
+class StopPopUpViewController: UIViewController {
 
     let viewController = UIApplication.shared.windows.first!.rootViewController as! StartViewController
     
-    var delegate: stopPopUpViewControllerDelegate?
+    var delegate: StopPopUpViewControllerDelegate?
     var isSoundDiable: Bool?
     
     @IBOutlet weak var muteButtonLabel: UIButton!

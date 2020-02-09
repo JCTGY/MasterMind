@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ruleViewController: UIViewController {
+class RuleViewController: UIViewController {
 
     @IBOutlet weak var ruleTextLabel: UILabel!
     

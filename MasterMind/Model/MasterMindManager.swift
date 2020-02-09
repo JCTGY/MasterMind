@@ -94,7 +94,9 @@ class MasterMindManager {
 }
 
 extension UIColor {
+    
     // MARK: - Extension for comparing UIColor
+    
   static func == (l: UIColor, r: UIColor) -> Bool {
     var r1: CGFloat = 0
     var g1: CGFloat = 0

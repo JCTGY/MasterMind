@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+class NormalGameViewController: UIViewController {
 
     /* =========================== */
     /*       IBoutlet Buttons      */
@@ -88,6 +88,7 @@ class GameViewController: UIViewController {
         
         if lastReplaceButton != nil {
             lastReplaceButton?.setTitle("", for: .normal)
+            lastReplaceButton?.layer.removeAllAnimations()
         }
         masterMindManager.gameSoundController.soundForPlayerSelect()
         currentSelectButton = sender
@@ -96,7 +97,8 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func colorSelectButtons(_ sender: UIButton) {
-        guard let currentSelectButton = currentSelectButton
+        guard let currentSelectButton = currentSelectButton,
+            lastReplaceButton != nil
             else {
                 return
         }
@@ -107,16 +109,18 @@ class GameViewController: UIViewController {
     
     @IBAction func submitButton(_ sender: UIButton) {
         // Check if every bottons is selected with a color
-        guard tableOfButtons.count > tableRowIndex || tableOfPinsImageView.count > tableRowIndex
+        guard tableOfButtons.count > tableRowIndex
+            || tableOfPinsImageView.count > tableRowIndex
             else {
                 return
         }
-        masterMindManager.gameSoundController.soundForPlayerSubmit()
         for button in tableOfButtons[tableRowIndex] {
             guard button.backgroundColor != UIColor.white else {
                 return ;
             }
         }
+        currentSelectButton?.layer.removeAllAnimations()
+        masterMindManager.gameSoundController.soundForPlayerSubmit()
         assignGuessKey(tableOfButtons[tableRowIndex])
         masterMindManager.calculateResult()
         assignPinColor(tableOfPinsImageView[tableRowIndex])
@@ -124,7 +128,8 @@ class GameViewController: UIViewController {
         
         // MARK: - Increment the `tableRowIndex`
         tableRowIndex += 1
-        if tableOfButtons.count <= tableRowIndex || masterMindManager.numberOfBlackPins == 4 {
+        if tableOfButtons.count <= tableRowIndex
+            || masterMindManager.numberOfBlackPins == pinRowOne?.count {
             gameFinish()
         }
         enableButtons(tableOfButtons[tableRowIndex])
@@ -172,6 +177,7 @@ class GameViewController: UIViewController {
         currentSelectButton.setTitle("O", for: .normal)
         currentSelectButton.setTitleColor(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), for: .normal)
         currentSelectButton.backgroundColor = UIColor.white
+        currentSelectButton.pulseAnimation()
     }
     
     func moveToNextButton() {
@@ -185,6 +191,7 @@ class GameViewController: UIViewController {
             if button.backgroundColor == UIColor.white {
                 if lastReplaceButton != nil {
                     lastReplaceButton?.setTitle("", for: .normal)
+                    lastReplaceButton?.layer.removeAllAnimations()
                 }
                 currentSelectButton = button
                 setButtonToSelectImage()
@@ -276,7 +283,7 @@ class GameViewController: UIViewController {
             destinationVC.gameResult = masterMindManager.getFinalResult()
         }
         if segue.identifier == "goToStopPopUp" {
-            let destinationVC = segue.destination as! stopPopUpViewController
+            let destinationVC = segue.destination as! StopPopUpViewController
             destinationVC.delegate = self
             destinationVC.isSoundDiable = masterMindManager.gameSoundController.disableSound
         }
@@ -304,7 +311,7 @@ class GameViewController: UIViewController {
     }
 }
 
-extension GameViewController: resetGameDelegate {
+extension NormalGameViewController: resetGameDelegate {
     
     // MARK: - protocol call for reset `GameViewController`
     
@@ -327,7 +334,7 @@ extension GameViewController: resetGameDelegate {
     }
 }
 
-extension GameViewController: stopPopUpViewControllerDelegate {
+extension NormalGameViewController: StopPopUpViewControllerDelegate {
     
     func resumeGameTimer() {
         
@@ -353,5 +360,24 @@ extension UIImageView {
         let templateImage = self.image?.withRenderingMode(.alwaysTemplate)
         self.image = templateImage
         self.tintColor = color
+    }
+}
+
+extension UIButton {
+    
+    // MARK: - add beeting animation to currentButton
+    
+    func pulseAnimation() {
+        
+        let pulse = CASpringAnimation(keyPath: "transform.scale")
+        pulse.duration = 0.6
+        pulse.fromValue = 0.95
+        pulse.toValue = 1.0
+        pulse.autoreverses = true
+        pulse.repeatCount = 200
+        pulse.initialVelocity = 0.5
+        pulse.damping = 1.0
+        
+        layer.add(pulse, forKey: "pulse")
     }
 }

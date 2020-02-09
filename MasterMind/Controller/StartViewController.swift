@@ -26,7 +26,7 @@ class StartViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToGame" {
-            let destinationVC = segue.destination as! GameViewController
+            let destinationVC = segue.destination as! NormalGameViewController
             destinationVC.correctKeyString = self.correctKeyString
         }
     }
