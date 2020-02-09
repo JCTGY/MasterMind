@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NormalGameViewController: UIViewController {
+class NormalGameViewController: BaseGameViewController {
 
     /* =========================== */
     /*       IBoutlet Buttons      */
@@ -23,10 +23,10 @@ class NormalGameViewController: UIViewController {
     @IBOutlet var rowEight : [UIButton]?
     @IBOutlet var rowNine : [UIButton]?
     @IBOutlet var rowTen : [UIButton]?
-    var tableOfButtons = [[UIButton]]()
-    var currentSelectButton: UIButton?
-    var lastReplaceButton: UIButton?
-    var tableRowIndex = 0
+//    var tableOfButtons = [[UIButton]]()
+//    var currentSelectButton: UIButton?
+//    var lastReplaceButton: UIButton?
+//    var tableRowIndex = 0
     
     /* =========================== */
     /*       IBoutlet pinView      */
@@ -41,39 +41,39 @@ class NormalGameViewController: UIViewController {
     @IBOutlet var pinRowEight: [UIImageView]?
     @IBOutlet var pinRowNine: [UIImageView]?
     @IBOutlet var pinRowTen: [UIImageView]?
-    var tableOfPinsImageView = [[UIImageView]]()
-    var currentRowPin = [UIImageView]()
+//    var tableOfPinsImageView = [[UIImageView]]()
+//    var currentRowPin = [UIImageView]()
     
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     
-    let masterMindManager = MasterMindManager()
-    var resetGameDelegate: resetGameDelegate?
-    var correctKeyString: String?
-    var timer: Timer?
-    var currentTime = 300
-    
-    func startGame() {
-        
-        appendtableOfButtons()
-        appendtableOfPinsImageView()
-        guard let correctKeyString = correctKeyString,
-            let firstRowButton = tableOfButtons.first
-            else {
-                return
-        }
-        currentSelectButton = firstRowButton.first
-        lastReplaceButton = firstRowButton.first
-        setButtonToSelectImage()
-        intitailGameTimer()
-        startGameTimer()
-        masterMindManager.assignKeyToCorrectKey(correctKeyString)
-        masterMindManager.gameSoundController.playBackgroundSong()
-    }
+//    let masterMindManager = MasterMindManager()
+//    var resetGameDelegate: resetGameDelegate?
+//    var correctKeyString: String?
+//    var timer: Timer?
+//    var currentTime = 300
+//
+//    func startGame() {
+//
+//        guard let correctKeyString = correctKeyString,
+//            let firstRowButton = tableOfButtons.first
+//            else {
+//                return
+//        }
+//        currentSelectButton = firstRowButton.first
+//        lastReplaceButton = firstRowButton.first
+//        setButtonToSelectImage()
+//        intitailGameTimer()
+//        startGameTimer()
+//        masterMindManager.assignKeyToCorrectKey(correctKeyString)
+//        masterMindManager.gameSoundController.playBackgroundSong()
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        appendtableOfButtons()
+        appendtableOfPinsImageView()
         startGame()
     }
     
@@ -139,6 +139,20 @@ class NormalGameViewController: UIViewController {
         setButtonToSelectImage()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // send result to `FinalPopUpViewController`
+        if segue.identifier == "goToEndPopUp" {
+            let destinationVC = segue.destination as! FinalPopUpViewController
+            destinationVC.delegate = self
+            destinationVC.gameResult = masterMindManager.getFinalResult()
+        }
+        if segue.identifier == "goToStopPopUp" {
+            let destinationVC = segue.destination as! StopPopUpViewController
+            destinationVC.delegate = self
+            destinationVC.isSoundDiable = masterMindManager.gameSoundController.disableSound
+        }
+    }
+    
     // MARK: - Buttons functions
     
     func appendtableOfButtons() {
@@ -155,51 +169,51 @@ class NormalGameViewController: UIViewController {
         tableOfButtons.append(rowTen!)
     }
     
-    func enableButtons(_ currentRowButton: [UIButton]) {
-        currentRowButton.forEach {
-            $0.isUserInteractionEnabled = true
-        }
-    }
-    
-    func disableButtons(_ currentRowButton: [UIButton]) {
-        currentRowButton.forEach {
-            $0.isUserInteractionEnabled = false
-        }
-    }
-    
-    func setButtonToSelectImage() {
-        // Indicate which buttons is currently selected
-        guard let currentSelectButton = currentSelectButton
-            else {
-                return
-        }
-        currentSelectButton.showsTouchWhenHighlighted = true
-        currentSelectButton.setTitle("O", for: .normal)
-        currentSelectButton.setTitleColor(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), for: .normal)
-        currentSelectButton.backgroundColor = UIColor.white
-        currentSelectButton.pulseAnimation()
-    }
-    
-    func moveToNextButton() {
-        // After user select color, will automatic move to the next item
-        guard tableOfButtons.count > tableRowIndex
-            else {
-                return
-        }
-        let currentRowButtons = tableOfButtons[tableRowIndex]
-        for button in currentRowButtons {
-            if button.backgroundColor == UIColor.white {
-                if lastReplaceButton != nil {
-                    lastReplaceButton?.setTitle("", for: .normal)
-                    lastReplaceButton?.layer.removeAllAnimations()
-                }
-                currentSelectButton = button
-                setButtonToSelectImage()
-                lastReplaceButton = button
-                break
-            }
-        }
-    }
+//    func enableButtons(_ currentRowButton: [UIButton]) {
+//        currentRowButton.forEach {
+//            $0.isUserInteractionEnabled = true
+//        }
+//    }
+//
+//    func disableButtons(_ currentRowButton: [UIButton]) {
+//        currentRowButton.forEach {
+//            $0.isUserInteractionEnabled = false
+//        }
+//    }
+//
+//    func setButtonToSelectImage() {
+//        // Indicate which buttons is currently selected
+//        guard let currentSelectButton = currentSelectButton
+//            else {
+//                return
+//        }
+//        currentSelectButton.showsTouchWhenHighlighted = true
+//        currentSelectButton.setTitle("O", for: .normal)
+//        currentSelectButton.setTitleColor(#colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), for: .normal)
+//        currentSelectButton.backgroundColor = UIColor.white
+//        currentSelectButton.pulseAnimation()
+//    }
+//
+//    func moveToNextButton() {
+//        // After user select color, will automatic move to the next item
+//        guard tableOfButtons.count > tableRowIndex
+//            else {
+//                return
+//        }
+//        let currentRowButtons = tableOfButtons[tableRowIndex]
+//        for button in currentRowButtons {
+//            if button.backgroundColor == UIColor.white {
+//                if lastReplaceButton != nil {
+//                    lastReplaceButton?.setTitle("", for: .normal)
+//                    lastReplaceButton?.layer.removeAllAnimations()
+//                }
+//                currentSelectButton = button
+//                setButtonToSelectImage()
+//                lastReplaceButton = button
+//                break
+//            }
+//        }
+//    }
     
     // MARK: - pinImageViews functions
     
@@ -217,33 +231,33 @@ class NormalGameViewController: UIViewController {
         tableOfPinsImageView.append(pinRowTen!)
     }
     
-    func assignPinColor(_ currentRowPins: [UIImageView]) {
-        // Replace the Pin image after get the number from the Manager
-        var indexForNumPinColor = 0
-        tableOfPinsImageView[tableRowIndex
-        ].forEach {
-            //TODO Number Not Correct
-            if indexForNumPinColor < masterMindManager.numberOfBlackPins {
-                $0.image = UIImage(systemName: "pin.fill")
-                $0.setImageColor(color: UIColor.black)
-            } else if indexForNumPinColor < masterMindManager.numberOfBlackPins + masterMindManager.numberOfWhitePins{
-                $0.image = UIImage(systemName: "pin.fill")
-                $0.setImageColor(color: UIColor.white)
-            }
-            indexForNumPinColor += 1
-        }
-    }
-    
-    func assignGuessKey(_ currentRowButton: [UIButton]) {
-        // assigned the guesskey to the Manager
-        masterMindManager.guessKey.removeAll()
-        currentRowButton.forEach {
-            if let color = $0.backgroundColor {
-                let key = masterMindManager.getNumberFromColor(color)
-                masterMindManager.guessKey.append(key)
-            }
-        }
-    }
+//    func assignPinColor(_ currentRowPins: [UIImageView]) {
+//        // Replace the Pin image after get the number from the Manager
+//        var indexForNumPinColor = 0
+//        tableOfPinsImageView[tableRowIndex
+//        ].forEach {
+//            //TODO Number Not Correct
+//            if indexForNumPinColor < masterMindManager.numberOfBlackPins {
+//                $0.image = UIImage(systemName: "pin.fill")
+//                $0.setImageColor(color: UIColor.black)
+//            } else if indexForNumPinColor < masterMindManager.numberOfBlackPins + masterMindManager.numberOfWhitePins{
+//                $0.image = UIImage(systemName: "pin.fill")
+//                $0.setImageColor(color: UIColor.white)
+//            }
+//            indexForNumPinColor += 1
+//        }
+//    }
+//
+//    func assignGuessKey(_ currentRowButton: [UIButton]) {
+//        // assigned the guesskey to the Manager
+//        masterMindManager.guessKey.removeAll()
+//        currentRowButton.forEach {
+//            if let color = $0.backgroundColor {
+//                let key = masterMindManager.getNumberFromColor(color)
+//                masterMindManager.guessKey.append(key)
+//            }
+//        }
+//    }
     
     // MARK: - GameTimer funtions
     
@@ -274,47 +288,33 @@ class NormalGameViewController: UIViewController {
         scoreLabel.text = "Score: " + masterMindManager.scoreCalculator.getFinalScore()
         self.performSegue(withIdentifier: "goToEndPopUp", sender: self)
     }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // send result to `FinalPopUpViewController`
-        if segue.identifier == "goToEndPopUp" {
-            let destinationVC = segue.destination as! FinalPopUpViewController
-            destinationVC.delegate = self
-            destinationVC.gameResult = masterMindManager.getFinalResult()
-        }
-        if segue.identifier == "goToStopPopUp" {
-            let destinationVC = segue.destination as! StopPopUpViewController
-            destinationVC.delegate = self
-            destinationVC.isSoundDiable = masterMindManager.gameSoundController.disableSound
-        }
-    }
     
     // MARK: - reset functions
     
-    func resetTablePinsImage() {
-        // resetPinsColor to original state
-        tableOfPinsImageView.forEach {
-            $0.forEach {
-                $0.image = UIImage(systemName: "pin")
-                $0.setImageColor(color: UIColor.black)
-            }
-        }
-    }
-    
-    func resetTableButtons() {
-        // reset all the buttons to original state
-        tableOfButtons.forEach {
-            $0.forEach {
-                $0.backgroundColor = UIColor.white
-            }
-        }
-    }
+//    func resetTablePinsImage() {
+//        // resetPinsColor to original state
+//        tableOfPinsImageView.forEach {
+//            $0.forEach {
+//                $0.image = UIImage(systemName: "pin")
+//                $0.setImageColor(color: UIColor.black)
+//            }
+//        }
+//    }
+//
+//    func resetTableButtons() {
+//        // reset all the buttons to original state
+//        tableOfButtons.forEach {
+//            $0.forEach {
+//                $0.backgroundColor = UIColor.white
+//            }
+//        }
+//    }
 }
 
 extension NormalGameViewController: resetGameDelegate {
-    
+
     // MARK: - protocol call for reset `GameViewController`
-    
+
     func didResetGame(newKey: String) {
         tableRowIndex = 0
         resetGameTimer()
@@ -335,49 +335,49 @@ extension NormalGameViewController: resetGameDelegate {
 }
 
 extension NormalGameViewController: StopPopUpViewControllerDelegate {
-    
+
     func resumeGameTimer() {
-        
+
         intitailGameTimer()
         startGameTimer()
     }
     func stopGameSound(isSound: Bool) {
-        
+
         if isSound == true {
             masterMindManager.gameSoundController.diableSoundPlayer()
         } else {
             masterMindManager.gameSoundController.enableSoundPlayer()
         }
-        
+
     }
 }
 
-extension UIImageView {
-    
-    // MARK: - Set extension for change UIImageView color
-    
-    func setImageColor(color: UIColor) {
-        let templateImage = self.image?.withRenderingMode(.alwaysTemplate)
-        self.image = templateImage
-        self.tintColor = color
-    }
-}
-
-extension UIButton {
-    
-    // MARK: - add beeting animation to currentButton
-    
-    func pulseAnimation() {
-        
-        let pulse = CASpringAnimation(keyPath: "transform.scale")
-        pulse.duration = 0.6
-        pulse.fromValue = 0.95
-        pulse.toValue = 1.0
-        pulse.autoreverses = true
-        pulse.repeatCount = 200
-        pulse.initialVelocity = 0.5
-        pulse.damping = 1.0
-        
-        layer.add(pulse, forKey: "pulse")
-    }
-}
+//extension UIImageView {
+//
+//    // MARK: - Set extension for change UIImageView color
+//
+//    func setImageColor(color: UIColor) {
+//        let templateImage = self.image?.withRenderingMode(.alwaysTemplate)
+//        self.image = templateImage
+//        self.tintColor = color
+//    }
+//}
+//
+//extension UIButton {
+//
+//    // MARK: - add beeting animation to currentButton
+//
+//    func pulseAnimation() {
+//
+//        let pulse = CASpringAnimation(keyPath: "transform.scale")
+//        pulse.duration = 0.6
+//        pulse.fromValue = 0.95
+//        pulse.toValue = 1.0
+//        pulse.autoreverses = true
+//        pulse.repeatCount = 200
+//        pulse.initialVelocity = 0.5
+//        pulse.damping = 1.0
+//
+//        layer.add(pulse, forKey: "pulse")
+//    }
+//}

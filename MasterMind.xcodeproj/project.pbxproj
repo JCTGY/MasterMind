@@ -20,6 +20,7 @@
 		355E3C6F23EFC49F00EE09D7 /* playerDeselect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 355E3C6E23EFC49F00EE09D7 /* playerDeselect.wav */; };
 		355E3C7123EFC4B100EE09D7 /* submit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 355E3C7023EFC4B100EE09D7 /* submit.wav */; };
 		355E3C7323F09CA400EE09D7 /* HardGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355E3C7223F09CA400EE09D7 /* HardGameViewController.swift */; };
+		355E3C7523F0A7BE00EE09D7 /* BaseGameViewContrloller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355E3C7423F0A7BE00EE09D7 /* BaseGameViewContrloller.swift */; };
 		35A4468F23EB4617002FCEDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4468E23EB4617002FCEDF /* AppDelegate.swift */; };
 		35A4469123EB4617002FCEDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4469023EB4617002FCEDF /* SceneDelegate.swift */; };
 		35A4469323EB4617002FCEDF /* NormalGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4469223EB4617002FCEDF /* NormalGameViewController.swift */; };
@@ -56,6 +57,7 @@
 		355E3C6E23EFC49F00EE09D7 /* playerDeselect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = playerDeselect.wav; sourceTree = "<group>"; };
 		355E3C7023EFC4B100EE09D7 /* submit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = submit.wav; sourceTree = "<group>"; };
 		355E3C7223F09CA400EE09D7 /* HardGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardGameViewController.swift; sourceTree = "<group>"; };
+		355E3C7423F0A7BE00EE09D7 /* BaseGameViewContrloller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseGameViewContrloller.swift; sourceTree = "<group>"; };
 		35A4468B23EB4617002FCEDF /* MasterMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35A4468E23EB4617002FCEDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35A4469023EB4617002FCEDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,12 +145,13 @@
 		35A446A223EB4724002FCEDF /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				35A4469223EB4617002FCEDF /* NormalGameViewController.swift */,
-				355E3C3F23EDC78C00EE09D7 /* FinalPopUpViewController.swift */,
 				355E3C4123EDCC8C00EE09D7 /* StartViewController.swift */,
 				355E3C4923EF31ED00EE09D7 /* RuleViewController.swift */,
-				355E3C4B23EF62A200EE09D7 /* StopPopUpViewController.swift */,
+				355E3C7423F0A7BE00EE09D7 /* BaseGameViewContrloller.swift */,
+				35A4469223EB4617002FCEDF /* NormalGameViewController.swift */,
 				355E3C7223F09CA400EE09D7 /* HardGameViewController.swift */,
+				355E3C3F23EDC78C00EE09D7 /* FinalPopUpViewController.swift */,
+				355E3C4B23EF62A200EE09D7 /* StopPopUpViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				35A446A823ECB2D1002FCEDF /* RandomIntAPI.swift in Sources */,
 				355E3C4E23EF84E600EE09D7 /* GameSound.swift in Sources */,
 				355E3C4623EE787E00EE09D7 /* ScoreCalulate.swift in Sources */,
+				355E3C7523F0A7BE00EE09D7 /* BaseGameViewContrloller.swift in Sources */,
 				35A446AE23ECCFD1002FCEDF /* MasterMindManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
