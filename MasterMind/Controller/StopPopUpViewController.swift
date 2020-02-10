@@ -41,7 +41,7 @@ class StopPopUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        viewController.randomIntAPI.fetchRandomInt()
+        viewController.randomIntAPINormalMode.fetchRandomInt(isNormalMode: true)
         displayMuteButton()
     }
     

@@ -32,8 +32,6 @@ class BaseGameViewController: UIViewController {
         currentSelectButton = firstRowButton.first
         lastReplaceButton = firstRowButton.first
         setButtonToSelectImage()
-//        intitailGameTimer()
-//        startGameTimer()
         masterMindManager.assignKeyToCorrectKey(correctKeyString)
         masterMindManager.gameSoundController.playBackgroundSong()
     }

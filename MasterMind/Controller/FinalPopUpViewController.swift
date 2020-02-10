@@ -26,7 +26,7 @@ class FinalPopUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        viewController.randomIntAPI.fetchRandomInt()
+        viewController.randomIntAPINormalMode.fetchRandomInt(isNormalMode: true)
         guard let finalScore = gameResult?.finalScore
             else {
                 return
@@ -44,7 +44,7 @@ class FinalPopUpViewController: UIViewController {
     @IBAction func popUpButton(_ sender: UIButton) {
         // Set to the rootViewController
         if gameResult?.didWin == true {
-            guard let correctKeyString = viewController.correctKeyString
+            guard let correctKeyString = viewController.correctKeyNormalMode
                 else {
                     return
             }

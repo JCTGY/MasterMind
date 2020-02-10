@@ -10,24 +10,36 @@ import UIKit
 
 class StartViewController: UIViewController {
 
-    var randomIntAPI = RandomIntAPI(num: 4, min: 0, max: 7)
-    var correctKeyString: String?
+    var randomIntAPINormalMode = RandomIntAPI(num: 4, min: 0, max: 7)
+    var randomIntAPIHardMode = RandomIntAPI(num: 6, min: 0, max: 7)
+    var correctKeyNormalMode: String?
+    var correctKeyHardMode: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        randomIntAPI.delegate = self
-        randomIntAPI.fetchRandomInt()
+        randomIntAPINormalMode.delegate = self
+        randomIntAPINormalMode.fetchRandomInt(isNormalMode: true)
+        randomIntAPIHardMode.delegate = self
+        randomIntAPIHardMode.fetchRandomInt(isNormalMode: false)
     }
     
-    @IBAction func startButton(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "goToGame", sender: self)
+    @IBAction func startNormalModeButton(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "goToNormalMode", sender: self)
+    }
+    
+    @IBAction func startHardModeButton(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "goToHardMode", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToGame" {
+        if segue.identifier == "goToNormalMode" {
             let destinationVC = segue.destination as! NormalGameViewController
-            destinationVC.correctKeyString = self.correctKeyString
+            destinationVC.correctKeyString = self.correctKeyNormalMode
+        }
+        if segue.identifier == "goToHardMode" {
+            let destinationVC = segue.destination as! HardGameViewController
+            destinationVC.correctKeyString = self.correctKeyHardMode
         }
     }
     
@@ -44,10 +56,14 @@ extension StartViewController: RandomAPIDelegate {
     
     //MARK: delegate for randomIntAPI fetching data
 
-    func didUpdateRandomAPI(stringData: String) {
+    func didUpdateRandomAPI(stringData: String, _ isNormalMode: Bool) {
         // async fetching random API data
         DispatchQueue.main.async {
-            self.correctKeyString = stringData
+            if isNormalMode == true {
+                self.correctKeyNormalMode = stringData
+            } else {
+                self.correctKeyHardMode = stringData
+            }
             print(stringData)
         }
     }

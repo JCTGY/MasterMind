@@ -11,7 +11,7 @@ import Foundation
 protocol RandomAPIDelegate {
     // MAKR: - RandomAPIDelegate to transfer fetch data
 
-    func didUpdateRandomAPI(stringData: String)
+    func didUpdateRandomAPI(stringData: String, _ isNormalMode: Bool)
     func didFailWithError(error: Error)
 }
 
@@ -24,7 +24,7 @@ struct RandomIntAPI {
     
     var delegate: RandomAPIDelegate?
 
-    func fetchRandomInt() {
+    func fetchRandomInt(isNormalMode: Bool) {
         
         let urlString = "\(baseURL)num=\(num)&min=\(min)&max=\(max)&rnd=new"
         let url = URL(string: urlString)!
@@ -40,7 +40,7 @@ struct RandomIntAPI {
             }
             guard let data = data else { return }
             if let stringData = String(bytes: data, encoding: .utf8) {
-                self.delegate?.didUpdateRandomAPI(stringData: stringData)
+                self.delegate?.didUpdateRandomAPI(stringData: stringData, isNormalMode)
             }
         }
         task.resume()

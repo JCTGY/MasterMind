@@ -74,16 +74,16 @@ class MasterMindManager {
         numberOfBlackPins = exact
     }
     
-    func claculateFinalScore(numberOfTries: Int, gameTimeRemain: Int) {
+    func claculateFinalScore(numberOfTries: Int, gameTimeRemain: Int, numberOfPins: Int) {
         
-        if numberOfBlackPins == 4 {
+        if numberOfBlackPins == numberOfPins {
             scoreCalculator.calculateScore(numberOfTries, gameTimeRemain)
         }
     }
     
-    func getFinalResult() -> GameResult {
+    func getFinalResult(_ numberofPins: Int) -> GameResult {
         // return the fianl game result
-        if numberOfBlackPins == 4 {
+        if numberOfBlackPins == numberofPins {
             let gameResult = GameResult(didWin: true, finalScore: scoreCalculator.getFinalScore())
             return gameResult
         } else {
