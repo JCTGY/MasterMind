@@ -74,21 +74,29 @@ class MasterMindManager {
         numberOfBlackPins = exact
     }
     
-    func claculateFinalScore(numberOfTries: Int, gameTimeRemain: Int, numberOfPins: Int) {
+    func claculateFinalScore(_ numberOfTries: Int, _ gameTimeRemain: Int, _ numberOfPins: Int) {
         
         if numberOfBlackPins == numberOfPins {
             scoreCalculator.calculateScore(numberOfTries, gameTimeRemain)
         }
     }
     
-    func getFinalResult(_ numberofPins: Int) -> GameResult {
+    func getFinalResult(_ numberofPins: Int, _ currentGameStat: GameStat) -> GameStat {
         // return the fianl game result
         if numberOfBlackPins == numberofPins {
-            let gameResult = GameResult(didWin: true, finalScore: scoreCalculator.getFinalScore())
-            return gameResult
+//            let gameResult = GameResult(didWin: true, finalScore: scoreCalculator.getFinalScore())
+//            return gameResult
+            var gameStat = currentGameStat
+            gameStat.didWin = true
+            gameStat.finalScore = scoreCalculator.getFinalScore()
+            return gameStat
         } else {
-            let gameResult = GameResult(didWin: false, finalScore: scoreCalculator.getFinalScore())
-            return gameResult
+//            let gameResult = GameResult(didWin: false, finalScore: scoreCalculator.getFinalScore())
+//            return gameResult
+            var gameStat = currentGameStat
+            gameStat.didWin = false
+            gameStat.finalScore = 0
+            return gameStat
         }
     }
 }

@@ -35,11 +35,21 @@ class StartViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToNormalMode" {
             let destinationVC = segue.destination as! NormalGameViewController
-            destinationVC.correctKeyString = self.correctKeyNormalMode
+            guard let correctKeyNormalMode = correctKeyNormalMode
+                else {
+                    return
+            }
+            let gameStat = GameStat(correctKey: correctKeyNormalMode, isNormalMode: true)
+            destinationVC.gameStat = gameStat
         }
         if segue.identifier == "goToHardMode" {
+            guard let correctKeyHardMode = correctKeyHardMode
+                else {
+                    return
+            }
             let destinationVC = segue.destination as! HardGameViewController
-            destinationVC.correctKeyString = self.correctKeyHardMode
+            let gameStat = GameStat(correctKey: correctKeyHardMode, isNormalMode: false)
+            destinationVC.gameStat = gameStat
         }
     }
     

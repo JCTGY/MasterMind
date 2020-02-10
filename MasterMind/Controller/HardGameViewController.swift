@@ -125,16 +125,18 @@ class HardGameViewController: BaseGameViewController {
         if segue.identifier == "goToEndPopUp" {
             let destinationVC = segue.destination as! FinalPopUpViewController
             destinationVC.delegate = self
-            guard let firstPinsRow = tableOfPinsImageView.first
+            guard let firstPinsRow = tableOfPinsImageView.first,
+                let gameStat = gameStat
                 else {
                     return
             }
-            destinationVC.gameResult = masterMindManager.getFinalResult(firstPinsRow.count)
+            destinationVC.gameStat = masterMindManager.getFinalResult(firstPinsRow.count, gameStat)
         }
         if segue.identifier == "goToStopPopUp" {
             let destinationVC = segue.destination as! StopPopUpViewController
             destinationVC.delegate = self
-            destinationVC.isSoundDiable = masterMindManager.gameSoundController.disableSound
+            destinationVC.isSoundDisable = masterMindManager.gameSoundController.disableSound
+            destinationVC.isNormalMode = gameStat?.isNormalMode
         }
     }
     
@@ -181,9 +183,9 @@ class HardGameViewController: BaseGameViewController {
     }
     
     @objc func startGameTimer() {
-        currentTime -= 1
+         currentTime -= 1
         
-        if currentTime <= 0 {
+        if  currentTime <= 0 {
             gameFinish()
         }
         timerLabel.text = "Timer: \(currentTime)"
@@ -196,8 +198,9 @@ class HardGameViewController: BaseGameViewController {
                 return
         }
         timer?.invalidate()
-        masterMindManager.claculateFinalScore(numberOfTries: tableRowIndex, gameTimeRemain: currentTime, numberOfPins: firstRowPins.count)
-        scoreLabel.text = "Score: " + masterMindManager.scoreCalculator.getFinalScore()
+        masterMindManager.claculateFinalScore(tableRowIndex, currentTime, firstRowPins.count)
+        let finalScore = masterMindManager.scoreCalculator.getFinalScore()
+        scoreLabel.text = "Score: \(finalScore)"
         self.performSegue(withIdentifier: "goToEndPopUp", sender: self)
     }
 }

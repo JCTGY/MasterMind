@@ -18,13 +18,13 @@ class BaseGameViewController: UIViewController {
     var currentRowPin = [UIImageView]()
     let masterMindManager = MasterMindManager()
     var resetGameDelegate: resetGameDelegate?
-    var correctKeyString: String?
     var timer: Timer?
     var currentTime = 300
+    var gameStat: GameStat?
     
     func startGame() {
         
-        guard let correctKeyString = correctKeyString,
+        guard let correctKeyString = gameStat?.correctKey,
             let firstRowButton = tableOfButtons.first
             else {
                 return
@@ -113,37 +113,7 @@ class BaseGameViewController: UIViewController {
             }
         }
     }
-    
-    // MARK: - GameTimer funtions
-    
-//    func intitailGameTimer () {
-//        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(startGameTimer), userInfo: nil, repeats: true)
-//    }
-//
-//    func resetGameTimer() {
-//        timer?.invalidate()
-//        currentTime = 301
-//        intitailGameTimer()
-//        startGameTimer()
-//    }
-//
-//    @objc func startGameTimer() {
-//        currentTime -= 1
-//
-//        if currentTime <= 0 {
-//            gameFinish()
-//        }
-//        timerLabel.text = "Timer: \(currentTime)"
-//    }
-    
-//    func gameFinish() {
-//
-//        timer?.invalidate()
-//        masterMindManager.claculateFinalScore(numberOfTries: tableRowIndex, gameTimeRemain: currentTime)
-//        scoreLabel.text = "Score: " + masterMindManager.scoreCalculator.getFinalScore()
-//        self.performSegue(withIdentifier: "goToEndPopUp", sender: self)
-//    }
-    
+
     // MARK: - reset table for both pins and buttons
     
     func resetTablePinsImage() {
@@ -165,47 +135,6 @@ class BaseGameViewController: UIViewController {
         }
     }
 }
-
-//extension NormalGameViewController: resetGameDelegate {
-//    
-//    // MARK: - protocol call for reset `GameViewController`
-//    
-//    func didResetGame(newKey: String) {
-//        tableRowIndex = 0
-//        resetGameTimer()
-//        guard let firstRowButton = tableOfButtons.first
-//            else {
-//                return
-//        }
-//        enableButtons(firstRowButton)
-//        currentSelectButton?.setTitle("", for: .normal)
-//        currentSelectButton = firstRowButton.first
-//        lastReplaceButton = firstRowButton.first
-//        resetTableButtons()
-//        resetTablePinsImage()
-//        setButtonToSelectImage()
-//        masterMindManager.assignKeyToCorrectKey(newKey)
-//        dismiss(animated: true, completion: nil)
-//    }
-//}
-
-//extension NormalGameViewController: StopPopUpViewControllerDelegate {
-//    
-//    func resumeGameTimer() {
-//        
-//        intitailGameTimer()
-//        startGameTimer()
-//    }
-//    func stopGameSound(isSound: Bool) {
-//        
-//        if isSound == true {
-//            masterMindManager.gameSoundController.diableSoundPlayer()
-//        } else {
-//            masterMindManager.gameSoundController.enableSoundPlayer()
-//        }
-//        
-//    }
-//}
 
 extension UIImageView {
     

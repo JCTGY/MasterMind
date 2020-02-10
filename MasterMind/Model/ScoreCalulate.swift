@@ -18,8 +18,8 @@ class ScoreCalculate {
         finalScore += 100 - (numberOfTries * 9) + (gameTimeRemain / 5)
     }
 
-    func getFinalScore() -> String {
+    func getFinalScore() -> Int {
 
-        return String(finalScore)
+        return finalScore
     }
 }

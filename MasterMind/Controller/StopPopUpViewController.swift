@@ -17,20 +17,21 @@ protocol StopPopUpViewControllerDelegate {
 
 class StopPopUpViewController: UIViewController {
 
-    let viewController = UIApplication.shared.windows.first!.rootViewController as! StartViewController
+    let startViewController = UIApplication.shared.windows.first!.rootViewController as! StartViewController
     
     var delegate: StopPopUpViewControllerDelegate?
-    var isSoundDiable: Bool?
+    var isSoundDisable: Bool?
+    var isNormalMode: Bool?
     
     @IBOutlet weak var muteButtonLabel: UIButton!
     
     func displayMuteButton() {
         
-        guard isSoundDiable != nil
+        guard isSoundDisable != nil
             else {
                 return
         }
-        if isSoundDiable == true {
+        if isSoundDisable == true {
             muteButtonLabel.setTitle("Unmute", for: .normal)
         } else {
             muteButtonLabel.setTitle("Mute", for: .normal)
@@ -41,7 +42,6 @@ class StopPopUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        viewController.randomIntAPINormalMode.fetchRandomInt(isNormalMode: true)
         displayMuteButton()
     }
     
@@ -52,8 +52,12 @@ class StopPopUpViewController: UIViewController {
     }
 
     @IBAction func endGameButton(_ sender: UIButton) {
-        
-        viewController.dismissStackViews()
+        if isNormalMode == true {
+            startViewController.randomIntAPINormalMode.fetchRandomInt(isNormalMode: true)
+        } else {
+            startViewController.randomIntAPIHardMode.fetchRandomInt(isNormalMode: false)
+        }
+        startViewController.dismissStackViews()
     }
     
     @IBAction func muteButton(_ sender: UIButton) {
