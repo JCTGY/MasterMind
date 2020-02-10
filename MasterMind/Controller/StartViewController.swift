@@ -9,7 +9,10 @@
 import UIKit
 
 class StartViewController: UIViewController {
-
+    
+    let segueIdentifierNormal = GameStat.segueIdentifier.goToNormalMode.rawValue
+    let segueIdentifierHard = GameStat.segueIdentifier.goToHardMode.rawValue
+    let segueIdentifierRule = GameStat.segueIdentifier.goToRule.rawValue
     var randomIntAPINormalMode = RandomIntAPI(num: 4, min: 0, max: 7)
     var randomIntAPIHardMode = RandomIntAPI(num: 6, min: 0, max: 7)
     var correctKeyNormalMode: String?
@@ -25,15 +28,15 @@ class StartViewController: UIViewController {
     }
     
     @IBAction func startNormalModeButton(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "goToNormalMode", sender: self)
+        self.performSegue(withIdentifier: segueIdentifierNormal, sender: self)
     }
     
     @IBAction func startHardModeButton(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "goToHardMode", sender: self)
+        self.performSegue(withIdentifier: segueIdentifierHard, sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToNormalMode" {
+        if segue.identifier == segueIdentifierNormal {
             let destinationVC = segue.destination as! NormalGameViewController
             guard let correctKeyNormalMode = correctKeyNormalMode
                 else {
@@ -42,7 +45,7 @@ class StartViewController: UIViewController {
             let gameStat = GameStat(correctKey: correctKeyNormalMode, isNormalMode: true)
             destinationVC.gameStat = gameStat
         }
-        if segue.identifier == "goToHardMode" {
+        if segue.identifier == segueIdentifierHard {
             guard let correctKeyHardMode = correctKeyHardMode
                 else {
                     return
@@ -54,7 +57,7 @@ class StartViewController: UIViewController {
     }
     
     @IBAction func ruleButton(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "goToRule", sender: self)
+        self.performSegue(withIdentifier: segueIdentifierRule, sender: self)
     }
     
     func dismissStackViews() {
@@ -65,7 +68,7 @@ class StartViewController: UIViewController {
 extension StartViewController: RandomAPIDelegate {
     
     //MARK: delegate for randomIntAPI fetching data
-
+    
     func didUpdateRandomAPI(stringData: String, _ isNormalMode: Bool) {
         // async fetching random API data
         DispatchQueue.main.async {

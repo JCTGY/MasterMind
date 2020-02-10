@@ -14,4 +14,12 @@ struct GameStat {
     let isNormalMode: Bool
     var didWin = false
     var finalScore = 0
+    
+    enum segueIdentifier: String {
+        case goToStopPopUp
+        case goToEndPopUp
+        case goToNormalMode
+        case goToHardMode
+        case goToRule
+    }
 }

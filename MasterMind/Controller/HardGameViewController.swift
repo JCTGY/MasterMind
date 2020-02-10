@@ -9,7 +9,7 @@
 import UIKit
 
 class HardGameViewController: BaseGameViewController {
-
+    
     /* =========================== */
     /*       IBoutlet Buttons      */
     /* =========================== */
@@ -25,7 +25,7 @@ class HardGameViewController: BaseGameViewController {
     @IBOutlet var rowTen : [UIButton]?
     @IBOutlet var rowEleven : [UIButton]?
     @IBOutlet var rowTwelve : [UIButton]?
-
+    
     
     
     /* =========================== */
@@ -71,7 +71,8 @@ class HardGameViewController: BaseGameViewController {
             lastReplaceButton?.setTitle("", for: .normal)
             lastReplaceButton?.layer.removeAllAnimations()
         }
-        masterMindManager.gameSoundController.soundForPlayerSelect()
+        let playerSelectFileName = masterMindManager.gameSoundController.selectFileName
+        masterMindManager.gameSoundController.playSoundEffect(playerSelectFileName)
         currentSelectButton = sender
         setButtonToSelectImage()
         lastReplaceButton = sender
@@ -83,7 +84,8 @@ class HardGameViewController: BaseGameViewController {
             else {
                 return
         }
-        masterMindManager.gameSoundController.soundForPlayerSelect()
+        let playerSelectFileName = masterMindManager.gameSoundController.selectFileName
+        masterMindManager.gameSoundController.playSoundEffect(playerSelectFileName)
         currentSelectButton.backgroundColor = sender.imageView?.tintColor
         moveToNextButton()
     }
@@ -101,7 +103,8 @@ class HardGameViewController: BaseGameViewController {
             }
         }
         currentSelectButton?.layer.removeAllAnimations()
-        masterMindManager.gameSoundController.soundForPlayerSubmit()
+        let playerSubmitFileName = masterMindManager.gameSoundController.submitFileName
+        masterMindManager.gameSoundController.playSoundEffect(playerSubmitFileName)
         assignGuessKey(tableOfButtons[tableRowIndex])
         masterMindManager.calculateResult()
         assignPinColor(tableOfPinsImageView[tableRowIndex])
@@ -112,32 +115,13 @@ class HardGameViewController: BaseGameViewController {
         if tableOfButtons.count <= tableRowIndex
             || masterMindManager.numberOfBlackPins == pinRowOne?.count {
             gameFinish()
+            return
         }
         enableButtons(tableOfButtons[tableRowIndex])
         lastReplaceButton?.setTitle("", for: .normal)
         currentSelectButton = tableOfButtons[tableRowIndex].first
         lastReplaceButton = currentSelectButton
         setButtonToSelectImage()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // send result to `FinalPopUpViewController`
-        if segue.identifier == "goToEndPopUp" {
-            let destinationVC = segue.destination as! FinalPopUpViewController
-            destinationVC.delegate = self
-            guard let firstPinsRow = tableOfPinsImageView.first,
-                let gameStat = gameStat
-                else {
-                    return
-            }
-            destinationVC.gameStat = masterMindManager.getFinalResult(firstPinsRow.count, gameStat)
-        }
-        if segue.identifier == "goToStopPopUp" {
-            let destinationVC = segue.destination as! StopPopUpViewController
-            destinationVC.delegate = self
-            destinationVC.isSoundDisable = masterMindManager.gameSoundController.disableSound
-            destinationVC.isNormalMode = gameStat?.isNormalMode
-        }
     }
     
     func appendtableOfButtons() {
@@ -172,7 +156,8 @@ class HardGameViewController: BaseGameViewController {
     
     func intitailGameTimer () {
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self,
-                                     selector: #selector(startGameTimer), userInfo: nil, repeats: true)
+                                     selector: #selector(startGameTimer),
+                                     userInfo: nil, repeats: true)
     }
     
     func resetGameTimer() {
@@ -183,7 +168,7 @@ class HardGameViewController: BaseGameViewController {
     }
     
     @objc func startGameTimer() {
-         currentTime -= 1
+        currentTime -= 1
         
         if  currentTime <= 0 {
             gameFinish()
@@ -198,10 +183,37 @@ class HardGameViewController: BaseGameViewController {
                 return
         }
         timer?.invalidate()
-        masterMindManager.claculateFinalScore(tableRowIndex, currentTime, firstRowPins.count)
+        masterMindManager.claculateFinalScore(tableRowIndex,
+                                              currentTime, firstRowPins.count)
         let finalScore = masterMindManager.scoreCalculator.getFinalScore()
         scoreLabel.text = "Score: \(finalScore)"
-        self.performSegue(withIdentifier: "goToEndPopUp", sender: self)
+        let segueIdentifier = GameStat.segueIdentifier.goToEndPopUp.rawValue
+        self.performSegue(withIdentifier: segueIdentifier, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // send result to `FinalPopUpViewController`
+        let segueIdentifierEnd = GameStat.segueIdentifier.goToEndPopUp.rawValue
+        let segueIdentifierStop = GameStat.segueIdentifier.goToStopPopUp.rawValue
+        if segue.identifier == segueIdentifierEnd {
+            if let destinationVC = segue.destination as? FinalPopUpViewController {
+                destinationVC.delegate = self
+                guard let firstPinsRow = tableOfPinsImageView.first,
+                    let gameStat = gameStat
+                    else {
+                        return
+                }
+                destinationVC.gameStat = masterMindManager.getFinalResult(firstPinsRow.count, gameStat)
+            }
+        } else if segue.identifier == segueIdentifierStop {
+            if let destinationVC = segue.destination as? StopPopUpViewController {
+                destinationVC.delegate = self
+                destinationVC.isSoundDisable = masterMindManager.gameSoundController.disableSound
+                destinationVC.isNormalMode = gameStat?.isNormalMode
+            }
+        } else {
+            assertionFailure("Segue identifier inValid")
+        }
     }
 }
 

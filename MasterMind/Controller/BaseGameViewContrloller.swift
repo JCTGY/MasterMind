@@ -37,7 +37,7 @@ class BaseGameViewController: UIViewController {
     }
     
     // MARK: - Buttons functions
-
+    
     func enableButtons(_ currentRowButton: [UIButton]) {
         currentRowButton.forEach {
             $0.isUserInteractionEnabled = true
@@ -113,7 +113,7 @@ class BaseGameViewController: UIViewController {
             }
         }
     }
-
+    
     // MARK: - reset table for both pins and buttons
     
     func resetTablePinsImage() {

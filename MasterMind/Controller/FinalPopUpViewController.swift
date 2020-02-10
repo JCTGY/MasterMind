@@ -15,20 +15,31 @@ protocol resetGameDelegate {
 }
 
 class FinalPopUpViewController: UIViewController {
-
+    
     @IBOutlet weak var finalDisplay: UILabel!
     @IBOutlet weak var popUpButton: UIButton!
     
     var gameStat: GameStat?
     var delegate: resetGameDelegate?
-    let startViewController = UIApplication.shared.windows.first!.rootViewController as! StartViewController
-
-    func setNextGameCorrectKey() {
+    
+    func getStatViewController() -> StartViewController? {
         
-        if gameStat?.isNormalMode == true {
-            startViewController.randomIntAPINormalMode.fetchRandomInt(isNormalMode: true)
-        } else {
-            startViewController.randomIntAPIHardMode.fetchRandomInt(isNormalMode: false)
+        if let startViewController = UIApplication.shared.windows
+            .first?.rootViewController as? StartViewController {
+            return startViewController
+        }
+        return nil
+    }
+    
+    func setNextGameCorrectKey() {
+        if let startViewController = getStatViewController() {
+            if gameStat?.isNormalMode == true {
+                startViewController.randomIntAPINormalMode
+                    .fetchRandomInt(isNormalMode: true)
+            } else {
+                startViewController.randomIntAPIHardMode
+                    .fetchRandomInt(isNormalMode: false)
+            }
         }
     }
     
@@ -57,22 +68,22 @@ class FinalPopUpViewController: UIViewController {
     
     @IBAction func popUpButton(_ sender: UIButton) {
         // Set to the rootViewController
-        if gameStat?.didWin == true {
-            var tmpCorrectKey: String?
-            if gameStat?.isNormalMode == true {
-                tmpCorrectKey = startViewController.correctKeyNormalMode
+        if let startViewController = getStatViewController() {
+            if gameStat?.didWin == true {
+                var tmpCorrectKey: String?
+                if gameStat?.isNormalMode == true {
+                    tmpCorrectKey = startViewController.correctKeyNormalMode
+                } else {
+                    tmpCorrectKey = startViewController.correctKeyHardMode
+                }
+                guard let correctKey = tmpCorrectKey
+                    else {
+                        return
+                }
+                self.delegate?.didResetGame(newKey: correctKey)
             } else {
-                tmpCorrectKey = startViewController.correctKeyHardMode
+                startViewController.dismissStackViews()
             }
-            guard let correctKey = tmpCorrectKey
-                else {
-                    return
-            }
-            self.delegate?.didResetGame(newKey: correctKey)
-        } else {
-            startViewController.dismissStackViews()
         }
     }
-    
-
 }

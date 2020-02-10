@@ -16,14 +16,23 @@ protocol StopPopUpViewControllerDelegate {
 }
 
 class StopPopUpViewController: UIViewController {
-
-    let startViewController = UIApplication.shared.windows.first!.rootViewController as! StartViewController
+    
+//    let startViewController = UIApplication.shared.windows.first!.rootViewController as! StartViewController
     
     var delegate: StopPopUpViewControllerDelegate?
     var isSoundDisable: Bool?
     var isNormalMode: Bool?
     
     @IBOutlet weak var muteButtonLabel: UIButton!
+    
+    func getStatViewController() -> StartViewController? {
+        
+        if let startViewController = UIApplication.shared.windows
+            .first?.rootViewController as? StartViewController {
+            return startViewController
+        }
+        return nil
+    }
     
     func displayMuteButton() {
         
@@ -36,7 +45,7 @@ class StopPopUpViewController: UIViewController {
         } else {
             muteButtonLabel.setTitle("Mute", for: .normal)
         }
-    
+        
     }
     
     override func viewDidLoad() {
@@ -50,14 +59,16 @@ class StopPopUpViewController: UIViewController {
         self.delegate?.resumeGameTimer()
         dismiss(animated: true, completion: nil)
     }
-
+    
     @IBAction func endGameButton(_ sender: UIButton) {
-        if isNormalMode == true {
-            startViewController.randomIntAPINormalMode.fetchRandomInt(isNormalMode: true)
-        } else {
-            startViewController.randomIntAPIHardMode.fetchRandomInt(isNormalMode: false)
+        if let startViewController = getStatViewController() {
+            if isNormalMode == true {
+                startViewController.randomIntAPINormalMode.fetchRandomInt(isNormalMode: true)
+            } else {
+                startViewController.randomIntAPIHardMode.fetchRandomInt(isNormalMode: false)
+            }
+            startViewController.dismissStackViews()
         }
-        startViewController.dismissStackViews()
     }
     
     @IBAction func muteButton(_ sender: UIButton) {

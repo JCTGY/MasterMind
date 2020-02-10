@@ -9,7 +9,7 @@
 import UIKit
 
 class RuleViewController: UIViewController {
-
+    
     @IBOutlet weak var ruleTextLabel: UILabel!
     
     func displayRuleText () {
@@ -21,7 +21,7 @@ class RuleViewController: UIViewController {
         attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
         ruleTextLabel.attributedText = attributedString
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -29,10 +29,8 @@ class RuleViewController: UIViewController {
             else {
                 return
         }
-        
         self.view.backgroundColor = UIColor(patternImage: backgroundImage)
         displayRuleText()
-       // ruleTextLabel.text = ruleText
     }
     
     @IBAction func backButton(_ sender: UIButton) {

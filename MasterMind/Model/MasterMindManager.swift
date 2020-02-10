@@ -83,17 +83,12 @@ class MasterMindManager {
     
     func getFinalResult(_ numberofPins: Int, _ currentGameStat: GameStat) -> GameStat {
         // return the fianl game result
+        var gameStat = currentGameStat
         if numberOfBlackPins == numberofPins {
-//            let gameResult = GameResult(didWin: true, finalScore: scoreCalculator.getFinalScore())
-//            return gameResult
-            var gameStat = currentGameStat
             gameStat.didWin = true
             gameStat.finalScore = scoreCalculator.getFinalScore()
             return gameStat
         } else {
-//            let gameResult = GameResult(didWin: false, finalScore: scoreCalculator.getFinalScore())
-//            return gameResult
-            var gameStat = currentGameStat
             gameStat.didWin = false
             gameStat.finalScore = 0
             return gameStat
