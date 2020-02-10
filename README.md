@@ -7,8 +7,8 @@ Mastermind game, a code breaking game in iOS app
 
 ## Features    
 * [How to play](#How-to-play)
-* [Color/Animation](#Color/Animation)
-* [Normal/Hard Mode](#Normal/Hard-Mode)
+* [Color Animation](#Color-Animation)
+* [Normal Hard Mode](#Normal Hard-Mode)
 * [Sounds](#Sounds)
 * [Scores](#Scores)
 * [Timer](#Timer)
