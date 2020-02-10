@@ -38,7 +38,10 @@ struct RandomIntAPI {
                     print("Error with the response, unexpected status code: \(String(describing: response))")
                     return
             }
-            guard let data = data else { return }
+            guard let data = data
+                else {
+                    return
+            }
             if let stringData = String(bytes: data, encoding: .utf8) {
                 self.delegate?.didUpdateRandomAPI(stringData: stringData, isNormalMode)
             }

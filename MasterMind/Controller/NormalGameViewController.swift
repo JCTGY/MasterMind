@@ -157,7 +157,7 @@ class NormalGameViewController: BaseGameViewController {
     
     func resetGameTimer() {
         timer?.invalidate()
-        currentTime = 301
+        currentTime = 181
         intitailGameTimer()
         startGameTimer()
     }

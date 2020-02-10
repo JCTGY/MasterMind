@@ -19,7 +19,7 @@ class BaseGameViewController: UIViewController {
     let masterMindManager = MasterMindManager()
     var resetGameDelegate: resetGameDelegate?
     var timer: Timer?
-    var currentTime = 300
+    var currentTime = 180
     var gameStat: GameStat?
     
     func startGame() {

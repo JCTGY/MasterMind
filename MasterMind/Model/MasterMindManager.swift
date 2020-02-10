@@ -11,7 +11,7 @@ import UIKit
 
 class MasterMindManager {
     
-    private var correctKey = [Int]()
+    var correctKey = [Int]()
     var guessKey = [Int]()
     var numberOfWhitePins = 0
     var numberOfBlackPins = 0
