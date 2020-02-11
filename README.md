@@ -25,6 +25,7 @@ git clone https://github.com/JCTGY/MasterMind
 cd MasterMind
 open MasterMind.xcodeproj
 ```
+![](images/MasterMine%20Struture.png)
 
 ### How to play
 
