@@ -78,3 +78,4 @@ Can add sound when player lose or win
   }
 ```
 ### Timer
+Timer is display on the upper right corner. Once the timer run off the game is over
