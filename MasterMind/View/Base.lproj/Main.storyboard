@@ -138,10 +138,10 @@
             </objects>
             <point key="canvasLocation" x="-2023" y="909"/>
         </scene>
-        <!--Stop Pop Up View Controller-->
+        <!--Pause Pop Up View Controller-->
         <scene sceneID="t5w-S7-uYX">
             <objects>
-                <viewController id="oXP-TY-Qw7" customClass="StopPopUpViewController" customModule="MasterMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oXP-TY-Qw7" customClass="PausePopUpViewController" customModule="MasterMind" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mQe-Gc-ZLW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -262,7 +262,7 @@
                                                 <color key="tintColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" image="pause.fill" catalog="system"/>
                                                 <connections>
-                                                    <action selector="stopGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Std-g0-lVV"/>
+                                                    <action selector="pauseGameTimerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Std-g0-lVV"/>
                                                     <segue destination="oXP-TY-Qw7" kind="presentation" identifier="goToStopPopUp" id="4eg-Ad-qAS"/>
                                                 </connections>
                                             </button>
@@ -1312,7 +1312,7 @@
                                                 <color key="tintColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" image="pause.fill" catalog="system"/>
                                                 <connections>
-                                                    <action selector="stopGameButton:" destination="Eff-a7-yjc" eventType="touchUpInside" id="WD5-Hf-T5n"/>
+                                                    <action selector="pauseGameTimerButton:" destination="Eff-a7-yjc" eventType="touchUpInside" id="WD5-Hf-T5n"/>
                                                     <segue destination="oXP-TY-Qw7" kind="presentation" identifier="goToStopPopUp" id="sI0-id-pMr"/>
                                                 </connections>
                                             </button>

@@ -9,16 +9,23 @@
 import Foundation
 
 class ScoreCalculate {
+  private(set) var finalScore = 0
 
-    private(set) var finalScore = 0
+  /**
+    calculate the score base on remaining time and number of tries
+    - parameter numberOfTries: how many times have the player tries
+    - parameter gameTimeRemain: how much time remaining
+    - returns: Void
+    */
+  func calculateScore(_ numberOfTries: Int, _ gameTimeRemain: Int) {
+    finalScore += 100 - (numberOfTries * 9) + (gameTimeRemain / 5)
+  }
 
-    func calculateScore(_ numberOfTries: Int, _ gameTimeRemain: Int) {
-
-        finalScore += 100 - (numberOfTries * 9) + (gameTimeRemain / 5)
-    }
-
-    func getFinalScore() -> Int {
-
-        return finalScore
-    }
+  /**
+   getter for FinalScore
+   - returns: return finalScore
+   */
+  func getFinalScore() -> Int {
+    return finalScore
+  }
 }

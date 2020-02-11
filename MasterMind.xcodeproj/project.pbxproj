@@ -11,7 +11,7 @@
 		355E3C4223EDCC8C00EE09D7 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355E3C4123EDCC8C00EE09D7 /* StartViewController.swift */; };
 		355E3C4623EE787E00EE09D7 /* ScoreCalulate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355E3C4523EE787E00EE09D7 /* ScoreCalulate.swift */; };
 		355E3C4A23EF31ED00EE09D7 /* RuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355E3C4923EF31ED00EE09D7 /* RuleViewController.swift */; };
-		355E3C4C23EF62A200EE09D7 /* StopPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355E3C4B23EF62A200EE09D7 /* StopPopUpViewController.swift */; };
+		355E3C4C23EF62A200EE09D7 /* PausePopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355E3C4B23EF62A200EE09D7 /* PausePopUpViewController.swift */; };
 		355E3C4E23EF84E600EE09D7 /* GameSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355E3C4D23EF84E600EE09D7 /* GameSound.swift */; };
 		355E3C6323EFBAC000EE09D7 /* MasterMindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355E3C6223EFBAC000EE09D7 /* MasterMindTests.swift */; };
 		355E3C6B23EFC45500EE09D7 /* Background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 355E3C6A23EFC45500EE09D7 /* Background.mp3 */; };
@@ -45,7 +45,7 @@
 		355E3C4123EDCC8C00EE09D7 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		355E3C4523EE787E00EE09D7 /* ScoreCalulate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCalulate.swift; sourceTree = "<group>"; };
 		355E3C4923EF31ED00EE09D7 /* RuleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuleViewController.swift; sourceTree = "<group>"; };
-		355E3C4B23EF62A200EE09D7 /* StopPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopPopUpViewController.swift; sourceTree = "<group>"; };
+		355E3C4B23EF62A200EE09D7 /* PausePopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PausePopUpViewController.swift; sourceTree = "<group>"; };
 		355E3C4D23EF84E600EE09D7 /* GameSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSound.swift; sourceTree = "<group>"; };
 		355E3C6023EFBAC000EE09D7 /* MasterMindTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasterMindTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		355E3C6223EFBAC000EE09D7 /* MasterMindTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterMindTests.swift; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 				35A4469223EB4617002FCEDF /* NormalGameViewController.swift */,
 				355E3C7223F09CA400EE09D7 /* HardGameViewController.swift */,
 				355E3C3F23EDC78C00EE09D7 /* FinalPopUpViewController.swift */,
-				355E3C4B23EF62A200EE09D7 /* StopPopUpViewController.swift */,
+				355E3C4B23EF62A200EE09D7 /* PausePopUpViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -287,7 +287,7 @@
 			files = (
 				355E3C4023EDC78C00EE09D7 /* FinalPopUpViewController.swift in Sources */,
 				355E3C4223EDCC8C00EE09D7 /* StartViewController.swift in Sources */,
-				355E3C4C23EF62A200EE09D7 /* StopPopUpViewController.swift in Sources */,
+				355E3C4C23EF62A200EE09D7 /* PausePopUpViewController.swift in Sources */,
 				35A4469323EB4617002FCEDF /* NormalGameViewController.swift in Sources */,
 				355E3C7723F11B3700EE09D7 /* GameStat.swift in Sources */,
 				35A4468F23EB4617002FCEDF /* AppDelegate.swift in Sources */,
