@@ -25,7 +25,8 @@ git clone https://github.com/JCTGY/MasterMind
 cd MasterMind
 open MasterMind.xcodeproj
 ```
-![](images/MasterMine%20Struture.png)
+Run the project by clicking play with desired iOS device 
+![](images/xcode.png)
 
 ### How to play
 
