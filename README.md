@@ -71,5 +71,5 @@ Use AVAudioPlayer to play the sound \
 Game currently have backgroud soud and sound effec while clicking differnt buttons \
 Can add sound when player lose or win
 ### Scores
-
+[ScoreCalculate](https://github.com/JCTGY/MasterMind/blob/master/MasterMind/Model/ScoreCalulate.swift) calculate the score base on number of tries and remaining time 
 ### Timer
