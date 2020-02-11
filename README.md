@@ -49,17 +49,17 @@ Run the project by clicking play with desired iOS device
 ![](images/xcode.png)
 
 ### How to play
-![](images/Rule.png)
+![](images/Rule.png) \
 Simple guide/hint of how to play the game
 
 ### Color/Animation
-![](images/MasterMind.gif)
-Represent number key as differnt color and has animation on the current select button
+![](images/MasterMind.gif) \
+Represent number key as differnt colors and has animation on the current select button
 
 ### Normal/Hard Mode
-![](images/Color:Animation.png)
+![](images/Color:Animation.png) ![](images/HardMode.png)\
 Normal mode have 4 numbers to guess \
-Hard mode have 6 numbers to guess \
+Hard mode have 6 numbers to guess 
 ### Sounds
 ### Scores
 ### Timer
