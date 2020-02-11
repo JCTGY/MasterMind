@@ -57,7 +57,7 @@ Simple guide/hint of how to play the game
 Represent number key as differnt color and has animation on the current select button
 
 ### Normal/Hard Mode
-![](images/HardMode.png=480X274)![](images/GameInterface.png=480X247)
+![](images/Color:Animation.png)
 Normal mode have 4 numbers to guess \
 Hard mode have 6 numbers to guess \
 ### Sounds
