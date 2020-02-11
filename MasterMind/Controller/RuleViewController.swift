@@ -14,7 +14,7 @@ class RuleViewController: UIViewController {
     
     func displayRuleText () {
         
-        let attributedString = NSMutableAttributedString(string: " MasterMind\n You have ten attempts to slove the correct\n color and order\n Use lower circle button to fill color\n Once you are ready, click submit\n Black Pin = #correct color and order\n White Pin = #correct color\n You have 5 minute to slove guess the answer")
+        let attributedString = NSMutableAttributedString(string: " MasterMind\n You have ten attempts to solve the correct\n color and order\n Use lower circle button to fill color\n Once you are ready, click submit\n Black Pin = #correct color and order\n White Pin = #correct color\n You have 5 minute to solve guess the answer")
         let paragraphStyle = NSMutableParagraphStyle()
         
         paragraphStyle.lineSpacing = 8

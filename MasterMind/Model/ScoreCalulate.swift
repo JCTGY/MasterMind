@@ -13,7 +13,6 @@ class ScoreCalculate {
     private(set) var finalScore = 0
 
     func calculateScore(_ numberOfTries: Int, _ gameTimeRemain: Int) {
-        print("numberOfTries: \(numberOfTries)")
 
         finalScore += 100 - (numberOfTries * 9) + (gameTimeRemain / 5)
     }
