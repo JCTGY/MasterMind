@@ -1,7 +1,7 @@
 # Mastermind
 Mastermind game, a code breaking game in iOS app
 
-![](header.png)
+![](images/MasterMind.gif)
 
 ## Objective
 
