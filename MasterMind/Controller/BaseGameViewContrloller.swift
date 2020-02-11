@@ -141,7 +141,6 @@ class BaseGameViewController: UIViewController {
     var indexForNumPinColor = 0
     tableOfPinsImageView[tableRowIndex
     ].forEach {
-      //TODO Number Not Correct
       if indexForNumPinColor < masterMindManager.numberOfBlackPins {
         $0.image = UIImage(systemName: "pin.fill")
         $0.setImageColor(color: UIColor.black)
