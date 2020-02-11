@@ -63,8 +63,13 @@ Represent number key as differnt colors and has animation on the current select 
 
 ### Normal/Hard Mode
 ![](images/Color:Animation.png) ![](images/HardMode.png)\
-Normal mode have 4 numbers to guess \
-Hard mode have 6 numbers to guess 
+Normal mode need to solve 4 numbers key \
+Hard mode need to solve 6 numbers key
 ### Sounds
+[GameSound](https://github.com/JCTGY/MasterMind/blob/master/MasterMind/Model/GameSound.swift) control the sound playing \
+Use AVAudioPlayer to play the sound \
+Game currently have backgroud soud and sound effec while clicking differnt buttons \
+Can add sound when player lose or win
 ### Scores
+
 ### Timer
