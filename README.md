@@ -72,4 +72,9 @@ Game currently have backgroud soud and sound effec while clicking differnt butto
 Can add sound when player lose or win
 ### Scores
 [ScoreCalculate](https://github.com/JCTGY/MasterMind/blob/master/MasterMind/Model/ScoreCalulate.swift) calculate the score base on number of tries and remaining time 
+```
+  func calculateScore(_ numberOfTries: Int, _ gameTimeRemain: Int) {
+    finalScore += 100 - (numberOfTries * 9) + (gameTimeRemain / 5)
+  }
+```
 ### Timer
