@@ -49,8 +49,13 @@ Run the project by clicking play with desired iOS device
 ![](images/xcode.png)
 
 ### How to play
-![](images/pause.png)![](images/PausePopUp.png)![](images/Score.png)![](images/Timer.png)![](images/EndPopUp.png)![](images/Rule.png) \
-Simple guide/hint of how to play the game
+![](images/pause.png)![](images/Score.png)![](images/Timer.png)![](images/Rule.png) \
+Click on the lower circle buttons to change the color to the square buttons \
+Once every color is fill, click submit to see the result \
+pause button can pause the game \
+When the timer runs out or player use all the tries the game is over \
+![](images/PausePopUp.png)![](images/EndPopUp.png)\
+Pause pop up screen can mute the sound and display a simple hint how to play the game
 
 ### Color/Animation
 ![](images/MasterMind.gif) \
