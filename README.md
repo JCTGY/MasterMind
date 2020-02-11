@@ -4,7 +4,9 @@ Mastermind game, a code breaking game in iOS app
 ![](images/MasterMind.gif)
 
 ## Objective
-Implement a mastermind game, which can be played by a user who tries to guess the number combinations. On each attempt to\ guess the numbers of combinations, the program will provide feedback whether the player had guess a number correctly, or/and\ a number and order correctly. A player must guess the right number combinations with limit attempts and limit time to win the\ game.\ 
+Implement a mastermind game, which can be played by a user who tries to guess the number combinations. On each attempt to guess the numbers of combinations, the program will provide feedback whether the player had guess a number correctly, or/and  a number and order correctly. A player must guess the right number combinations with limit attempts and limit time to win the game.
+
+## 
 
 ## Features    
 * [How to play](#How-to-play)
