@@ -8,12 +8,12 @@ Implement a mastermind game, which can be played by a user who tries to guess th
 
 ## Structure
 ![](images/MasterMine%20Struture.png)
-- Model
-** MasterMindManager
-*** ScoreCalulate
-*** GameSound
-*** GameStat
-*** RandomIntAPI
+- Model \
+* MasterMindManager
+* ScoreCalulate
+* GameSound
+* GameStat
+* RandomIntAPI
 - View
 - Controller
 MasterMind consist of four views and two pop up views
