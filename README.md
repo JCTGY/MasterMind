@@ -9,15 +9,22 @@ Implement a mastermind game, which can be played by a user who tries to guess th
 ## Structure
 ![](images/MasterMine%20Struture.png)
 - Model
-  * MasterMindManager
-  * ScoreCalulate
-  * GameSound
-  * GameStat
-  * RandomIntAPI
+  * MasterMindManager: Manager that manage the game data
+  * ScoreCalulate: responsible for handling score calculation
+  * GameSound: disable/enable the sound
+  * GameStat: store the useful game stats
+  * RandomIntAPI: fetching random key from [random.org](www.random.org)
 - View
+ * mainstoryboard that have four views and two pop up views
 - Controller
-MasterMind consist of four views and two pop up views
-
+ * StartViewController: Entry point of the game can direct to Normal/Hard Game Mode
+ * BaseGameViewContrloller: super class for both game mode ViewController class, contain the logic of moving selected buttons
+ * NormalGameViewController: Normal game mode that inheritance from BaseGameViewContrloller have control for the table of buttons and pins
+ * HardGameViewController: Same as NormalGameViewController, but is for hard game mode
+ * RuleViewController: Display the rule of the game, can be accesses from StartViewController/PausePopUpViewController
+ * PausePopUpViewController: pop up view that can pase the game and change some game setting
+ * FinalPopUpViewController: End of the current game. Can press continue/end game
+ 
 ## Features    
 * [How to play](#How-to-play)
 * [Color/Animation](#coloranimation)
