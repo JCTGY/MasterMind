@@ -49,7 +49,7 @@ Run the project by clicking play with desired iOS device
 ![](images/xcode.png)
 
 ### How to play
-![](images/Rule.png) \
+![](images/pause.png)![](images/PausePopUp.png)![](images/Score.png)![](images/Timer.png)![](images/EndPopUp.png)![](images/Rule.png) \
 Simple guide/hint of how to play the game
 
 ### Color/Animation
