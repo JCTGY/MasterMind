@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 /**
 ## StartViewController
@@ -27,6 +28,7 @@ class StartViewController: UIViewController {
   var randomIntAPIHardMode = RandomIntAPI(num: 6, min: 0, max: 7)
   var correctKeyNormalMode: String?
   var correctKeyHardMode: String?
+//  let db = Firestore.firestore()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -35,6 +37,16 @@ class StartViewController: UIViewController {
     randomIntAPINormalMode.fetchRandomInt(isNormalMode: true)
     randomIntAPIHardMode.delegate = self
     randomIntAPIHardMode.fetchRandomInt(isNormalMode: false)
+//    db.collection("leaderboard").whereField("name", isEqualTo: "fan")
+//        .getDocuments() { (querySnapshot, err) in
+//            if let err = err {
+//                print("Error getting documents: \(err)")
+//            } else {
+//                for document in querySnapshot!.documents {
+//                    print("\(document.documentID) => \(document.data())")
+//                }
+//            }
+//    }
   }
 
   @IBAction func startNormalModeButton(_ sender: UIButton) {

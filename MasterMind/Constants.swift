@@ -35,6 +35,16 @@ struct K {
   static let normalModeSegue = "goToNormalMode"
   static let hardModeSegue = "goToHardMode"
   static let ruleSegue = "goToRule"
+  static let leaderboardSegue = "goToLeaderboard"
+
+  static let leaderboardNibName = "LeaderboardCell"
+  static let tableCellIdentifier = "reuseableCell"
+
+  struct FStore {
+    static let leaderboard = "leaderboard"
+    static let name = "name"
+    static let score = "score"
+  }
 
   struct SoundFileName {
     static let background = "Background"

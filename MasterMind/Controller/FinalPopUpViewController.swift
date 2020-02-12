@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 protocol resetGameDelegate {
 
@@ -30,6 +31,8 @@ class FinalPopUpViewController: UIViewController {
 
   var gameStat: GameStat?
   var delegate: resetGameDelegate?
+
+  let db = Firestore.firestore()
 
   /**
    get the `StartViewController`
@@ -82,6 +85,17 @@ class FinalPopUpViewController: UIViewController {
     setPopUpMenuTitle()
   }
 
+
+  func sendScoreToFirestore() {
+    //        db.collection("leaderboard").addDocument(data: ["name": "fan", "score": 50]) { (error) in
+    //          if let e = error {
+    //            print("An error on sending data to firestore: \(e)")
+    //          } else {
+    //            print("Sucessfully send data to firestore")
+    //          }
+    //        }
+  }
+
   /**
    - If the player win, the game will reset to last viewController with the current score but new game
    - if the player lose, the game will be back to the `StartViewController`
@@ -101,7 +115,7 @@ class FinalPopUpViewController: UIViewController {
         }
         self.delegate?.didResetGame(newKey: correctKey)
       } else {
-        startViewController.dismissStackViews()
+        self.performSegue(withIdentifier: K.leaderboardSegue, sender: self)
       }
     }
   }

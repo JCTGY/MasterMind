@@ -238,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXg-KS-s2D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="932" y="942"/>
+            <point key="canvasLocation" x="906" y="138"/>
         </scene>
         <!--Normal Game View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -1284,11 +1284,76 @@
                         <outlet property="finalDisplay" destination="rY9-nl-P9J" id="THH-5U-Yb8"/>
                         <outlet property="popUpButton" destination="FJy-fh-Xda" id="zWy-gB-LqW"/>
                         <segue destination="2XJ-ue-iCR" kind="presentation" identifier="goToStart" id="dDa-gi-NxR"/>
+                        <segue destination="5aI-vc-3YB" kind="presentation" identifier="goToLeaderboard" id="aZd-zA-Ose"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KeJ-aA-eix" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="931.88405797101461" y="137.94642857142856"/>
+            <point key="canvasLocation" x="906" y="909"/>
+        </scene>
+        <!--Leaderboard View Controller-->
+        <scene sceneID="bDw-aC-z7a">
+            <objects>
+                <viewController id="5aI-vc-3YB" customClass="LeaderboardViewController" customModule="MasterMind" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YEa-k1-c0O">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="leaderboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QML-yu-BbD">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="35.5"/>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="35"/>
+                                <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <size key="shadowOffset" width="1" height="0.0"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tt-9l-6QO">
+                                <rect key="frame" x="124" y="747" width="166" height="37"/>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="End Game">
+                                    <color key="titleColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleShadowColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="endGameButton:" destination="5aI-vc-3YB" eventType="touchUpInside" id="Jsa-hx-NWX"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dEB-ET-Ik8">
+                                <rect key="frame" x="20" y="80" width="374" height="623"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseableCell" id="xuy-em-ney">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xuy-em-ney" id="FAd-xP-P8T">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6M1-lf-l5Q" firstAttribute="trailing" secondItem="8tt-9l-6QO" secondAttribute="trailing" constant="124" id="3Hy-tT-MxB"/>
+                            <constraint firstItem="QML-yu-BbD" firstAttribute="top" secondItem="6M1-lf-l5Q" secondAttribute="top" id="7Z2-Az-KCF"/>
+                            <constraint firstItem="8tt-9l-6QO" firstAttribute="leading" secondItem="6M1-lf-l5Q" secondAttribute="leading" constant="124" id="RCV-XX-8tJ"/>
+                            <constraint firstItem="QML-yu-BbD" firstAttribute="trailing" secondItem="6M1-lf-l5Q" secondAttribute="trailing" id="XFV-Oc-apW"/>
+                            <constraint firstItem="QML-yu-BbD" firstAttribute="leading" secondItem="6M1-lf-l5Q" secondAttribute="leading" id="d0E-WM-SFF"/>
+                            <constraint firstItem="6M1-lf-l5Q" firstAttribute="bottom" secondItem="8tt-9l-6QO" secondAttribute="bottom" constant="24" id="zE8-fX-5dM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6M1-lf-l5Q"/>
+                    </view>
+                    <connections>
+                        <outlet property="leaderboardTableView" destination="dEB-ET-Ik8" id="KW4-4l-uL1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ax5-Rs-7p2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="905.79710144927549" y="1672.7678571428571"/>
         </scene>
         <!--Hard Game View Controller-->
         <scene sceneID="aXg-1T-EH4">
@@ -2758,7 +2823,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="sJf-SF-TZO"/>
-        <segue reference="4eg-Ad-qAS"/>
+        <segue reference="sI0-id-pMr"/>
         <segue reference="zgt-YR-dwQ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -37,13 +37,20 @@ Implement a mastermind game, which can be played by a user who tries to guess th
 
 - iOS 10.14.6+
 - Xcode 11.3.1+
+- cocoapods 1.8.4
 
 ## Installation
+
+Install cocoapods
+```
+sudo gem install cocoapods
+```
+Clone the project and open it
 ```
 cd ~
 git clone https://github.com/JCTGY/MasterMind
 cd MasterMind
-open MasterMind.xcodeproj
+open MasterMind.xcworkspace
 ```
 Run the project by clicking play with desired iOS device 
 ![](images/xcode.png)

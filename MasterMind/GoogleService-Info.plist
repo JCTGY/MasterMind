@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>117095296764-tkmol9b7h13o0pitnicpn7m2bhbjtklf.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.117095296764-tkmol9b7h13o0pitnicpn7m2bhbjtklf</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBox3qd2lEIeMUqVR7McTsknhToMD7bn2c</string>
+	<key>GCM_SENDER_ID</key>
+	<string>117095296764</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>JCTGY.MasterMind</string>
+	<key>PROJECT_ID</key>
+	<string>mastermind-ios</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mastermind-ios.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:117095296764:ios:545f13d6d6679023097179</string>
+	<key>DATABASE_URL</key>
+	<string>https://mastermind-ios.firebaseio.com</string>
+</dict>
+</plist>

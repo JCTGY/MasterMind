@@ -1,0 +1,6 @@
+framework module Pods_MasterMind {
+  umbrella header "Pods-MasterMind-umbrella.h"
+
+  export *
+  module * { export * }
+}
