@@ -91,6 +91,29 @@ Can add sound when player lose or win
 Timer is display on the upper right corner. Once the timer run off the game is over
 
 ### Leaderboard
-![](images/leaderboard.png)
-Use firestore to manage leaderboard. 
+![](images/leaderboard.png) \
+Use firestore to manage leaderboard. \
 learderboard will show the top 15 scores
+```
+    let db = Firestore.firestore()
+    db.collection(K.FStore.leaderboard)
+      .order(by: K.FStore.score, descending: true).limit(to: 15)
+      .getDocuments() { (querySnapshot, err) in
+        if let err = err {
+          print("Error getting documents: \(err)")
+        } else {
+          if let snapshotDocuments = querySnapshot?.documents {
+            for doc in snapshotDocuments {
+              let data = doc.data()
+              if let name = data[K.FStore.name] as? String,
+                let score = data[K.FStore.score] as? Int {
+                self.scores.append(Score(name: name, score: score))
+                DispatchQueue.main.async {
+                  self.leaderboardTableView.reloadData()
+                }
+              }
+            }
+          }
+        }
+    }
+```
