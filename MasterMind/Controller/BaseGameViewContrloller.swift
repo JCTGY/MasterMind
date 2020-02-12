@@ -48,7 +48,30 @@ class BaseGameViewController: UIViewController {
     masterMindManager.assignKeyToCorrectKey(correctKeyString)
     masterMindManager.gameSoundController.playBackgroundSong()
   }
-  
+
+  func checkIsAppBackground() {
+    /* check if the app move to the background call `appMovedToBackground` */
+    let notificationCenter = NotificationCenter.default
+     notificationCenter.addObserver(self, selector: #selector(appMovedToBackground),
+                                    name: UIApplication.didEnterBackgroundNotification, object: nil)
+  }
+
+  @objc func appMovedToBackground() {
+    /* disable sound if app move to the background */
+    masterMindManager.gameSoundController.diableSoundPlayer()
+  }
+
+  func checkIsAppForground() {
+    /* check if app is going back to the forground */
+    let notificationCenter = NotificationCenter.default
+     notificationCenter.addObserver(self, selector: #selector(appMovedToForground),
+                                    name: UIApplication.willEnterForegroundNotification, object: nil)
+  }
+
+  @objc func appMovedToForground() {
+    /* enable sound if app back to the forground */
+    masterMindManager.gameSoundController.enableSoundPlayer()
+  }
   // MARK: - Buttons functions
 
   /**

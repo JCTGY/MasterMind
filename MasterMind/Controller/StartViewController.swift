@@ -56,22 +56,24 @@ class StartViewController: UIViewController {
    */
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == segueIdentifierNormal {
-      let destinationVC = segue.destination as! NormalGameViewController
-      guard let correctKeyNormalMode = correctKeyNormalMode
-        else {
-          return
+      if let destinationVC = segue.destination as? NormalGameViewController {
+        guard let correctKeyNormalMode = correctKeyNormalMode
+          else {
+            return
+        }
+        let gameStat = GameStat(correctKey: correctKeyNormalMode, isNormalMode: true)
+        destinationVC.gameStat = gameStat
       }
-      let gameStat = GameStat(correctKey: correctKeyNormalMode, isNormalMode: true)
-      destinationVC.gameStat = gameStat
     }
     if segue.identifier == segueIdentifierHard {
       guard let correctKeyHardMode = correctKeyHardMode
         else {
           return
       }
-      let destinationVC = segue.destination as! HardGameViewController
-      let gameStat = GameStat(correctKey: correctKeyHardMode, isNormalMode: false)
-      destinationVC.gameStat = gameStat
+      if let destinationVC = segue.destination as? HardGameViewController {
+        let gameStat = GameStat(correctKey: correctKeyHardMode, isNormalMode: false)
+        destinationVC.gameStat = gameStat
+      }
     }
   }
 

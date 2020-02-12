@@ -58,6 +58,7 @@ class MasterMindManager {
     var counts: [Int: Int] = [:]
     guard correctKey.count != 0 || guessKey.count != 0
       else {
+        print("key did not assigned\n")
         return
     }
     for (eachGuessKey, eachCorrectKey) in zip(guessKey, correctKey) {
@@ -106,7 +107,7 @@ class MasterMindManager {
       return gameStat
     } else {
       gameStat.didWin = false
-      gameStat.finalScore = 0
+      gameStat.finalScore = scoreCalculator.getFinalScore()
       return gameStat
     }
   }

@@ -14,11 +14,13 @@ class RuleViewController: UIViewController {
 
   func displayRuleText () {
     /* display the Rule in the RuleViewController lable */
-    let attributedString = NSMutableAttributedString(string: " MasterMind\n You have ten attempts to solve the correct\n color and order\n Use lower circle button to fill color\n Once you are ready, click submit\n Black Pin = #correct color and order\n White Pin = #correct color\n You have 5 minute to solve guess the answer")
+    let attributedString = NSMutableAttributedString(string: " MasterMind\n You have ten attempts to solve the correct\n color and order\n Use lower circle button to fill color\n Once you are ready, click submit\n Black Pin = #correct color and order\n White Pin = #correct color\n You have 3 minute to guess the correct key")
     let paragraphStyle = NSMutableParagraphStyle()
 
     paragraphStyle.lineSpacing = 8
-    attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
+    attributedString.addAttribute(NSAttributedString.Key.paragraphStyle,
+                                  value:paragraphStyle,
+                                  range:NSMakeRange(0, attributedString.length))
     ruleTextLabel.attributedText = attributedString
   }
 
