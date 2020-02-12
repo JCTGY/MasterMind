@@ -51,7 +51,7 @@ class StartViewController: UIViewController {
   }
 
   /**
-   override func the send gameStat to the next viewController
+   override func the send gameStat to the next viewController either Noram/Hard
    - warning: make sure to have the correct segue.identifier
    */
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

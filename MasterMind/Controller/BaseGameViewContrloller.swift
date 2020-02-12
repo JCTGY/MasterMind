@@ -49,6 +49,8 @@ class BaseGameViewController: UIViewController {
     masterMindManager.gameSoundController.playBackgroundSong()
   }
 
+  // MARK: - Check if app is on background/forground
+
   func checkIsAppBackground() {
     /* check if the app move to the background call `appMovedToBackground` */
     let notificationCenter = NotificationCenter.default
@@ -210,7 +212,7 @@ extension UIImageView {
 
 extension UIButton {
   
-  // MARK: - add beeting animation to currentButton
+  // MARK: - add animation beeting to currentButton
   
   func pulseAnimation() {
     let pulse = CASpringAnimation(keyPath: "transform.scale")

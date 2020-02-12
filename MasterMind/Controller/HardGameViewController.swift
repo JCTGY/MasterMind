@@ -66,6 +66,8 @@ class HardGameViewController: BaseGameViewController {
     tableOfButtons.append(rowEight!)
     tableOfButtons.append(rowNine!)
     tableOfButtons.append(rowTen!)
+    tableOfButtons.append(rowEleven!)
+    tableOfButtons.append(rowTwelve!)
   }
 
   func appendtableOfPinsImageView() {
@@ -80,6 +82,8 @@ class HardGameViewController: BaseGameViewController {
     tableOfPinsImageView.append(pinRowEight!)
     tableOfPinsImageView.append(pinRowNine!)
     tableOfPinsImageView.append(pinRowTen!)
+    tableOfPinsImageView.append(pinRowEleven!)
+    tableOfPinsImageView.append(pinRowTwelve!)
   }
 
   override func viewDidLoad() {
@@ -102,7 +106,7 @@ class HardGameViewController: BaseGameViewController {
   }
 
   /**
-   click to remove colorof the button, and the button will be the current select button
+   click to remove color of the button, and the button will be the current select button
    add sound effect from `masterMindManager.gameSoundController`
    */
   @IBAction func deselectColorButtons(_ sender: UIButton) {
@@ -165,7 +169,7 @@ class HardGameViewController: BaseGameViewController {
 
   /**
    check if the game is finish: player use all the tires, then will call `gameFinish()` method
-   else will move to the next row of buttons
+   else will move to the next row of the buttons
    */
   func moveToNextRowOfButtons() {
 
