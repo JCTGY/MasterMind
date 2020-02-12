@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		350AD86C23F3930B007C9682 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350AD86B23F3930B007C9682 /* Constants.swift */; };
 		351B74CC23F324A700A92F4B /* MasterMindManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351B74CB23F324A700A92F4B /* MasterMindManagerTests.swift */; };
 		355E3C4023EDC78C00EE09D7 /* FinalPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355E3C3F23EDC78C00EE09D7 /* FinalPopUpViewController.swift */; };
 		355E3C4223EDCC8C00EE09D7 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355E3C4123EDCC8C00EE09D7 /* StartViewController.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		350AD86B23F3930B007C9682 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		351B74CB23F324A700A92F4B /* MasterMindManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterMindManagerTests.swift; sourceTree = "<group>"; };
 		355E3C3F23EDC78C00EE09D7 /* FinalPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalPopUpViewController.swift; sourceTree = "<group>"; };
 		355E3C4123EDCC8C00EE09D7 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				35A4469723EB4617002FCEDF /* Assets.xcassets */,
 				35A4469923EB4617002FCEDF /* LaunchScreen.storyboard */,
 				35A4469C23EB4617002FCEDF /* Info.plist */,
+				350AD86B23F3930B007C9682 /* Constants.swift */,
 			);
 			path = MasterMind;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				355E3C4C23EF62A200EE09D7 /* PausePopUpViewController.swift in Sources */,
 				35A4469323EB4617002FCEDF /* NormalGameViewController.swift in Sources */,
 				355E3C7723F11B3700EE09D7 /* GameStat.swift in Sources */,
+				350AD86C23F3930B007C9682 /* Constants.swift in Sources */,
 				35A4468F23EB4617002FCEDF /* AppDelegate.swift in Sources */,
 				355E3C7323F09CA400EE09D7 /* HardGameViewController.swift in Sources */,
 				355E3C4A23EF31ED00EE09D7 /* RuleViewController.swift in Sources */,

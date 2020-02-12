@@ -114,8 +114,7 @@ class HardGameViewController: BaseGameViewController {
       lastReplaceButton?.setTitle("", for: .normal)
       lastReplaceButton?.layer.removeAllAnimations()
     }
-    let playerSelectFileName = masterMindManager.gameSoundController.selectFileName
-    masterMindManager.gameSoundController.playSoundEffect(playerSelectFileName)
+    masterMindManager.gameSoundController.playSoundEffect(K.SoundFileName.select)
     currentSelectButton = sender
     setButtonToSelectImage()
     lastReplaceButton = sender
@@ -131,8 +130,7 @@ class HardGameViewController: BaseGameViewController {
       else {
         return
     }
-    let playerSelectFileName = masterMindManager.gameSoundController.selectFileName
-    masterMindManager.gameSoundController.playSoundEffect(playerSelectFileName)
+    masterMindManager.gameSoundController.playSoundEffect(K.SoundFileName.select)
     currentSelectButton.backgroundColor = sender.imageView?.tintColor
     moveToNextButton()
   }
@@ -158,8 +156,7 @@ class HardGameViewController: BaseGameViewController {
       }
     }
     currentSelectButton?.layer.removeAllAnimations()
-    let playerSubmitFileName = masterMindManager.gameSoundController.submitFileName
-    masterMindManager.gameSoundController.playSoundEffect(playerSubmitFileName)
+    masterMindManager.gameSoundController.playSoundEffect(K.SoundFileName.submit)
     assignGuessKey(tableOfButtons[tableRowIndex])
     masterMindManager.calculateResult()
     assignPinColor(tableOfPinsImageView[tableRowIndex])
@@ -230,8 +227,7 @@ class HardGameViewController: BaseGameViewController {
                                           currentTime, firstRowPins.count)
     let finalScore = masterMindManager.scoreCalculator.getFinalScore()
     scoreLabel.text = "Score: \(finalScore)"
-    let segueIdentifier = GameStat.segueIdentifier.goToEndPopUp.rawValue
-    self.performSegue(withIdentifier: segueIdentifier, sender: self)
+    self.performSegue(withIdentifier: K.endPopUpSegue, sender: self)
   }
 
   /**
@@ -241,9 +237,7 @@ class HardGameViewController: BaseGameViewController {
    */
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     // send result to `FinalPopUpViewController`
-    let segueIdentifierEnd = GameStat.segueIdentifier.goToEndPopUp.rawValue
-    let segueIdentifierStop = GameStat.segueIdentifier.goToStopPopUp.rawValue
-    if segue.identifier == segueIdentifierEnd {
+    if segue.identifier == K.endPopUpSegue {
       if let destinationVC = segue.destination as? FinalPopUpViewController {
         destinationVC.delegate = self
         guard let firstPinsRow = tableOfPinsImageView.first,
@@ -253,7 +247,7 @@ class HardGameViewController: BaseGameViewController {
         }
         destinationVC.gameStat = masterMindManager.getFinalResult(firstPinsRow.count, gameStat)
       }
-    } else if segue.identifier == segueIdentifierStop {
+    } else if segue.identifier == K.pausePopUpSegue {
       if let destinationVC = segue.destination as? PausePopUpViewController {
         destinationVC.delegate = self
         destinationVC.isSoundDisable = masterMindManager.gameSoundController.disableSound

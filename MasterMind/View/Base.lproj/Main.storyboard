@@ -263,7 +263,7 @@
                                                 <state key="normal" image="pause.fill" catalog="system"/>
                                                 <connections>
                                                     <action selector="pauseGameTimerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Std-g0-lVV"/>
-                                                    <segue destination="oXP-TY-Qw7" kind="presentation" identifier="goToStopPopUp" id="4eg-Ad-qAS"/>
+                                                    <segue destination="oXP-TY-Qw7" kind="presentation" identifier="goToPausePopUp" id="4eg-Ad-qAS"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:  0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9V-PC-gal">
@@ -1313,7 +1313,7 @@
                                                 <state key="normal" image="pause.fill" catalog="system"/>
                                                 <connections>
                                                     <action selector="pauseGameTimerButton:" destination="Eff-a7-yjc" eventType="touchUpInside" id="WD5-Hf-T5n"/>
-                                                    <segue destination="oXP-TY-Qw7" kind="presentation" identifier="goToStopPopUp" id="sI0-id-pMr"/>
+                                                    <segue destination="oXP-TY-Qw7" kind="presentation" identifier="goToPausePopUp" id="sI0-id-pMr"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:  0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Db6-dE-W1R">
@@ -2758,7 +2758,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="sJf-SF-TZO"/>
-        <segue reference="sI0-id-pMr"/>
+        <segue reference="4eg-Ad-qAS"/>
         <segue reference="zgt-YR-dwQ"/>
     </inferredMetricsTieBreakers>
 </document>

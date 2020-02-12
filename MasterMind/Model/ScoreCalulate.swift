@@ -18,7 +18,7 @@ class ScoreCalculate {
     - returns: Void
     */
   func calculateScore(_ numberOfTries: Int, _ gameTimeRemain: Int) {
-    finalScore += 100 - (numberOfTries * 9) + (gameTimeRemain / 5)
+    finalScore += 100 - (numberOfTries * 7) + (gameTimeRemain / 5)
   }
 
   /**

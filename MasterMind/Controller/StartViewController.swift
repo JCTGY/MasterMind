@@ -23,9 +23,6 @@ and HardGameViewController
 2. Make sure to sign both randomAPIDelegate to self
 */
 class StartViewController: UIViewController {
-  let segueIdentifierNormal = GameStat.segueIdentifier.goToNormalMode.rawValue
-  let segueIdentifierHard = GameStat.segueIdentifier.goToHardMode.rawValue
-  let segueIdentifierRule = GameStat.segueIdentifier.goToRule.rawValue
   var randomIntAPINormalMode = RandomIntAPI(num: 4, min: 0, max: 7)
   var randomIntAPIHardMode = RandomIntAPI(num: 6, min: 0, max: 7)
   var correctKeyNormalMode: String?
@@ -42,12 +39,12 @@ class StartViewController: UIViewController {
 
   @IBAction func startNormalModeButton(_ sender: UIButton) {
     /* start button for Normal game mode */
-    self.performSegue(withIdentifier: segueIdentifierNormal, sender: self)
+    self.performSegue(withIdentifier: K.normalModeSegue, sender: self)
   }
 
   @IBAction func startHardModeButton(_ sender: UIButton) {
     /* start button for Hard game mode */
-    self.performSegue(withIdentifier: segueIdentifierHard, sender: self)
+    self.performSegue(withIdentifier: K.hardModeSegue, sender: self)
   }
 
   /**
@@ -55,7 +52,7 @@ class StartViewController: UIViewController {
    - warning: make sure to have the correct segue.identifier
    */
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == segueIdentifierNormal {
+    if segue.identifier == K.normalModeSegue {
       if let destinationVC = segue.destination as? NormalGameViewController {
         guard let correctKeyNormalMode = correctKeyNormalMode
           else {
@@ -65,7 +62,7 @@ class StartViewController: UIViewController {
         destinationVC.gameStat = gameStat
       }
     }
-    if segue.identifier == segueIdentifierHard {
+    if segue.identifier == K.hardModeSegue {
       guard let correctKeyHardMode = correctKeyHardMode
         else {
           return
@@ -79,7 +76,7 @@ class StartViewController: UIViewController {
 
   @IBAction func ruleButton(_ sender: UIButton) {
     /* activate RuleViewController */
-    self.performSegue(withIdentifier: segueIdentifierRule, sender: self)
+    self.performSegue(withIdentifier: K.ruleSegue, sender: self)
   }
 
   /**

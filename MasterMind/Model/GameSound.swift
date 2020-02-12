@@ -25,9 +25,6 @@ manage the sound of the game
 - Warnings: Make sure to assign the fileName while calling `playSoundeffect`
 */
 class GameSound {
-  let backgroundFileName = "Background"
-  let selectFileName = "playerSelect"
-  let submitFileName = "submit"
   var audioBackgroundPlayer: AVAudioPlayer?
   var soundEffectPlayer: AVAudioPlayer?
   var disableSound = false
@@ -60,7 +57,7 @@ class GameSound {
    */
   func playBackgroundSong() {
     let fileType = "mp3"
-    guard let audioSourcePath = Bundle.main.path(forResource: backgroundFileName, ofType: fileType)
+    guard let audioSourcePath = Bundle.main.path(forResource: K.SoundFileName.background, ofType: fileType)
       else {
         return
     }
