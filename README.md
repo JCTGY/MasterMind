@@ -24,6 +24,7 @@ Implement a mastermind game, which can be played by a user who tries to guess th
   * RuleViewController: Display the rule of the game, can be accesses from StartViewController/PausePopUpViewController
   * PausePopUpViewController: pop up view that can pase the game and change some game setting
   * FinalPopUpViewController: End of the current game. Can press continue/end game
+  * LeaderboardViewController: display the leaderboard that fetch data from firestore
  
 ## Features    
 * [How to play](#How-to-play)
@@ -32,6 +33,7 @@ Implement a mastermind game, which can be played by a user who tries to guess th
 * [Sounds](#Sounds)
 * [Scores](#Scores)
 * [Timer](#Timer)
+* [Leaderboard](#Leaderboard)
 
 ## Requirements
 
@@ -86,3 +88,6 @@ Can add sound when player lose or win
 ```
 ### Timer
 Timer is display on the upper right corner. Once the timer run off the game is over
+
+### Leaderboard
+

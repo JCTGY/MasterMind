@@ -19,8 +19,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <color key="backgroundColor" red="0.70368820428848267" green="0.44159725308418274" blue="0.32938259840011597" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="ZOT-HF-mM7">
-                                <rect key="frame" x="128" y="348" width="158" height="146"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="ZOT-HF-mM7">
+                                <rect key="frame" x="57" y="392.5" width="300" height="57"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEb-6J-juc">
                                         <rect key="frame" x="0.0" y="0.0" width="158" height="57"/>
@@ -35,7 +35,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cX-w2-D77">
-                                        <rect key="frame" x="24" y="89" width="110" height="57"/>
+                                        <rect key="frame" x="190" y="0.0" width="110" height="57"/>
                                         <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="45"/>
                                         <size key="titleShadowOffset" width="1" height="1"/>
                                         <state key="normal" title="Hard">
@@ -48,29 +48,63 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HW5-OH-xgh" userLabel="rule">
-                                <rect key="frame" x="197.5" y="756" width="19.5" height="22"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JuP-Qp-w6r">
+                                <rect key="frame" x="110" y="265" width="194" height="59"/>
+                                <color key="backgroundColor" red="0.88533577510000006" green="0.88937019269999995" blue="0.90147344559999998" alpha="0.60398327466619717" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" image="questionmark.square.fill" catalog="system"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="eM5-Cs-Pp1"/>
+                                </constraints>
+                                <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="ruleButton:" destination="2XJ-ue-iCR" eventType="touchUpInside" id="MXA-5q-yB2"/>
+                                    <action selector="nameActionTextField:" destination="2XJ-ue-iCR" eventType="editingChanged" id="tVy-6W-gzn"/>
                                 </connections>
-                            </button>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="WBg-3s-HaH">
+                                <rect key="frame" x="159" y="752" width="96.5" height="22"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HW5-OH-xgh" userLabel="rule">
+                                        <rect key="frame" x="0.0" y="0.0" width="19.5" height="22"/>
+                                        <color key="tintColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" image="questionmark.square.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="ruleButton:" destination="2XJ-ue-iCR" eventType="touchUpInside" id="MXA-5q-yB2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bfx-ca-ueI">
+                                        <rect key="frame" x="71.5" y="0.0" width="25" height="22"/>
+                                        <color key="tintColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" image="chart.bar.fill" catalog="system">
+                                            <color key="titleColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="5aI-vc-3YB" kind="presentation" id="sn7-KA-gIS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ZOT-HF-mM7" firstAttribute="centerX" secondItem="bcJ-4B-msE" secondAttribute="centerX" id="0RW-PH-wxW"/>
                             <constraint firstItem="ZOT-HF-mM7" firstAttribute="centerY" secondItem="bcJ-4B-msE" secondAttribute="centerY" id="70J-kt-nom"/>
                             <constraint firstItem="xub-iM-wf0" firstAttribute="top" secondItem="bcJ-4B-msE" secondAttribute="top" id="8mi-kT-6jV"/>
-                            <constraint firstItem="Oiv-6v-eKI" firstAttribute="bottom" secondItem="HW5-OH-xgh" secondAttribute="bottom" constant="30" id="9W8-z2-FjH"/>
+                            <constraint firstItem="JuP-Qp-w6r" firstAttribute="leading" secondItem="Oiv-6v-eKI" secondAttribute="leading" constant="110" id="9Qm-DI-apO"/>
+                            <constraint firstItem="JuP-Qp-w6r" firstAttribute="top" secondItem="Oiv-6v-eKI" secondAttribute="top" constant="265" id="ByC-RM-4Xw"/>
                             <constraint firstItem="xub-iM-wf0" firstAttribute="leading" secondItem="bcJ-4B-msE" secondAttribute="leading" id="FKz-0A-BPf"/>
-                            <constraint firstItem="HW5-OH-xgh" firstAttribute="centerX" secondItem="bcJ-4B-msE" secondAttribute="centerX" id="a8k-Ts-rRx"/>
+                            <constraint firstItem="Oiv-6v-eKI" firstAttribute="bottom" secondItem="WBg-3s-HaH" secondAttribute="bottom" constant="34" id="JgW-eR-j9F"/>
+                            <constraint firstItem="Oiv-6v-eKI" firstAttribute="trailing" secondItem="JuP-Qp-w6r" secondAttribute="trailing" constant="110" id="OHq-Cp-iXv"/>
                             <constraint firstAttribute="bottom" secondItem="xub-iM-wf0" secondAttribute="bottom" id="kKU-3i-dcD"/>
+                            <constraint firstItem="Oiv-6v-eKI" firstAttribute="trailing" secondItem="WBg-3s-HaH" secondAttribute="trailing" constant="158.5" id="ken-UK-nZs"/>
                             <constraint firstItem="xub-iM-wf0" firstAttribute="trailing" secondItem="bcJ-4B-msE" secondAttribute="trailing" id="rXb-MD-0hL"/>
+                            <constraint firstItem="WBg-3s-HaH" firstAttribute="leading" secondItem="Oiv-6v-eKI" secondAttribute="leading" constant="159" id="zlm-mb-9yz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Oiv-6v-eKI"/>
                     </view>
                     <connections>
+                        <outlet property="nameTextField" destination="JuP-Qp-w6r" id="DrO-0P-hiZ"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToNormalMode" id="IZ7-ky-OoI"/>
                         <segue destination="S2x-dx-iI5" kind="presentation" identifier="goToRule" id="36F-uV-8vY"/>
                         <segue destination="Eff-a7-yjc" kind="presentation" identifier="goToHardMode" id="6Yu-uF-ars"/>
@@ -78,7 +112,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhn-GS-dIU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-491" y="942"/>
+            <point key="canvasLocation" x="-491.304347826087" y="941.51785714285711"/>
         </scene>
         <!--Rule View Controller-->
         <scene sceneID="KqL-QO-CRQ">
@@ -1300,7 +1334,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="leaderboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QML-yu-BbD">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="35.5"/>
+                                <rect key="frame" x="0.0" y="25" width="414" height="35.5"/>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="35"/>
                                 <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -1311,7 +1345,7 @@
                                 <rect key="frame" x="124" y="747" width="166" height="37"/>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
-                                <state key="normal" title="End Game">
+                                <state key="normal" title="Back">
                                     <color key="titleColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="titleShadowColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -1339,7 +1373,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6M1-lf-l5Q" firstAttribute="trailing" secondItem="8tt-9l-6QO" secondAttribute="trailing" constant="124" id="3Hy-tT-MxB"/>
-                            <constraint firstItem="QML-yu-BbD" firstAttribute="top" secondItem="6M1-lf-l5Q" secondAttribute="top" id="7Z2-Az-KCF"/>
+                            <constraint firstItem="QML-yu-BbD" firstAttribute="top" secondItem="6M1-lf-l5Q" secondAttribute="top" constant="25" id="7Z2-Az-KCF"/>
                             <constraint firstItem="8tt-9l-6QO" firstAttribute="leading" secondItem="6M1-lf-l5Q" secondAttribute="leading" constant="124" id="RCV-XX-8tJ"/>
                             <constraint firstItem="QML-yu-BbD" firstAttribute="trailing" secondItem="6M1-lf-l5Q" secondAttribute="trailing" id="XFV-Oc-apW"/>
                             <constraint firstItem="QML-yu-BbD" firstAttribute="leading" secondItem="6M1-lf-l5Q" secondAttribute="leading" id="d0E-WM-SFF"/>
@@ -2816,14 +2850,16 @@
     <resources>
         <image name="RuleImage" width="784" height="464"/>
         <image name="background_1" width="640" height="1136"/>
+        <image name="chart.bar.fill" catalog="system" width="64" height="44"/>
         <image name="circle.fill" catalog="system" width="64" height="60"/>
         <image name="pause.fill" catalog="system" width="58" height="64"/>
         <image name="pin" catalog="system" width="58" height="64"/>
         <image name="questionmark.square.fill" catalog="system" width="64" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="sn7-KA-gIS"/>
         <segue reference="sJf-SF-TZO"/>
         <segue reference="sI0-id-pMr"/>
-        <segue reference="zgt-YR-dwQ"/>
+        <segue reference="36F-uV-8vY"/>
     </inferredMetricsTieBreakers>
 </document>

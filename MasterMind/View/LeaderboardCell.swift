@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+Custome tableView cell for tableView in LeaderBoardViewController
+*/
 class LeaderboardCell: UITableViewCell {
 
   @IBOutlet weak var leaderboardCell: UIView!

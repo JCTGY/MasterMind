@@ -87,13 +87,19 @@ class FinalPopUpViewController: UIViewController {
 
 
   func sendScoreToFirestore() {
-    //        db.collection("leaderboard").addDocument(data: ["name": "fan", "score": 50]) { (error) in
-    //          if let e = error {
-    //            print("An error on sending data to firestore: \(e)")
-    //          } else {
-    //            print("Sucessfully send data to firestore")
-    //          }
-    //        }
+    guard let gameStat = gameStat
+      else {
+        return
+    }
+    db.collection("leaderboard")
+      .addDocument(data: [K.FStore.name: gameStat.userName,
+                          K.FStore.score: gameStat.finalScore]) { (error) in
+      if let e = error {
+        print("An error on sending data to firestore: \(e)")
+      } else {
+        print("Sucessfully send data to firestore")
+      }
+    }
   }
 
   /**
@@ -115,6 +121,7 @@ class FinalPopUpViewController: UIViewController {
         }
         self.delegate?.didResetGame(newKey: correctKey)
       } else {
+        sendScoreToFirestore()
         self.performSegue(withIdentifier: K.leaderboardSegue, sender: self)
       }
     }

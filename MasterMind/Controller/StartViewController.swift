@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 /**
 ## StartViewController
@@ -28,35 +27,82 @@ class StartViewController: UIViewController {
   var randomIntAPIHardMode = RandomIntAPI(num: 6, min: 0, max: 7)
   var correctKeyNormalMode: String?
   var correctKeyHardMode: String?
-//  let db = Firestore.firestore()
+  var name: String?
+
+  @IBOutlet weak var nameTextField: UITextField!
+
+  /**
+   use `UITapGestureRecognizer` to check if player touch anywhere outside of the keyboard
+   which will call `dismissKeyboard` to close the keyboard
+   */
+  func checkUserTabToCloseKeyboard() {
+    let tap: UITapGestureRecognizer =
+      UITapGestureRecognizer(target: self
+        , action: #selector(UIInputViewController.dismissKeyboard))
+    view.addGestureRecognizer(tap)
+  }
+
+  @objc func dismissKeyboard() {
+    /* close the popUp keyBoard */
+      view.endEditing(true)
+  }
+
+  func changeBordarStyle(_ textFiles: UITextField) {
+    /* change the UIText filed board to make it look better */
+    textFiles.borderStyle = UITextField.BorderStyle.roundedRect
+    textFiles.layer.cornerRadius = 6.0
+    textFiles.layer.masksToBounds = true
+    textFiles.layer.borderColor = #colorLiteral(red: 0.515049994, green: 0.07091144472, blue: 0.1544082761, alpha: 1).cgColor
+    textFiles.layer.borderWidth = 2.0
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
     /* Do any additional setup after loading the view. */
+    checkUserTabToCloseKeyboard()
+    nameTextField.delegate = self
     randomIntAPINormalMode.delegate = self
     randomIntAPINormalMode.fetchRandomInt(isNormalMode: true)
     randomIntAPIHardMode.delegate = self
     randomIntAPIHardMode.fetchRandomInt(isNormalMode: false)
-//    db.collection("leaderboard").whereField("name", isEqualTo: "fan")
-//        .getDocuments() { (querySnapshot, err) in
-//            if let err = err {
-//                print("Error getting documents: \(err)")
-//            } else {
-//                for document in querySnapshot!.documents {
-//                    print("\(document.documentID) => \(document.data())")
-//                }
-//            }
-//    }
+    changeBordarStyle(nameTextField)
+  }
+
+  @IBAction func nameActionTextField(_ sender: UITextField) {
+    /* check if the name textfied is lower that 12 character */
+    checkMaxLength(textField: sender, maxLength: 12)
+    name = sender.text
   }
 
   @IBAction func startNormalModeButton(_ sender: UIButton) {
     /* start button for Normal game mode */
+    guard name != nil && name!.count > 0
+      else {
+        return
+    }
     self.performSegue(withIdentifier: K.normalModeSegue, sender: self)
   }
 
   @IBAction func startHardModeButton(_ sender: UIButton) {
     /* start button for Hard game mode */
+    guard name != nil && name!.count > 0
+      else {
+        return
+    }
     self.performSegue(withIdentifier: K.hardModeSegue, sender: self)
+  }
+
+  /**
+   make sure the name is not to long
+   - parameter textField: UITextField that will be check
+   - parameter maxLength: the max len of name user can input
+   */
+  func checkMaxLength(textField: UITextField!, maxLength: Int) {
+    if let currntTextLen = textField?.text?.count {
+      if currntTextLen > maxLength {
+        textField.deleteBackward()
+      }
+    }
   }
 
   /**
@@ -64,23 +110,30 @@ class StartViewController: UIViewController {
    - warning: make sure to have the correct segue.identifier
    */
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let name = name
+      else{
+        return
+    }
     if segue.identifier == K.normalModeSegue {
       if let destinationVC = segue.destination as? NormalGameViewController {
         guard let correctKeyNormalMode = correctKeyNormalMode
           else {
             return
         }
-        let gameStat = GameStat(correctKey: correctKeyNormalMode, isNormalMode: true)
+        let gameStat = GameStat(userName: name,
+                                correctKey: correctKeyNormalMode,
+                                isNormalMode: true)
         destinationVC.gameStat = gameStat
       }
-    }
-    if segue.identifier == K.hardModeSegue {
+    } else if segue.identifier == K.hardModeSegue {
       guard let correctKeyHardMode = correctKeyHardMode
         else {
           return
       }
       if let destinationVC = segue.destination as? HardGameViewController {
-        let gameStat = GameStat(correctKey: correctKeyHardMode, isNormalMode: false)
+        let gameStat = GameStat(userName: name,
+                                correctKey: correctKeyHardMode,
+                                isNormalMode: false)
         destinationVC.gameStat = gameStat
       }
     }
@@ -94,8 +147,10 @@ class StartViewController: UIViewController {
   /**
    dismissSackViews will dismiss everything on top of the current view
    while will reset the game back to StartViewController
+   clean up the nameTextFiled
    */
   func dismissStackViews() {
+    nameTextField.text = ""
     dismiss(animated: true)
   }
 }
@@ -123,5 +178,12 @@ extension StartViewController: RandomAPIDelegate {
   func didFailWithError(error: Error) {
     /* randomAPIDelegate func didFailWithError */
     print(error)
+  }
+}
+
+extension StartViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+      self.view.endEditing(true)
+      return false
   }
 }

@@ -59,9 +59,23 @@ class PausePopUpViewController: UIViewController {
 
   }
 
+  func checkUserTabToClosePopUp() {
+    let tap: UITapGestureRecognizer =
+      UITapGestureRecognizer(target: self
+        , action: #selector(dismissPausePopUpView))
+    view.addGestureRecognizer(tap)
+  }
+
+  @objc func dismissPausePopUpView() {
+    /* close the popUp keyBoard */
+      self.delegate?.resumeGameTimer()
+      dismiss(animated: true, completion: nil)
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
+    checkUserTabToClosePopUp()
     displayMuteButton()
   }
 
@@ -82,6 +96,7 @@ class PausePopUpViewController: UIViewController {
       } else {
         startViewController.randomIntAPIHardMode.fetchRandomInt(isNormalMode: false)
       }
+      startViewController.name = ""
       startViewController.dismissStackViews()
     }
   }
