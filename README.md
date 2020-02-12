@@ -15,7 +15,8 @@ Implement a mastermind game, which can be played by a user who tries to guess th
   * GameStat: store the useful game stats
   * RandomIntAPI: fetching random key from [random.org](www.random.org)
 - View
-  * mainstoryboard that have four views and two pop up views
+  * mainstoryboard that have five views and two pop up views
+  * LeaderboardCell.xib is the template of tableView cell
 - Controller
   * StartViewController: Entry point of the game can direct to Normal/Hard Game Mode
   * BaseGameViewContrloller: super class for both game mode ViewController class, contain the logic of moving selected buttons
@@ -90,4 +91,6 @@ Can add sound when player lose or win
 Timer is display on the upper right corner. Once the timer run off the game is over
 
 ### Leaderboard
-
+![](images/leaderboard.png)
+Use firestore to manage leaderboard. 
+learderboard will show the top 15 scores

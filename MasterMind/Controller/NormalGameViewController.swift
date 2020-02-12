@@ -238,12 +238,14 @@ class NormalGameViewController: BaseGameViewController {
             return
         }
         destinationVC.gameStat = masterMindManager.getFinalResult(firstPinsRow.count, gameStat)
+        destinationVC.isModalInPresentation = true
       }
     } else if segue.identifier == K.pausePopUpSegue {
       if let destinationVC = segue.destination as? PausePopUpViewController {
         destinationVC.delegate = self
         destinationVC.isSoundDisable = masterMindManager.gameSoundController.disableSound
         destinationVC.isNormalMode = gameStat?.isNormalMode
+        destinationVC.isModalInPresentation = true
       }
     } else {
       assertionFailure("Segue identifier inValid")

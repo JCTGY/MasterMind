@@ -16,6 +16,24 @@ protocol RandomAPIDelegate {
   func didFailWithError(error: Error)
 }
 
+/**
+## RandomIntAPI
+
+fetching Data from ramdom.org
+
+- parameter num: number of integers want to fetch
+- parameter min: minimun number of the interger
+- parameter max: maximum number of the integer
+
+## Example
+
+    let randomAPI = RandomIntAPI(num: 4, min: 0, max: 7)
+    ramdomAPI.fetchRandomInt(isNormalMode: true)
+ fetch 4 number from 0 to 7
+
+## Warnings
+ make sure to have `RandomAPIDelegate`, so can catch the data
+*/
 struct RandomIntAPI {
   let baseURL = "https://www.random.org/integers/?col=1&base=10&format=plain&"
   let num: Int

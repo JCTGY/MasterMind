@@ -10,17 +10,17 @@
         <!--Start View Controller-->
         <scene sceneID="fPR-7S-SIt">
             <objects>
-                <viewController id="2XJ-ue-iCR" customClass="StartViewController" customModule="MasterMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="2XJ-ue-iCR" customClass="StartViewController" customModule="MasterMind" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bcJ-4B-msE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_1" translatesAutoresizingMaskIntoConstraints="NO" id="xub-iM-wf0">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" red="0.70368820428848267" green="0.44159725308418274" blue="0.32938259840011597" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="ZOT-HF-mM7">
-                                <rect key="frame" x="57" y="392.5" width="300" height="57"/>
+                                <rect key="frame" x="57" y="419.5" width="300" height="57"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEb-6J-juc">
                                         <rect key="frame" x="0.0" y="0.0" width="158" height="57"/>
@@ -49,7 +49,7 @@
                                 </subviews>
                             </stackView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JuP-Qp-w6r">
-                                <rect key="frame" x="110" y="265" width="194" height="59"/>
+                                <rect key="frame" x="110" y="309" width="194" height="59"/>
                                 <color key="backgroundColor" red="0.88533577510000006" green="0.88937019269999995" blue="0.90147344559999998" alpha="0.60398327466619717" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -63,7 +63,7 @@
                                 </connections>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="WBg-3s-HaH">
-                                <rect key="frame" x="159" y="752" width="96.5" height="22"/>
+                                <rect key="frame" x="159" y="806" width="96.5" height="22"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HW5-OH-xgh" userLabel="rule">
                                         <rect key="frame" x="0.0" y="0.0" width="19.5" height="22"/>
@@ -117,13 +117,13 @@
         <!--Rule View Controller-->
         <scene sceneID="KqL-QO-CRQ">
             <objects>
-                <viewController id="S2x-dx-iI5" customClass="RuleViewController" customModule="MasterMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="S2x-dx-iI5" customClass="RuleViewController" customModule="MasterMind" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yXC-IJ-n2K">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVc-ri-qe4">
-                                <rect key="frame" x="0.0" y="272" width="414" height="451"/>
+                                <rect key="frame" x="0.0" y="316" width="414" height="451"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="451" id="Ter-72-HIx"/>
                                 </constraints>
@@ -132,7 +132,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FQ6-n5-Qin">
-                                <rect key="frame" x="121" y="745" width="172" height="37"/>
+                                <rect key="frame" x="121" y="799" width="172" height="37"/>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Back">
@@ -144,7 +144,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RuleImage" translatesAutoresizingMaskIntoConstraints="NO" id="WuT-Tx-Xw3">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="rnI-qU-eVL"/>
                                 </constraints>
@@ -277,22 +277,22 @@
         <!--Normal Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="NormalGameViewController" customModule="MasterMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="NormalGameViewController" customModule="MasterMind" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_1" translatesAutoresizingMaskIntoConstraints="NO" id="Cu3-pj-tpW">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kK2-wo-8Ny">
-                                <rect key="frame" x="20" y="20" width="374" height="802"/>
+                                <rect key="frame" x="20" y="20" width="374" height="856"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7vi-5c-m8Z" userLabel="Top Stack View">
-                                        <rect key="frame" x="34.5" y="0.0" width="305" height="61.5"/>
+                                        <rect key="frame" x="34.5" y="0.0" width="305" height="66"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1DL-LW-JKY">
-                                                <rect key="frame" x="0.0" y="0.0" width="95" height="61.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="95" height="66"/>
                                                 <color key="tintColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" image="pause.fill" catalog="system"/>
                                                 <connections>
@@ -301,7 +301,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:  0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9V-PC-gal">
-                                                <rect key="frame" x="105" y="0.0" width="95" height="61.5"/>
+                                                <rect key="frame" x="105" y="0.0" width="95" height="66"/>
                                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="15"/>
                                                 <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -309,7 +309,7 @@
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer: 300" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9T-ZA-7uL">
-                                                <rect key="frame" x="210" y="0.0" width="95" height="61.5"/>
+                                                <rect key="frame" x="210" y="0.0" width="95" height="66"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="95" id="MPc-Km-qa0"/>
                                                 </constraints>
@@ -322,10 +322,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="7gU-OX-3RI">
-                                        <rect key="frame" x="19.5" y="61.5" width="335" height="62"/>
+                                        <rect key="frame" x="19.5" y="66" width="335" height="65.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFD-pn-vl2">
-                                                <rect key="frame" x="0.0" y="13" width="25" height="36"/>
+                                                <rect key="frame" x="0.0" y="15" width="25" height="36"/>
                                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="30"/>
                                                 <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -333,7 +333,7 @@
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9Q-5a-Hes">
-                                                <rect key="frame" x="55" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="55" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
@@ -341,28 +341,28 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Air-gO-8Ef">
-                                                <rect key="frame" x="115" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="115" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="I6C-ag-YtM"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFx-CF-rmE">
-                                                <rect key="frame" x="175" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="175" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="atc-nG-tKL"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5UX-Do-zV8">
-                                                <rect key="frame" x="235" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="235" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LKG-pn-Sgj"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="gcY-vE-UqA">
-                                                <rect key="frame" x="295" y="11" width="40" height="40"/>
+                                                <rect key="frame" x="295" y="13" width="40" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fAR-l3-er0">
                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="20"/>
@@ -395,10 +395,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="bFN-Xo-go2">
-                                        <rect key="frame" x="15" y="123.5" width="344.5" height="61.5"/>
+                                        <rect key="frame" x="15" y="131.5" width="344.5" height="66"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jG-Bq-nIg">
-                                                <rect key="frame" x="0.0" y="12.5" width="34.5" height="36"/>
+                                                <rect key="frame" x="0.0" y="15" width="34.5" height="36"/>
                                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="30"/>
                                                 <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -406,7 +406,7 @@
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1L-N8-bk5">
-                                                <rect key="frame" x="64.5" y="15.5" width="30" height="30"/>
+                                                <rect key="frame" x="64.5" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
@@ -414,28 +414,28 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o02-ZP-nDh">
-                                                <rect key="frame" x="124.5" y="15.5" width="30" height="30"/>
+                                                <rect key="frame" x="124.5" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vMg-0F-pSL"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRi-A3-Lt3">
-                                                <rect key="frame" x="184.5" y="15.5" width="30" height="30"/>
+                                                <rect key="frame" x="184.5" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="z1y-D6-cRr"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCq-dA-8Z7">
-                                                <rect key="frame" x="244.5" y="15.5" width="30" height="30"/>
+                                                <rect key="frame" x="244.5" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KeL-0l-9R9"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="MTA-uk-vrI">
-                                                <rect key="frame" x="304.5" y="10.5" width="40" height="40"/>
+                                                <rect key="frame" x="304.5" y="13" width="40" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WEy-hU-DXA">
                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="20"/>
@@ -468,10 +468,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="2C2-Xy-AEu">
-                                        <rect key="frame" x="17.5" y="185" width="339" height="62"/>
+                                        <rect key="frame" x="17.5" y="197.5" width="339" height="66"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HoY-we-MJn">
-                                                <rect key="frame" x="0.0" y="13" width="29" height="36"/>
+                                                <rect key="frame" x="0.0" y="15" width="29" height="36"/>
                                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="30"/>
                                                 <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -479,7 +479,7 @@
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WnZ-g4-RPC">
-                                                <rect key="frame" x="59" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="59" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
@@ -487,28 +487,28 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltd-sR-UqC">
-                                                <rect key="frame" x="119" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="119" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vaK-Yl-zzh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7A-qU-eJR">
-                                                <rect key="frame" x="179" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="179" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L1R-tu-p6c"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmA-8b-EDD">
-                                                <rect key="frame" x="239" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="239" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CxU-oW-bhn"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="mGM-Ke-hTb">
-                                                <rect key="frame" x="299" y="11" width="40" height="40"/>
+                                                <rect key="frame" x="299" y="13" width="40" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zqP-0C-6hS">
                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="20"/>
@@ -541,10 +541,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="RjK-hj-66u">
-                                        <rect key="frame" x="18" y="247" width="338.5" height="61.5"/>
+                                        <rect key="frame" x="18" y="263.5" width="338.5" height="65.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3se-h8-1qC">
-                                                <rect key="frame" x="0.0" y="12.5" width="28.5" height="36"/>
+                                                <rect key="frame" x="0.0" y="15" width="28.5" height="36"/>
                                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="30"/>
                                                 <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -552,7 +552,7 @@
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yH-W4-yaj">
-                                                <rect key="frame" x="58.5" y="15.5" width="30" height="30"/>
+                                                <rect key="frame" x="58.5" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
@@ -560,28 +560,28 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pP-FT-zQj">
-                                                <rect key="frame" x="118.5" y="15.5" width="30" height="30"/>
+                                                <rect key="frame" x="118.5" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6oe-E9-96r"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mno-V1-ssD">
-                                                <rect key="frame" x="178.5" y="15.5" width="30" height="30"/>
+                                                <rect key="frame" x="178.5" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fIe-kc-fU2"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meD-3x-PnR">
-                                                <rect key="frame" x="238.5" y="15.5" width="30" height="30"/>
+                                                <rect key="frame" x="238.5" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6bA-N8-yKb"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="wGg-54-WQc">
-                                                <rect key="frame" x="298.5" y="10.5" width="40" height="40"/>
+                                                <rect key="frame" x="298.5" y="13" width="40" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GbQ-GN-SDL">
                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="20"/>
@@ -614,10 +614,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="KGg-lF-981">
-                                        <rect key="frame" x="15.5" y="308.5" width="343" height="61.5"/>
+                                        <rect key="frame" x="15.5" y="329" width="343" height="66"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FND-hA-UKU">
-                                                <rect key="frame" x="0.0" y="13" width="33" height="36"/>
+                                                <rect key="frame" x="0.0" y="15" width="33" height="36"/>
                                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="30"/>
                                                 <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -625,7 +625,7 @@
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDI-im-h7l">
-                                                <rect key="frame" x="63" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="63" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
@@ -633,28 +633,28 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHB-8L-gVb">
-                                                <rect key="frame" x="123" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="123" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PlZ-1B-3LX"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctU-kL-NT0">
-                                                <rect key="frame" x="183" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="183" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DhZ-Ox-zDQ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKL-Qh-LDK">
-                                                <rect key="frame" x="243" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="243" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gFV-dt-obs"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="bb2-Ql-FYo">
-                                                <rect key="frame" x="303" y="11" width="40" height="40"/>
+                                                <rect key="frame" x="303" y="13" width="40" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FML-0X-cUy">
                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="20"/>
@@ -687,10 +687,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Uhv-Ve-AB0">
-                                        <rect key="frame" x="18" y="370" width="338.5" height="62"/>
+                                        <rect key="frame" x="18" y="395" width="338.5" height="66"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3V2-GS-jJB">
-                                                <rect key="frame" x="0.0" y="13" width="28.5" height="36"/>
+                                                <rect key="frame" x="0.0" y="15" width="28.5" height="36"/>
                                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="30"/>
                                                 <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -698,7 +698,7 @@
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1u-E1-lJX">
-                                                <rect key="frame" x="58.5" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="58.5" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
@@ -706,28 +706,28 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4Y-ne-GHo">
-                                                <rect key="frame" x="118.5" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="118.5" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9vl-Yk-KvD"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doi-VP-6oL">
-                                                <rect key="frame" x="178.5" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="178.5" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v6j-XD-xSm"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ddm-aP-hnW">
-                                                <rect key="frame" x="238.5" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="238.5" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RLB-8w-7dj"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="TYf-Fs-AJo">
-                                                <rect key="frame" x="298.5" y="11" width="40" height="40"/>
+                                                <rect key="frame" x="298.5" y="13" width="40" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xik-pW-SAM">
                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="20"/>
@@ -760,10 +760,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="xeu-K1-AFw">
-                                        <rect key="frame" x="16.5" y="432" width="341.5" height="61.5"/>
+                                        <rect key="frame" x="16.5" y="461" width="341.5" height="66"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVl-Cw-Tan">
-                                                <rect key="frame" x="0.0" y="12.5" width="31.5" height="36"/>
+                                                <rect key="frame" x="0.0" y="15" width="31.5" height="36"/>
                                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="30"/>
                                                 <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -771,7 +771,7 @@
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75z-Vb-ApA">
-                                                <rect key="frame" x="61.5" y="15.5" width="30" height="30"/>
+                                                <rect key="frame" x="61.5" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
@@ -779,28 +779,28 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPF-HQ-ghO">
-                                                <rect key="frame" x="121.5" y="15.5" width="30" height="30"/>
+                                                <rect key="frame" x="121.5" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bqa-DF-Ca9"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Xn-7q-K3A">
-                                                <rect key="frame" x="181.5" y="15.5" width="30" height="30"/>
+                                                <rect key="frame" x="181.5" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eeR-TI-xt9"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIK-Be-SX2">
-                                                <rect key="frame" x="241.5" y="15.5" width="30" height="30"/>
+                                                <rect key="frame" x="241.5" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ahH-3e-WB7"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="v8W-cv-HK0">
-                                                <rect key="frame" x="301.5" y="10.5" width="40" height="40"/>
+                                                <rect key="frame" x="301.5" y="13" width="40" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="du7-5T-b2T">
                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="20"/>
@@ -833,10 +833,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="7cF-Qr-OB7">
-                                        <rect key="frame" x="17" y="493.5" width="340" height="61.5"/>
+                                        <rect key="frame" x="17" y="527" width="340" height="65.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cN-4n-76o">
-                                                <rect key="frame" x="0.0" y="13" width="30" height="36"/>
+                                                <rect key="frame" x="0.0" y="14.5" width="30" height="36"/>
                                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="30"/>
                                                 <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -844,7 +844,7 @@
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2y8-Tx-aom">
-                                                <rect key="frame" x="60" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="60" y="17.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
@@ -852,28 +852,28 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0d0-UF-8tK">
-                                                <rect key="frame" x="120" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="120" y="17.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ex5-xR-kAc"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWT-PP-HW1">
-                                                <rect key="frame" x="180" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="180" y="17.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UUA-6E-mfb"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DV1-c2-Ov6">
-                                                <rect key="frame" x="240" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="240" y="17.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pPc-Zt-5LE"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="gFC-HR-PPb">
-                                                <rect key="frame" x="300" y="11" width="40" height="40"/>
+                                                <rect key="frame" x="300" y="12.5" width="40" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="luk-mO-Ehr">
                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="20"/>
@@ -906,10 +906,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Uur-Mg-a7X">
-                                        <rect key="frame" x="17.5" y="555" width="339.5" height="62"/>
+                                        <rect key="frame" x="17.5" y="592.5" width="339.5" height="66"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xl6-ha-ldr">
-                                                <rect key="frame" x="0.0" y="13" width="29.5" height="36"/>
+                                                <rect key="frame" x="0.0" y="15" width="29.5" height="36"/>
                                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="30"/>
                                                 <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -917,7 +917,7 @@
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYg-ec-I0s">
-                                                <rect key="frame" x="59.5" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="59.5" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
@@ -925,28 +925,28 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFO-Wy-dic">
-                                                <rect key="frame" x="119.5" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="119.5" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WiE-RC-2GG"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZe-y4-dhp">
-                                                <rect key="frame" x="179.5" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="179.5" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1UP-li-gdL"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Tf-XW-c0H">
-                                                <rect key="frame" x="239.5" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="239.5" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0bJ-Hh-FOx"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="6EA-kO-psU">
-                                                <rect key="frame" x="299.5" y="11" width="40" height="40"/>
+                                                <rect key="frame" x="299.5" y="13" width="40" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMD-Ci-E7E">
                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="20"/>
@@ -979,10 +979,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="FIq-xv-9aP">
-                                        <rect key="frame" x="19.5" y="617" width="335" height="61.5"/>
+                                        <rect key="frame" x="19.5" y="658.5" width="335" height="66"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EH7-iR-FVj">
-                                                <rect key="frame" x="0.0" y="13" width="25" height="36"/>
+                                                <rect key="frame" x="0.0" y="15" width="25" height="36"/>
                                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="30"/>
                                                 <color key="textColor" red="0.47173935174942017" green="0.1202307320016712" blue="0.16461926806719304" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -990,7 +990,7 @@
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6a-zN-Wwf">
-                                                <rect key="frame" x="55" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="55" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
@@ -998,28 +998,28 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5l-I6-vpr">
-                                                <rect key="frame" x="115" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="115" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oKb-nw-tk8"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dbq-kf-4fA">
-                                                <rect key="frame" x="175" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="175" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YLz-M0-FDl"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2Y-qe-0Ly">
-                                                <rect key="frame" x="235" y="16" width="30" height="30"/>
+                                                <rect key="frame" x="235" y="18" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3N6-bL-Eqj"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="C1S-s2-g6b">
-                                                <rect key="frame" x="295" y="11" width="40" height="40"/>
+                                                <rect key="frame" x="295" y="13" width="40" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Erp-Bx-6Jj">
                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="20"/>
@@ -1052,7 +1052,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="BQG-z7-SEu">
-                                        <rect key="frame" x="2" y="678.5" width="370" height="62"/>
+                                        <rect key="frame" x="2" y="724.5" width="370" height="65.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sYk-A0-aQd" userLabel="Black">
                                                 <rect key="frame" x="0.0" y="0.0" width="20" height="29"/>
@@ -1133,10 +1133,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yGg-NR-PeQ">
-                                        <rect key="frame" x="144" y="740.5" width="86" height="61.5"/>
+                                        <rect key="frame" x="144" y="790" width="86" height="66"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mmt-Dw-pUy">
-                                                <rect key="frame" x="0.0" y="0.0" width="86" height="61.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="86" height="66"/>
                                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
                                                 <inset key="imageEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <size key="titleShadowOffset" width="1" height="1"/>
@@ -1328,13 +1328,13 @@
         <!--Leaderboard View Controller-->
         <scene sceneID="bDw-aC-z7a">
             <objects>
-                <viewController id="5aI-vc-3YB" customClass="LeaderboardViewController" customModule="MasterMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="5aI-vc-3YB" customClass="LeaderboardViewController" customModule="MasterMind" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YEa-k1-c0O">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="leaderboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QML-yu-BbD">
-                                <rect key="frame" x="0.0" y="25" width="414" height="35.5"/>
+                                <rect key="frame" x="0.0" y="69" width="414" height="35.5"/>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="35"/>
                                 <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -1342,7 +1342,7 @@
                                 <size key="shadowOffset" width="1" height="0.0"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tt-9l-6QO">
-                                <rect key="frame" x="124" y="747" width="166" height="37"/>
+                                <rect key="frame" x="124" y="801" width="166" height="37"/>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Back">
@@ -1354,7 +1354,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dEB-ET-Ik8">
-                                <rect key="frame" x="20" y="80" width="374" height="623"/>
+                                <rect key="frame" x="20" y="142" width="374" height="619"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -1392,22 +1392,22 @@
         <!--Hard Game View Controller-->
         <scene sceneID="aXg-1T-EH4">
             <objects>
-                <viewController id="Eff-a7-yjc" customClass="HardGameViewController" customModule="MasterMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Eff-a7-yjc" customClass="HardGameViewController" customModule="MasterMind" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wea-Oe-J73">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_1" translatesAutoresizingMaskIntoConstraints="NO" id="bzG-zz-Qwp">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WRg-Cn-CWu">
-                                <rect key="frame" x="20" y="20" width="374" height="802"/>
+                                <rect key="frame" x="20" y="20" width="374" height="856"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vfM-pj-HJY" userLabel="Top Stack View">
-                                        <rect key="frame" x="34.5" y="0.0" width="305" height="53.5"/>
+                                        <rect key="frame" x="34.5" y="0.0" width="305" height="57"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zyx-vf-TJd">
-                                                <rect key="frame" x="0.0" y="0.0" width="95" height="53.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="95" height="57"/>
                                                 <color key="tintColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" image="pause.fill" catalog="system"/>
                                                 <connections>
@@ -1416,7 +1416,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:  0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Db6-dE-W1R">
-                                                <rect key="frame" x="105" y="0.0" width="95" height="53.5"/>
+                                                <rect key="frame" x="105" y="0.0" width="95" height="57"/>
                                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="15"/>
                                                 <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -1424,7 +1424,7 @@
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer: 300" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCz-CI-8vW">
-                                                <rect key="frame" x="210" y="0.0" width="95" height="53.5"/>
+                                                <rect key="frame" x="210" y="0.0" width="95" height="57"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="95" id="XYX-xk-uAX"/>
                                                 </constraints>
@@ -1437,10 +1437,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Gdw-6r-ZjA">
-                                        <rect key="frame" x="3" y="53.5" width="368.5" height="53.5"/>
+                                        <rect key="frame" x="3" y="57" width="368.5" height="57"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RA5-tU-8Rw">
-                                                <rect key="frame" x="0.0" y="8.5" width="23.5" height="36"/>
+                                                <rect key="frame" x="0.0" y="10.5" width="23.5" height="36"/>
                                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="30"/>
                                                 <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -1448,7 +1448,7 @@
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHx-9B-pUt">
-                                                <rect key="frame" x="38.5" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="38.5" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
@@ -1456,42 +1456,42 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TdY-KP-KJ1">
-                                                <rect key="frame" x="83.5" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="83.5" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="iRL-1u-I8W"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nr-nR-e6P">
-                                                <rect key="frame" x="128.5" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="128.5" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="1hc-NF-EWd"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyn-Cy-tGj">
-                                                <rect key="frame" x="173.5" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="173.5" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="Fte-Bp-vYN"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ao9-Bj-lTX">
-                                                <rect key="frame" x="218.5" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="218.5" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="6sJ-0h-8h3"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkb-It-8Kh">
-                                                <rect key="frame" x="263.5" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="263.5" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="DHZ-7z-rYD"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="bVb-hP-6RR">
-                                                <rect key="frame" x="308.5" y="6.5" width="60" height="40"/>
+                                                <rect key="frame" x="308.5" y="8.5" width="60" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUa-xL-2Up">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="20"/>
@@ -1532,10 +1532,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="5YP-KB-SUL">
-                                        <rect key="frame" x="5" y="107" width="364" height="53.5"/>
+                                        <rect key="frame" x="5" y="114" width="364" height="57"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ErO-8F-1gN">
-                                                <rect key="frame" x="0.0" y="8.5" width="19" height="36"/>
+                                                <rect key="frame" x="0.0" y="10.5" width="19" height="36"/>
                                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="30"/>
                                                 <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -1543,7 +1543,7 @@
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jxy-eX-xXN">
-                                                <rect key="frame" x="34" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="34" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
@@ -1551,42 +1551,42 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J6z-Y1-K6D">
-                                                <rect key="frame" x="79" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="79" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="xEB-Z1-6qg"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5a-K6-eSg">
-                                                <rect key="frame" x="124" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="124" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="wLL-Xv-Itd"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yej-pe-oS7">
-                                                <rect key="frame" x="169" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="169" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="5Oi-vY-ek2"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWT-zV-pzi">
-                                                <rect key="frame" x="214" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="214" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="2HS-LI-c0a"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlr-bK-PqT">
-                                                <rect key="frame" x="259" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="259" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="dQJ-0x-asQ"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="06J-H1-2TJ">
-                                                <rect key="frame" x="304" y="6.5" width="60" height="40"/>
+                                                <rect key="frame" x="304" y="8.5" width="60" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lX0-Vw-NJc">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="20"/>
@@ -1627,10 +1627,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="yyv-ms-7sC">
-                                        <rect key="frame" x="2" y="160.5" width="370" height="53.5"/>
+                                        <rect key="frame" x="2" y="171" width="370" height="57.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQI-ap-vKc">
-                                                <rect key="frame" x="0.0" y="8.5" width="25" height="36"/>
+                                                <rect key="frame" x="0.0" y="10.5" width="25" height="36"/>
                                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="30"/>
                                                 <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -1638,7 +1638,7 @@
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHJ-ly-h76">
-                                                <rect key="frame" x="40" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="40" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
@@ -1646,42 +1646,42 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JFE-M4-6fv">
-                                                <rect key="frame" x="85" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="85" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="jjA-2n-AKL"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDL-nS-hPx">
-                                                <rect key="frame" x="130" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="130" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="De4-W2-dm2"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTK-vg-xS6">
-                                                <rect key="frame" x="175" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="175" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="90T-UP-Roc"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BwS-YA-REQ">
-                                                <rect key="frame" x="220" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="220" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="VO9-1l-eSo"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="15h-L8-cyu">
-                                                <rect key="frame" x="265" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="265" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="gep-Fc-Zf4"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="5Hj-Eu-BOS">
-                                                <rect key="frame" x="310" y="6.5" width="60" height="40"/>
+                                                <rect key="frame" x="310" y="8.5" width="60" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sPi-5Z-drU">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="20"/>
@@ -1722,10 +1722,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="TFY-5F-eQK">
-                                        <rect key="frame" x="0.0" y="214" width="374" height="53.5"/>
+                                        <rect key="frame" x="0.0" y="228.5" width="374" height="57"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="09" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNB-Y8-ibI">
-                                                <rect key="frame" x="0.0" y="10.5" width="29" height="32.5"/>
+                                                <rect key="frame" x="0.0" y="12" width="29" height="32.5"/>
                                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="27"/>
                                                 <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -1733,7 +1733,7 @@
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEM-T1-RKL">
-                                                <rect key="frame" x="44" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="44" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
@@ -1741,42 +1741,42 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEF-2A-4Yd">
-                                                <rect key="frame" x="89" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="89" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="UeJ-Hz-eil"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7VZ-5A-KHd">
-                                                <rect key="frame" x="134" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="134" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="cpN-pt-OQU"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WPK-ZG-abo">
-                                                <rect key="frame" x="179" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="179" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="WcA-01-4Ov"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dqa-t6-XsO">
-                                                <rect key="frame" x="224" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="224" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="tPx-q8-Xbx"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y9h-zK-xNp">
-                                                <rect key="frame" x="269" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="269" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="LMD-er-dwE"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="JZv-Km-SUV">
-                                                <rect key="frame" x="314" y="6.5" width="60" height="40"/>
+                                                <rect key="frame" x="314" y="8.5" width="60" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fM-ji-Pys">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="20"/>
@@ -1817,10 +1817,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="IzZ-ha-MFI">
-                                        <rect key="frame" x="0.0" y="267.5" width="374" height="53.5"/>
+                                        <rect key="frame" x="0.0" y="285.5" width="374" height="57"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULg-Jf-gdo">
-                                                <rect key="frame" x="0.0" y="8.5" width="29" height="36"/>
+                                                <rect key="frame" x="0.0" y="10.5" width="29" height="36"/>
                                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="30"/>
                                                 <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -1828,7 +1828,7 @@
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GP0-nn-C3c">
-                                                <rect key="frame" x="44" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="44" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
@@ -1836,42 +1836,42 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fj-EQ-N6G">
-                                                <rect key="frame" x="89" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="89" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="1wa-Yn-FlA"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJD-c9-xqU">
-                                                <rect key="frame" x="134" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="134" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="vCq-0a-ROz"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0y-4t-VU2">
-                                                <rect key="frame" x="179" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="179" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="Q6z-zb-PTd"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Hc-J2-IGM">
-                                                <rect key="frame" x="224" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="224" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="PcG-NU-UrL"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1l-WN-CSV">
-                                                <rect key="frame" x="269" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="269" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="mvB-yB-gUU"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="hs6-3L-ulP">
-                                                <rect key="frame" x="314" y="6.5" width="60" height="40"/>
+                                                <rect key="frame" x="314" y="8.5" width="60" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eSS-6s-CJ9">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="20"/>
@@ -1912,10 +1912,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="HPA-S7-KkS">
-                                        <rect key="frame" x="0.5" y="321" width="373.5" height="53.5"/>
+                                        <rect key="frame" x="0.5" y="342.5" width="373.5" height="57"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYB-yl-g8R">
-                                                <rect key="frame" x="0.0" y="8.5" width="28.5" height="36"/>
+                                                <rect key="frame" x="0.0" y="10.5" width="28.5" height="36"/>
                                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="30"/>
                                                 <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -1923,7 +1923,7 @@
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wlu-1H-d39">
-                                                <rect key="frame" x="43.5" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="43.5" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
@@ -1931,42 +1931,42 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJk-2R-fSj">
-                                                <rect key="frame" x="88.5" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="88.5" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="70f-o5-lJU"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8b7-Je-I0N">
-                                                <rect key="frame" x="133.5" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="133.5" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="2Ap-oW-tqt"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QeQ-Sc-RZE">
-                                                <rect key="frame" x="178.5" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="178.5" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="PCE-K2-Rzh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqL-f0-K6L">
-                                                <rect key="frame" x="223.5" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="223.5" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="Ie9-5X-R71"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4qI-NP-yav">
-                                                <rect key="frame" x="268.5" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="268.5" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="JP5-Xt-kHn"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ig6-49-xml">
-                                                <rect key="frame" x="313.5" y="6.5" width="60" height="40"/>
+                                                <rect key="frame" x="313.5" y="8.5" width="60" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wyM-bs-1X3">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="20"/>
@@ -2007,10 +2007,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Wfg-04-AVP">
-                                        <rect key="frame" x="0.0" y="374.5" width="374" height="53"/>
+                                        <rect key="frame" x="0.0" y="399.5" width="374" height="57"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="06" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIg-OL-HMH">
-                                                <rect key="frame" x="0.0" y="9.5" width="29" height="34"/>
+                                                <rect key="frame" x="0.0" y="11.5" width="29" height="34"/>
                                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="28"/>
                                                 <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -2018,7 +2018,7 @@
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdV-Yr-x0d">
-                                                <rect key="frame" x="44" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="44" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
@@ -2026,42 +2026,42 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utd-AW-baD">
-                                                <rect key="frame" x="89" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="89" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="OgC-fl-QDZ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lgu-rq-UE2">
-                                                <rect key="frame" x="134" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="134" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="MSj-wG-nla"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAM-X7-Wb2">
-                                                <rect key="frame" x="179" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="179" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="RiA-aj-Rgp"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1aQ-Yw-r5R">
-                                                <rect key="frame" x="224" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="224" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="qqz-4r-fuc"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1W-Qz-kuO">
-                                                <rect key="frame" x="269" y="11.5" width="30" height="30"/>
+                                                <rect key="frame" x="269" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="5nv-kR-4rd"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="unW-N5-gh6">
-                                                <rect key="frame" x="314" y="6.5" width="60" height="40"/>
+                                                <rect key="frame" x="314" y="8.5" width="60" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="APh-lX-3nJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="20"/>
@@ -2102,10 +2102,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2cC-iD-Ncp">
-                                        <rect key="frame" x="0.5" y="427.5" width="373.5" height="53.5"/>
+                                        <rect key="frame" x="0.5" y="456.5" width="373.5" height="57"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ng-cQ-71V">
-                                                <rect key="frame" x="0.0" y="9" width="28.5" height="36"/>
+                                                <rect key="frame" x="0.0" y="10.5" width="28.5" height="36"/>
                                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="30"/>
                                                 <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -2113,7 +2113,7 @@
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUn-xR-a0j">
-                                                <rect key="frame" x="43.5" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="43.5" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
@@ -2121,42 +2121,42 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKa-EP-oqu">
-                                                <rect key="frame" x="88.5" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="88.5" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="Kkt-s2-690"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYM-qr-4LG">
-                                                <rect key="frame" x="133.5" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="133.5" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="oH3-gF-JvK"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Lk-Op-Kc6">
-                                                <rect key="frame" x="178.5" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="178.5" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="GAA-tm-3te"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdH-HQ-4f9">
-                                                <rect key="frame" x="223.5" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="223.5" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="Qmr-V9-crO"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6in-Po-V0Y">
-                                                <rect key="frame" x="268.5" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="268.5" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="PPM-WX-zpu"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="MdA-Ua-Oyi">
-                                                <rect key="frame" x="313.5" y="7" width="60" height="40"/>
+                                                <rect key="frame" x="313.5" y="8.5" width="60" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lDJ-Fp-H7b">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="20"/>
@@ -2197,10 +2197,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="6LP-ag-NVG">
-                                        <rect key="frame" x="0.0" y="481" width="374" height="53.5"/>
+                                        <rect key="frame" x="0.0" y="513.5" width="374" height="57"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="04" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jub-WJ-3mz">
-                                                <rect key="frame" x="0.0" y="10" width="29" height="34"/>
+                                                <rect key="frame" x="0.0" y="11.5" width="29" height="34"/>
                                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="28"/>
                                                 <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -2208,7 +2208,7 @@
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXg-wD-z8g">
-                                                <rect key="frame" x="44" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="44" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
@@ -2216,42 +2216,42 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRY-Mi-nij">
-                                                <rect key="frame" x="89" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="89" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="aCX-jV-b0w"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3h-ei-B8x">
-                                                <rect key="frame" x="134" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="134" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="mK1-lR-4tz"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XsS-wA-iAH">
-                                                <rect key="frame" x="179" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="179" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="Bh5-Pt-c0Z"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVZ-IN-UFC">
-                                                <rect key="frame" x="224" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="224" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="4tO-tB-MLG"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Bz-bL-ggC">
-                                                <rect key="frame" x="269" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="269" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="fbP-uP-tUP"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Rg6-io-4Qh">
-                                                <rect key="frame" x="314" y="7" width="60" height="40"/>
+                                                <rect key="frame" x="314" y="8.5" width="60" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IYx-CZ-2ex">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="20"/>
@@ -2292,10 +2292,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="CqP-Jx-yPg">
-                                        <rect key="frame" x="0.0" y="534.5" width="374" height="53.5"/>
+                                        <rect key="frame" x="0.0" y="570.5" width="374" height="57"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="03" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1k-oD-7Qt">
-                                                <rect key="frame" x="0.0" y="9" width="29" height="36"/>
+                                                <rect key="frame" x="0.0" y="10.5" width="29" height="36"/>
                                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="30"/>
                                                 <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -2303,7 +2303,7 @@
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6WL-fS-pg8">
-                                                <rect key="frame" x="44" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="44" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
@@ -2311,42 +2311,42 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKo-fW-sSD">
-                                                <rect key="frame" x="89" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="89" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="7ay-Ab-8gc"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pgx-Q1-yYQ">
-                                                <rect key="frame" x="134" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="134" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="kRZ-LK-RmS"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMg-vH-NXT">
-                                                <rect key="frame" x="179" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="179" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="x3Y-8W-b8X"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHe-Ff-aCB">
-                                                <rect key="frame" x="224" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="224" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="TiR-Rc-UdY"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mM-jc-lgr">
-                                                <rect key="frame" x="269" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="269" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="PKh-c9-hCG"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="7pV-70-8MB">
-                                                <rect key="frame" x="314" y="7" width="60" height="40"/>
+                                                <rect key="frame" x="314" y="8.5" width="60" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2k2-4L-vHv">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="20"/>
@@ -2387,10 +2387,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="5jd-W0-DBQ">
-                                        <rect key="frame" x="0.0" y="588" width="374" height="53.5"/>
+                                        <rect key="frame" x="0.0" y="627.5" width="374" height="57.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YoK-2V-mY0">
-                                                <rect key="frame" x="0.0" y="9" width="29" height="36"/>
+                                                <rect key="frame" x="0.0" y="11" width="29" height="36"/>
                                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="30"/>
                                                 <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -2398,7 +2398,7 @@
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7l-rS-EBC">
-                                                <rect key="frame" x="44" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="44" y="14" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
@@ -2406,42 +2406,42 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Nr-91-LaJ">
-                                                <rect key="frame" x="89" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="89" y="14" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="5cg-6s-b5G"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17S-pf-gcl">
-                                                <rect key="frame" x="134" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="134" y="14" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="R7i-Na-v6h"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Beh-bK-DeT">
-                                                <rect key="frame" x="179" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="179" y="14" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="LwX-7t-N67"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsc-h7-m6M">
-                                                <rect key="frame" x="224" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="224" y="14" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="eqY-19-DgT"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIL-5u-hyB">
-                                                <rect key="frame" x="269" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="269" y="14" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="f9P-Z9-JJQ"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="3oc-r8-l8l">
-                                                <rect key="frame" x="314" y="7" width="60" height="40"/>
+                                                <rect key="frame" x="314" y="9" width="60" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MFq-tu-Omq">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="20"/>
@@ -2482,10 +2482,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="D2S-Ja-gJ4">
-                                        <rect key="frame" x="2" y="641.5" width="370" height="53.5"/>
+                                        <rect key="frame" x="2" y="685" width="370" height="57"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgu-bB-xat">
-                                                <rect key="frame" x="0.0" y="9" width="25" height="36"/>
+                                                <rect key="frame" x="0.0" y="10.5" width="25" height="36"/>
                                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="30"/>
                                                 <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -2493,7 +2493,7 @@
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wej-e1-uo8">
-                                                <rect key="frame" x="40" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="40" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <connections>
@@ -2501,42 +2501,42 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2q-2c-eFZ">
-                                                <rect key="frame" x="85" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="85" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="XcU-R2-ZUf"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTW-BJ-uYT">
-                                                <rect key="frame" x="130" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="130" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="uaT-Su-11T"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9p-Gn-vOr">
-                                                <rect key="frame" x="175" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="175" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="Tur-kt-CzE"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VdP-ke-BhY">
-                                                <rect key="frame" x="220" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="220" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="9J8-D4-dgc"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMt-Zj-KFW">
-                                                <rect key="frame" x="265" y="12" width="30" height="30"/>
+                                                <rect key="frame" x="265" y="13.5" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
                                                     <action selector="deselectColorButtons:" destination="Eff-a7-yjc" eventType="touchUpInside" id="ZdU-ru-t0J"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="aDz-A2-pms">
-                                                <rect key="frame" x="310" y="7" width="60" height="40"/>
+                                                <rect key="frame" x="310" y="8.5" width="60" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OeC-Mc-GGZ">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="20"/>
@@ -2577,7 +2577,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="FPK-kM-wGV">
-                                        <rect key="frame" x="2" y="695" width="370" height="53.5"/>
+                                        <rect key="frame" x="2" y="742" width="370" height="57"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PwS-wU-pi3" userLabel="Black">
                                                 <rect key="frame" x="0.0" y="0.0" width="20" height="29"/>
@@ -2658,10 +2658,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="43y-9I-nTg">
-                                        <rect key="frame" x="144" y="748.5" width="86" height="53.5"/>
+                                        <rect key="frame" x="144" y="799" width="86" height="57"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXQ-Iv-kC2">
-                                                <rect key="frame" x="0.0" y="0.0" width="86" height="53.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="86" height="57"/>
                                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
                                                 <inset key="imageEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <size key="titleShadowOffset" width="1" height="1"/>
@@ -2858,8 +2858,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="sn7-KA-gIS"/>
-        <segue reference="sJf-SF-TZO"/>
-        <segue reference="sI0-id-pMr"/>
+        <segue reference="7zm-WW-gXY"/>
+        <segue reference="4eg-Ad-qAS"/>
         <segue reference="36F-uV-8vY"/>
     </inferredMetricsTieBreakers>
 </document>
