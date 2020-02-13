@@ -1334,7 +1334,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="leaderboard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QML-yu-BbD">
-                                <rect key="frame" x="0.0" y="25" width="414" height="35.666666666666657"/>
+                                <rect key="frame" x="0.0" y="24.999999999999996" width="414" height="35.666666666666657"/>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="35"/>
                                 <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -2863,6 +2863,6 @@
         <segue reference="sn7-KA-gIS"/>
         <segue reference="7zm-WW-gXY"/>
         <segue reference="4eg-Ad-qAS"/>
-        <segue reference="36F-uV-8vY"/>
+        <segue reference="zgt-YR-dwQ"/>
     </inferredMetricsTieBreakers>
 </document>

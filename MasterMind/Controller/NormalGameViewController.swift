@@ -264,6 +264,8 @@ extension NormalGameViewController: resetGameDelegate {
   */
   func didResetGame(newKey: String) {
     tableRowIndex = 0
+    masterMindManager.numberOfBlackPins = 0
+    masterMindManager.numberOfWhitePins = 0
     resetGameTimer()
     guard let firstRowButton = tableOfButtons.first
       else {
