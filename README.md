@@ -38,7 +38,7 @@ Implement a mastermind game, which can be played by a user who tries to guess th
 
 ## Requirements
 
-- iOS 10.14.6+
+- iOS 13.3+
 - Xcode 11.3.1+
 - cocoapods 1.8.4
 
