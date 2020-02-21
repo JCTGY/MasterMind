@@ -13,7 +13,7 @@ protocol RandomAPIDelegate {
   // MARK: - RandomAPIDelegate to transfer fetch data
 
   func didUpdateRandomAPI(stringData: String, _ isNormalMode: Bool)
-  func didFailWithError(error: Error)
+  func didFailWithError(error: Error, _ isNormalMode: Bool)
 }
 
 /**
@@ -56,7 +56,7 @@ struct RandomIntAPI {
     let url = URL(string: urlString)!
     let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
       if let error = error {
-        self.delegate?.didFailWithError(error: error)
+        self.delegate?.didFailWithError(error: error, isNormalMode)
         return
       }
       guard let httpResponse = response as? HTTPURLResponse,

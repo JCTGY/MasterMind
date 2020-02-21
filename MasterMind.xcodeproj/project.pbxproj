@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		336B709D128887C5E675B0AF /* Pods_MasterMind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0F1CBEFB9F0AACEADA4D00 /* Pods_MasterMind.framework */; };
+		3501362E23FF37A400E2A3D1 /* LocalRandomInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3501362D23FF37A400E2A3D1 /* LocalRandomInt.swift */; };
 		350AD86C23F3930B007C9682 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350AD86B23F3930B007C9682 /* Constants.swift */; };
 		350AD86E23F39C6D007C9682 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 350AD86D23F39C6D007C9682 /* GoogleService-Info.plist */; };
 		350AD87223F3BA65007C9682 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350AD87123F3BA65007C9682 /* LeaderboardViewController.swift */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		147B1E9BA1F39D1DDD2BE528 /* Pods-MasterMind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasterMind.debug.xcconfig"; path = "Target Support Files/Pods-MasterMind/Pods-MasterMind.debug.xcconfig"; sourceTree = "<group>"; };
+		3501362D23FF37A400E2A3D1 /* LocalRandomInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRandomInt.swift; sourceTree = "<group>"; };
 		350AD86B23F3930B007C9682 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		350AD86D23F39C6D007C9682 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		350AD87123F3BA65007C9682 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				355E3C4D23EF84E600EE09D7 /* GameSound.swift */,
 				355E3C7623F11B3700EE09D7 /* GameStat.swift */,
 				350AD87323F3BE82007C9682 /* Score.swift */,
+				3501362D23FF37A400E2A3D1 /* LocalRandomInt.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				355E3C7723F11B3700EE09D7 /* GameStat.swift in Sources */,
 				350AD86C23F3930B007C9682 /* Constants.swift in Sources */,
 				35A4468F23EB4617002FCEDF /* AppDelegate.swift in Sources */,
+				3501362E23FF37A400E2A3D1 /* LocalRandomInt.swift in Sources */,
 				355E3C7323F09CA400EE09D7 /* HardGameViewController.swift in Sources */,
 				355E3C4A23EF31ED00EE09D7 /* RuleViewController.swift in Sources */,
 				35A4469123EB4617002FCEDF /* SceneDelegate.swift in Sources */,

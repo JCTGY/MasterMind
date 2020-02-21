@@ -175,9 +175,17 @@ extension StartViewController: RandomAPIDelegate {
     }
   }
   
-  func didFailWithError(error: Error) {
+  func didFailWithError(error: Error, _ isNormalMode: Bool) {
     /* randomAPIDelegate func didFailWithError */
     print(error)
+    let localKeyGenerator = LocalRandomInt()
+    if isNormalMode == true {
+      self.correctKeyNormalMode = localKeyGenerator.generateLocalKey(num: 4)
+      print(self.correctKeyNormalMode)
+    } else {
+      self.correctKeyHardMode = localKeyGenerator.generateLocalKey(num: 6)
+      print(self.correctKeyHardMode)
+    }
   }
 }
 
