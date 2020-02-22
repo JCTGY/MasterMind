@@ -144,7 +144,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RuleImage" translatesAutoresizingMaskIntoConstraints="NO" id="WuT-Tx-Xw3">
-                                <rect key="frame" x="0.0" y="0.0" width="414.00000000000023" height="250"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="rnI-qU-eVL"/>
                                 </constraints>
@@ -1167,8 +1167,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="scoreLabel" destination="r9V-PC-gal" id="qxz-88-OXV"/>
-                        <outlet property="timerLabel" destination="N9T-ZA-7uL" id="iaL-vJ-sVR"/>
+                        <outlet property="scoreLabel" destination="r9V-PC-gal" id="lJN-Sh-yKd"/>
+                        <outlet property="timerLabel" destination="N9T-ZA-7uL" id="6hb-94-rho"/>
                         <outletCollection property="rowOne" destination="R6a-zN-Wwf" collectionClass="NSMutableArray" id="kfZ-lr-FF8"/>
                         <outletCollection property="rowOne" destination="J5l-I6-vpr" collectionClass="NSMutableArray" id="cXR-8p-zAZ"/>
                         <outletCollection property="rowOne" destination="Dbq-kf-4fA" collectionClass="NSMutableArray" id="Dce-4L-jdT"/>
@@ -1254,7 +1254,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-490" y="138"/>
+            <point key="canvasLocation" x="59" y="73"/>
         </scene>
         <!--Final Pop Up View Controller-->
         <scene sceneID="6Ll-mZ-OlP">
@@ -2695,8 +2695,8 @@
                         <viewLayoutGuide key="safeArea" id="PIN-aZ-R3E"/>
                     </view>
                     <connections>
-                        <outlet property="scoreLabel" destination="Db6-dE-W1R" id="1BZ-BV-PQ2"/>
-                        <outlet property="timerLabel" destination="GCz-CI-8vW" id="aUP-Kl-gPI"/>
+                        <outlet property="scoreLabel" destination="Db6-dE-W1R" id="hua-lN-dH2"/>
+                        <outlet property="timerLabel" destination="GCz-CI-8vW" id="vhg-Ab-dpp"/>
                         <outletCollection property="rowOne" destination="Wej-e1-uo8" collectionClass="NSMutableArray" id="7uA-Lu-f8W"/>
                         <outletCollection property="rowOne" destination="y2q-2c-eFZ" collectionClass="NSMutableArray" id="TvS-6N-QZ1"/>
                         <outletCollection property="rowOne" destination="sTW-BJ-uYT" collectionClass="NSMutableArray" id="bUX-pU-abm"/>
@@ -2861,8 +2861,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="sn7-KA-gIS"/>
-        <segue reference="7zm-WW-gXY"/>
-        <segue reference="4eg-Ad-qAS"/>
+        <segue reference="sJf-SF-TZO"/>
+        <segue reference="sI0-id-pMr"/>
         <segue reference="zgt-YR-dwQ"/>
     </inferredMetricsTieBreakers>
 </document>

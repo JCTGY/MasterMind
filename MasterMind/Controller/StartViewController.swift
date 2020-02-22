@@ -181,10 +181,10 @@ extension StartViewController: RandomAPIDelegate {
     let localKeyGenerator = LocalRandomInt()
     if isNormalMode == true {
       self.correctKeyNormalMode = localKeyGenerator.generateLocalKey(num: 4)
-      print(self.correctKeyNormalMode)
+      print(self.correctKeyNormalMode ?? "Normal mode key missing")
     } else {
       self.correctKeyHardMode = localKeyGenerator.generateLocalKey(num: 6)
-      print(self.correctKeyHardMode)
+      print(self.correctKeyHardMode ?? "Hard mode key missing")
     }
   }
 }
