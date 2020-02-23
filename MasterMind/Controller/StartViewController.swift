@@ -28,6 +28,7 @@ class StartViewController: UIViewController {
   var correctKeyNormalMode: String?
   var correctKeyHardMode: String?
   var name: String?
+  var isNormal: Bool?
 
   @IBOutlet weak var nameTextField: UITextField!
 
@@ -80,16 +81,12 @@ class StartViewController: UIViewController {
       else {
         return
     }
-    self.performSegue(withIdentifier: K.normalModeSegue, sender: self)
-  }
-
-  @IBAction func startHardModeButton(_ sender: UIButton) {
-    /* start button for Hard game mode */
-    guard name != nil && name!.count > 0
-      else {
-        return
+    if sender.currentTitle == "Normal" {
+      isNormal = true
+    } else {
+      isNormal = false
     }
-    self.performSegue(withIdentifier: K.hardModeSegue, sender: self)
+    self.performSegue(withIdentifier: K.normalModeSegue, sender: self)
   }
 
   /**
@@ -115,26 +112,30 @@ class StartViewController: UIViewController {
         return
     }
     if segue.identifier == K.normalModeSegue {
-      if let destinationVC = segue.destination as? NormalGameViewController {
-        guard let correctKeyNormalMode = correctKeyNormalMode
-          else {
-            return
+      if let destinationVC = segue.destination as? BaseGameViewController {
+        if isNormal == true {
+          guard let correctKeyNormalMode = correctKeyNormalMode
+            else {
+              return
+          }
+          let gameStat = GameStat(userName: name,
+                                  correctKey: correctKeyNormalMode,
+                                  isNormalMode: true,
+                                  numOfRows: 10,
+                                  numOfKeys: 4)
+          destinationVC.gameStat = gameStat
+        } else {
+          guard let correctKeyHardMode = correctKeyHardMode
+            else {
+              return
+          }
+          let gameStat = GameStat(userName: name,
+                                  correctKey: correctKeyHardMode,
+                                  isNormalMode: false,
+                                  numOfRows: 12,
+                                  numOfKeys: 6)
+          destinationVC.gameStat = gameStat
         }
-        let gameStat = GameStat(userName: name,
-                                correctKey: correctKeyNormalMode,
-                                isNormalMode: true)
-        destinationVC.gameStat = gameStat
-      }
-    } else if segue.identifier == K.hardModeSegue {
-      guard let correctKeyHardMode = correctKeyHardMode
-        else {
-          return
-      }
-      if let destinationVC = segue.destination as? HardGameViewController {
-        let gameStat = GameStat(userName: name,
-                                correctKey: correctKeyHardMode,
-                                isNormalMode: false)
-        destinationVC.gameStat = gameStat
       }
     }
   }

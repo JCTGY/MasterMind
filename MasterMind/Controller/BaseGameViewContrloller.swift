@@ -9,19 +9,19 @@
 import UIKit
 
 /**
-## BaseGameViewController
+ ## BaseGameViewController
 
-super class for `NormalGameViewController` and `HardGameViewController`
+ super class for `NormalGameViewController` and `HardGameViewController`
 
-- starGame
-- moving the selected buttons
-- disable and enable row of buttons
+ - starGame
+ - moving the selected buttons
+ - disable and enable row of buttons
 
-## Warnings
+ ## Warnings
 
-use BaseGameViewController as an Interface
-BaseGameViewController cannot be function without buttons and pins
-*/
+ use BaseGameViewController as an Interface
+ BaseGameViewController cannot be function without buttons and pins
+ */
 class BaseGameViewController: UIViewController {
   var tableOfButtons = [[UIButton]]()
   var currentSelectButton: UIButton?
@@ -35,131 +35,239 @@ class BaseGameViewController: UIViewController {
   var gameStat: GameStat?
   let masterMindManager = MasterMindManager()
 
+  var indexOfLabel = 1
+  var tmpRowButton = [UIButton]()
+  var tmpRowPinImages = [UIImageView]()
+
   @IBOutlet weak var timerLabel: UILabel!
   @IBOutlet weak var scoreLabel: UILabel!
+  @IBOutlet weak var parentView: UIStackView!
   override func viewDidLoad() {
     checkIsAppBackground()
     checkIsAppForground()
     intitailGameTimer()
     startGameTimer()
+    guard let gameStat = gameStat
+      else {
+        return
+    }
+    createGameBoard(numOfRows: gameStat.numOfRows, numOfKeys: gameStat.numOfKeys)
+    startGame()
   }
 
-    // MARK: - IBAction functions for buttons
+  // MARK: - IBAction functions for buttons
 
-    @IBAction func pauseGameTimerButton(_ sender: UIButton) {
-      /* pause the GameTimer */
-      timer?.invalidate()
-    }
+  @IBAction func pauseGameTimerButton(_ sender: UIButton) {
+    /* pause the GameTimer */
+    timer?.invalidate()
+  }
 
-    /**
-     click to remove colorof the button, and the button will be the current select button
-     add sound effect from `masterMindManager.gameSoundController`
-     */
-    @IBAction func deselectColorButtons(_ sender: UIButton) {
-      if lastReplaceButton != nil {
-        lastReplaceButton?.setTitle("", for: .normal)
-        lastReplaceButton?.layer.removeAllAnimations()
-      }
-      masterMindManager.gameSoundController.playSoundEffect(K.SoundFileName.select)
-      currentSelectButton = sender
-      setButtonToSelectImage()
-      lastReplaceButton = sender
-    }
-
-    /**
-     click one of the circle color buttons and will put that color to the current selected square button
-     Also, remove animation from the last select button
-     */
-    @IBAction func colorSelectButtons(_ sender: UIButton) {
-      guard let currentSelectButton = currentSelectButton,
-        lastReplaceButton != nil
-        else {
-          return
-      }
-      masterMindManager.gameSoundController.playSoundEffect(K.SoundFileName.select)
-      currentSelectButton.backgroundColor = sender.imageView?.tintColor
-      moveToNextButton()
-    }
-
-    /**
-     `assignGuessKey` to assigned `guessKey`
-     `masterMindManager.calculateResult` to calculate the result
-     `assignPinColor` to assgned the Pin for the player to see
-     `disableRowOfButtons` then disable the current row of buttons
-     check if the game is finish: player use all the tires, then will call `gameFinish()` method
-     else will move to the next row of buttons
-     */
-    @IBAction func submitButton(_ sender: UIButton) {
-      // Check if every bottons is selected with a color
-      guard tableOfButtons.count > tableRowIndex
-        || tableOfPinsImageView.count > tableRowIndex
-        else {
-          return
-      }
-      for button in tableOfButtons[tableRowIndex] {
-        guard button.backgroundColor != UIColor.white else {
-          return ;
-        }
-      }
-      currentSelectButton?.layer.removeAllAnimations()
-      masterMindManager.gameSoundController.playSoundEffect(K.SoundFileName.submit)
-      assignGuessKey(tableOfButtons[tableRowIndex])
-      masterMindManager.calculateResult()
-      assignPinColor(tableOfPinsImageView[tableRowIndex])
-      disableRowOfButtons(tableOfButtons[tableRowIndex])
-      moveToNextRowOfButtons()
-    }
-
-    /**
-     check if the game is finish: player use all the tires, then will call `gameFinish()` method
-     else will move to the next row of buttons
-     */
-    func moveToNextRowOfButtons() {
-
-      // MARK: - Increment the `tableRowIndex`
-
-      tableRowIndex += 1
-      if tableOfButtons.count <= tableRowIndex
-        || masterMindManager.numberOfBlackPins == tableOfPinsImageView.first?.count {
-        gameFinish()
-        return
-      }
-      enableRowOfButtons(tableOfButtons[tableRowIndex])
+  /**
+   click to remove colorof the button, and the button will be the current select button
+   add sound effect from `masterMindManager.gameSoundController`
+   */
+  @IBAction func deselectColorButtons(_ sender: UIButton) {
+    if lastReplaceButton != nil {
       lastReplaceButton?.setTitle("", for: .normal)
-      currentSelectButton = tableOfButtons[tableRowIndex].first
-      lastReplaceButton = currentSelectButton
-      setButtonToSelectImage()
+      lastReplaceButton?.layer.removeAllAnimations()
     }
+    masterMindManager.gameSoundController.playSoundEffect(K.SoundFileName.select)
+    currentSelectButton = sender
+    setButtonToSelectImage()
+    lastReplaceButton = sender
+  }
 
-    /**
-     - move game stat to the `FinialPopUpViewController`
-     - or move current sound and game mode to `PauselPopUpViewController`
-     - warning: Make sure have the correct `segue.identifier`
-     */
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      // send result to `FinalPopUpViewController`
-      if segue.identifier == K.endPopUpSegue {
-        if let destinationVC = segue.destination as? FinalPopUpViewController {
-          destinationVC.delegate = self
-          guard let firstPinsRow = tableOfPinsImageView.first,
-            let gameStat = gameStat
-            else {
-              return
-          }
-          destinationVC.gameStat = masterMindManager.getFinalResult(firstPinsRow.count, gameStat)
-          destinationVC.isModalInPresentation = true
-        }
-      } else if segue.identifier == K.pausePopUpSegue {
-        if let destinationVC = segue.destination as? PausePopUpViewController {
-          destinationVC.delegate = self
-          destinationVC.isSoundDisable = masterMindManager.gameSoundController.disableSound
-          destinationVC.isNormalMode = gameStat?.isNormalMode
-          destinationVC.isModalInPresentation = true
-        }
-      } else {
-        assertionFailure("Segue identifier inValid")
+  func unselectColorButtons(_ sender: UIButton) {
+    if lastReplaceButton != nil {
+      lastReplaceButton?.setTitle("", for: .normal)
+      lastReplaceButton?.layer.removeAllAnimations()
+    }
+    masterMindManager.gameSoundController.playSoundEffect(K.SoundFileName.select)
+    currentSelectButton = sender
+    setButtonToSelectImage()
+    lastReplaceButton = sender
+  }
+  /**
+   click one of the circle color buttons and will put that color to the current selected square button
+   Also, remove animation from the last select button
+   */
+  @IBAction func colorSelectButtons(_ sender: UIButton) {
+    guard let currentSelectButton = currentSelectButton,
+      lastReplaceButton != nil
+      else {
+        return
+    }
+    masterMindManager.gameSoundController.playSoundEffect(K.SoundFileName.select)
+    currentSelectButton.backgroundColor = sender.imageView?.tintColor
+    moveToNextButton()
+  }
+
+  /**
+   `assignGuessKey` to assigned `guessKey`
+   `masterMindManager.calculateResult` to calculate the result
+   `assignPinColor` to assgned the Pin for the player to see
+   `disableRowOfButtons` then disable the current row of buttons
+   check if the game is finish: player use all the tires, then will call `gameFinish()` method
+   else will move to the next row of buttons
+   */
+  @IBAction func submitButton(_ sender: UIButton) {
+    // Check if every bottons is selected with a color
+    guard tableOfButtons.count > tableRowIndex
+      || tableOfPinsImageView.count > tableRowIndex
+      else {
+        return
+    }
+    for button in tableOfButtons[tableRowIndex] {
+      guard button.backgroundColor != UIColor.white else {
+        return ;
       }
     }
+    currentSelectButton?.layer.removeAllAnimations()
+    masterMindManager.gameSoundController.playSoundEffect(K.SoundFileName.submit)
+    assignGuessKey(tableOfButtons[tableRowIndex])
+    masterMindManager.calculateResult()
+    assignPinColor(tableOfPinsImageView[tableRowIndex])
+    disableRowOfButtons(tableOfButtons[tableRowIndex])
+    moveToNextRowOfButtons()
+  }
+
+
+  func createRowStackView(_ numOfKeys: Int) -> UIStackView {
+    let stackView = UIStackView()
+    stackView.axis = .horizontal
+    stackView.spacing = numOfKeys == 4 ? 30 : 15
+    stackView.alignment = .center
+    stackView.distribution = .fill
+    stackView.translatesAutoresizingMaskIntoConstraints = false
+    let label = createRowUIlable()
+    stackView.addArrangedSubview(label)
+    let buttons = createButtonArray(numOfKeys)
+    buttons.forEach {
+      stackView.addArrangedSubview($0)
+      tmpRowButton.append($0)
+    }
+    let pinImageStackView = createPinImages(numOfKeys)
+    stackView.addArrangedSubview(pinImageStackView)
+    tableOfButtons.append(tmpRowButton)
+    tmpRowButton.removeAll()
+    return stackView
+  }
+
+  func createRowUIlable() -> UILabel {
+    let label = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 20))
+    label.text = String(format: "%02d", indexOfLabel)
+    indexOfLabel += 1
+    label.textColor = #colorLiteral(red: 0.515049994, green: 0.07091144472, blue: 0.1544082761, alpha: 1)
+    label.font = UIFont(name: "PartyLetPlain", size: 30)
+    label.shadowColor = #colorLiteral(red: 0.515049994, green: 0.07091144472, blue: 0.1544082761, alpha: 1)
+    label.shadowOffset = CGSize(width: 1, height: 1)
+    label.adjustsFontSizeToFitWidth = true
+    return label
+  }
+
+  func createButtonArray(_ numOfKeys: Int) -> [UIButton] {
+    var buttons = [UIButton]()
+    for _ in 1...numOfKeys {
+      let button = UIButton()
+      button.backgroundColor = UIColor.white
+      button.addTarget(self, action: #selector(BaseGameViewController.deselectColorButtons(_:)), for: .touchUpInside)
+
+      buttons.append(button)
+    }
+    return buttons
+  }
+
+  func createPinImages(_ numOfKeys: Int) -> UIStackView {
+    let stackView = UIStackView()
+    stackView.axis = .vertical
+    stackView.spacing = 0
+    stackView.alignment = .leading
+    stackView.distribution = .fillEqually
+    stackView.translatesAutoresizingMaskIntoConstraints = false
+    let topSubStackView = createPinImagesStackView(numOfKeys/2)
+    let botSubStackView = createPinImagesStackView(numOfKeys/2)
+    stackView.addArrangedSubview(topSubStackView)
+    stackView.addArrangedSubview(botSubStackView)
+    tableOfPinsImageView.append(tmpRowPinImages)
+    tmpRowPinImages.removeAll()
+    return stackView
+  }
+
+  func createPinImagesStackView(_ numOfPins: Int) -> UIStackView {
+    let stackView = UIStackView()
+    stackView.axis = .horizontal
+    stackView.spacing = 0
+    stackView.alignment = .fill
+    stackView.distribution = .fill
+    stackView.translatesAutoresizingMaskIntoConstraints = false
+    var pinImages = [UIImageView]()
+    for _ in 1...numOfPins {
+      let pinImage = UIImageView(image: UIImage(systemName: "pin"))
+      pinImage.setImageColor(color: UIColor.black)
+      stackView.addArrangedSubview(pinImage)
+      pinImages.append(pinImage)
+      tmpRowPinImages.append(pinImage)
+    }
+    return stackView
+  }
+
+  func createGameBoard(numOfRows: Int, numOfKeys: Int) {
+    for _ in 1...numOfRows {
+      let stackView = createRowStackView(numOfKeys)
+      parentView.insertArrangedSubview(stackView, at: 1)
+    }
+  }
+
+  /**
+   check if the game is finish: player use all the tires, then will call `gameFinish()` method
+   else will move to the next row of buttons
+   */
+  func moveToNextRowOfButtons() {
+
+    // MARK: - Increment the `tableRowIndex`
+
+    tableRowIndex += 1
+    if tableOfButtons.count <= tableRowIndex
+      || masterMindManager.numberOfBlackPins == tableOfPinsImageView.first?.count {
+      gameFinish()
+      return
+    }
+    enableRowOfButtons(tableOfButtons[tableRowIndex])
+    lastReplaceButton?.setTitle("", for: .normal)
+    currentSelectButton = tableOfButtons[tableRowIndex].first
+    lastReplaceButton = currentSelectButton
+    setButtonToSelectImage()
+  }
+
+  /**
+   - move game stat to the `FinialPopUpViewController`
+   - or move current sound and game mode to `PauselPopUpViewController`
+   - warning: Make sure have the correct `segue.identifier`
+   */
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    // send result to `FinalPopUpViewController`
+    if segue.identifier == K.endPopUpSegue {
+      if let destinationVC = segue.destination as? FinalPopUpViewController {
+        destinationVC.delegate = self
+        guard let firstPinsRow = tableOfPinsImageView.first,
+          let gameStat = gameStat
+          else {
+            return
+        }
+        destinationVC.gameStat = masterMindManager.getFinalResult(firstPinsRow.count, gameStat)
+        destinationVC.isModalInPresentation = true
+      }
+    } else if segue.identifier == K.pausePopUpSegue {
+      if let destinationVC = segue.destination as? PausePopUpViewController {
+        destinationVC.delegate = self
+        destinationVC.isSoundDisable = masterMindManager.gameSoundController.disableSound
+        destinationVC.isNormalMode = gameStat?.isNormalMode
+        destinationVC.isModalInPresentation = true
+      }
+    } else {
+      assertionFailure("Segue identifier inValid")
+    }
+  }
 
   func startGame() {
     /* initiate the game, check if correctKey and buttons exsist */
@@ -180,8 +288,8 @@ class BaseGameViewController: UIViewController {
   func checkIsAppBackground() {
     /* check if the app move to the background call `appMovedToBackground` */
     let notificationCenter = NotificationCenter.default
-     notificationCenter.addObserver(self, selector: #selector(appMovedToBackground),
-                                    name: UIApplication.didEnterBackgroundNotification, object: nil)
+    notificationCenter.addObserver(self, selector: #selector(appMovedToBackground),
+                                   name: UIApplication.didEnterBackgroundNotification, object: nil)
   }
 
   @objc func appMovedToBackground() {
@@ -192,8 +300,8 @@ class BaseGameViewController: UIViewController {
   func checkIsAppForground() {
     /* check if app is going back to the forground */
     let notificationCenter = NotificationCenter.default
-     notificationCenter.addObserver(self, selector: #selector(appMovedToForground),
-                                    name: UIApplication.willEnterForegroundNotification, object: nil)
+    notificationCenter.addObserver(self, selector: #selector(appMovedToForground),
+                                   name: UIApplication.willEnterForegroundNotification, object: nil)
   }
 
   @objc func appMovedToForground() {
@@ -251,9 +359,9 @@ class BaseGameViewController: UIViewController {
   }
 
   /**
-  give animation to Indicate which buttons is currently selected
-  - warning: make sure `currentSelectButton` or it will not do anything
-  */
+   give animation to Indicate which buttons is currently selected
+   - warning: make sure `currentSelectButton` or it will not do anything
+   */
   func setButtonToSelectImage() {
     guard let currentSelectButton = currentSelectButton
       else {
@@ -267,10 +375,10 @@ class BaseGameViewController: UIViewController {
   }
 
   /**
-  UI friendly feature that automatic move to the next button, so the player dont have to click
-  Also, assigned the animation and color of the button while move to the new one
-  - warning: make sure `tableRowIndex` is still within the range or it will not do anything
-  */
+   UI friendly feature that automatic move to the next button, so the player dont have to click
+   Also, assigned the animation and color of the button while move to the new one
+   - warning: make sure `tableRowIndex` is still within the range or it will not do anything
+   */
   func moveToNextButton() {
     guard tableOfButtons.count > tableRowIndex
       else {
@@ -294,10 +402,10 @@ class BaseGameViewController: UIViewController {
   // MARK: - pinImageViews functions
 
   /**
-  use `getNumberFromColor` from `MasterMindManager` to get
-  the correct indicate number for each color. And store it as guessKey [Int]
-  - parameter currentRowButton: current row of bottons player just submit
-  */
+   use `getNumberFromColor` from `MasterMindManager` to get
+   the correct indicate number for each color. And store it as guessKey [Int]
+   - parameter currentRowButton: current row of bottons player just submit
+   */
   func assignGuessKey(_ currentRowButton: [UIButton]) {
     masterMindManager.guessKey.removeAll()
     currentRowButton.forEach {
@@ -314,7 +422,7 @@ class BaseGameViewController: UIViewController {
    - parameter currentRowPins: current row of pins need to be fill
    - warning: make sure to have extension `setImageColor` in `UIImageView`
    to set the pin.fill color
-  */
+   */
   func assignPinColor(_ currentRowPins: [UIImageView]) {
     // Replace the Pin image after get the number from the Manager
     var indexForNumPinColor = 0
@@ -410,7 +518,7 @@ extension BaseGameViewController: resetGameDelegate {
    reset the entire game from reset the table of pins and buttons
    - parameter newKey: the new correctKey
    - warning: make sure assigned the delegate to the `FinalPopUpViewController`
-  */
+   */
   func didResetGame(newKey: String) {
     tableRowIndex = 0
     masterMindManager.numberOfBlackPins = 0
@@ -451,4 +559,3 @@ extension BaseGameViewController: PasuePopUpViewControllerDelegate {
     }
   }
 }
-

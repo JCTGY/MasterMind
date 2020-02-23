@@ -31,7 +31,6 @@
 		355E3C7723F11B3700EE09D7 /* GameStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355E3C7623F11B3700EE09D7 /* GameStat.swift */; };
 		35A4468F23EB4617002FCEDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4468E23EB4617002FCEDF /* AppDelegate.swift */; };
 		35A4469123EB4617002FCEDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4469023EB4617002FCEDF /* SceneDelegate.swift */; };
-		35A4469323EB4617002FCEDF /* NormalGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4469223EB4617002FCEDF /* NormalGameViewController.swift */; };
 		35A4469623EB4617002FCEDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35A4469423EB4617002FCEDF /* Main.storyboard */; };
 		35A4469823EB4617002FCEDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35A4469723EB4617002FCEDF /* Assets.xcassets */; };
 		35A4469B23EB4617002FCEDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35A4469923EB4617002FCEDF /* LaunchScreen.storyboard */; };
@@ -77,7 +76,6 @@
 		35A4468B23EB4617002FCEDF /* MasterMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35A4468E23EB4617002FCEDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35A4469023EB4617002FCEDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		35A4469223EB4617002FCEDF /* NormalGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalGameViewController.swift; sourceTree = "<group>"; };
 		35A4469523EB4617002FCEDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		35A4469723EB4617002FCEDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35A4469A23EB4617002FCEDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -180,7 +178,6 @@
 				355E3C4123EDCC8C00EE09D7 /* StartViewController.swift */,
 				355E3C4923EF31ED00EE09D7 /* RuleViewController.swift */,
 				355E3C7423F0A7BE00EE09D7 /* BaseGameViewContrloller.swift */,
-				35A4469223EB4617002FCEDF /* NormalGameViewController.swift */,
 				355E3C7223F09CA400EE09D7 /* HardGameViewController.swift */,
 				355E3C3F23EDC78C00EE09D7 /* FinalPopUpViewController.swift */,
 				355E3C4B23EF62A200EE09D7 /* PausePopUpViewController.swift */,
@@ -385,7 +382,6 @@
 				355E3C4023EDC78C00EE09D7 /* FinalPopUpViewController.swift in Sources */,
 				355E3C4223EDCC8C00EE09D7 /* StartViewController.swift in Sources */,
 				355E3C4C23EF62A200EE09D7 /* PausePopUpViewController.swift in Sources */,
-				35A4469323EB4617002FCEDF /* NormalGameViewController.swift in Sources */,
 				355E3C7723F11B3700EE09D7 /* GameStat.swift in Sources */,
 				350AD86C23F3930B007C9682 /* Constants.swift in Sources */,
 				35A4468F23EB4617002FCEDF /* AppDelegate.swift in Sources */,

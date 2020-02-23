@@ -23,7 +23,8 @@ struct GameStat {
   let userName: String
   let correctKey: String
   let isNormalMode: Bool
+  let numOfRows: Int
+  let numOfKeys: Int
   var didWin = false
   var finalScore = 0
-
 }
