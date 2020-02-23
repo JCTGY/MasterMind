@@ -9,7 +9,7 @@
 import UIKit
 
 /**
- ## BaseGameViewController
+ ## GameViewController
 
  super class for `NormalGameViewController` and `HardGameViewController`
 
@@ -22,7 +22,7 @@ import UIKit
  use BaseGameViewController as an Interface
  BaseGameViewController cannot be function without buttons and pins
  */
-class BaseGameViewController: UIViewController {
+class GameViewController: UIViewController {
   var tableOfButtons = [[UIButton]]()
   var currentSelectButton: UIButton?
   var lastReplaceButton: UIButton?
@@ -42,6 +42,21 @@ class BaseGameViewController: UIViewController {
   @IBOutlet weak var timerLabel: UILabel!
   @IBOutlet weak var scoreLabel: UILabel!
   @IBOutlet weak var parentView: UIStackView!
+
+  func startGame() {
+    /* initiate the game, check if correctKey and buttons exsist */
+    guard let correctKeyString = gameStat?.correctKey,
+      let firstRowButton = tableOfButtons.first
+      else {
+        return
+    }
+    currentSelectButton = firstRowButton.first
+    lastReplaceButton = firstRowButton.first
+    setButtonToSelectImage()
+    masterMindManager.assignKeyToCorrectKey(correctKeyString)
+    masterMindManager.gameSoundController.playBackgroundSong()
+  }
+
   override func viewDidLoad() {
     checkIsAppBackground()
     checkIsAppForground()
@@ -66,7 +81,7 @@ class BaseGameViewController: UIViewController {
    click to remove colorof the button, and the button will be the current select button
    add sound effect from `masterMindManager.gameSoundController`
    */
-  @IBAction func deselectColorButtons(_ sender: UIButton) {
+  @objc func unselectColorButtons(_ sender: UIButton) {
     if lastReplaceButton != nil {
       lastReplaceButton?.setTitle("", for: .normal)
       lastReplaceButton?.layer.removeAllAnimations()
@@ -77,16 +92,6 @@ class BaseGameViewController: UIViewController {
     lastReplaceButton = sender
   }
 
-  func unselectColorButtons(_ sender: UIButton) {
-    if lastReplaceButton != nil {
-      lastReplaceButton?.setTitle("", for: .normal)
-      lastReplaceButton?.layer.removeAllAnimations()
-    }
-    masterMindManager.gameSoundController.playSoundEffect(K.SoundFileName.select)
-    currentSelectButton = sender
-    setButtonToSelectImage()
-    lastReplaceButton = sender
-  }
   /**
    click one of the circle color buttons and will put that color to the current selected square button
    Also, remove animation from the last select button
@@ -131,7 +136,27 @@ class BaseGameViewController: UIViewController {
     moveToNextRowOfButtons()
   }
 
+  // MARK: - Create Game Board table of buttons/pinImages
 
+  /**
+   create game board with desired number of rows, insert to the parent View
+
+   - parameter numOfRows: number of rows want to create
+   - parameter numOfKeys: number of the keys
+   */
+  func createGameBoard(numOfRows: Int, numOfKeys: Int) {
+    for _ in 1...numOfRows {
+      let stackView = createRowStackView(numOfKeys)
+      parentView.insertArrangedSubview(stackView, at: 1)
+    }
+  }
+
+  /**
+   create stackView of one row
+
+   - parameter numOfKeys: length of the keys
+   - returns: stackView of one row
+   */
   func createRowStackView(_ numOfKeys: Int) -> UIStackView {
     let stackView = UIStackView()
     stackView.axis = .horizontal
@@ -153,6 +178,11 @@ class BaseGameViewController: UIViewController {
     return stackView
   }
 
+  /**
+   create lable of the front of the row, indicate which row
+
+   - returns: UIlabel of number
+   */
   func createRowUIlable() -> UILabel {
     let label = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 20))
     label.text = String(format: "%02d", indexOfLabel)
@@ -165,18 +195,31 @@ class BaseGameViewController: UIViewController {
     return label
   }
 
+  /**
+   create array of buttons for selection
+
+   - parameter numOfKeys: length of the keys
+   - returns: array of buttons according key's length
+   */
   func createButtonArray(_ numOfKeys: Int) -> [UIButton] {
     var buttons = [UIButton]()
     for _ in 1...numOfKeys {
       let button = UIButton()
       button.backgroundColor = UIColor.white
-      button.addTarget(self, action: #selector(BaseGameViewController.deselectColorButtons(_:)), for: .touchUpInside)
-
+      button.addTarget(self,
+                       action: #selector(GameViewController.unselectColorButtons(_:)),
+                       for: .touchUpInside)
       buttons.append(button)
     }
     return buttons
   }
 
+  /**
+   create stackView for the pin Images
+
+   - parameter numOfKeys: length of the keys
+   - returns: stackview have two subView that contain 2/3 pin images
+   */
   func createPinImages(_ numOfKeys: Int) -> UIStackView {
     let stackView = UIStackView()
     stackView.axis = .vertical
@@ -193,6 +236,13 @@ class BaseGameViewController: UIViewController {
     return stackView
   }
 
+
+  /**
+   create sub stackView for the pin Images
+
+   - parameter numOfPins: number of pin images in subView
+   - returns: subView that contain 2/3 pin images
+   */
   func createPinImagesStackView(_ numOfPins: Int) -> UIStackView {
     let stackView = UIStackView()
     stackView.axis = .horizontal
@@ -209,78 +259,6 @@ class BaseGameViewController: UIViewController {
       tmpRowPinImages.append(pinImage)
     }
     return stackView
-  }
-
-  func createGameBoard(numOfRows: Int, numOfKeys: Int) {
-    for _ in 1...numOfRows {
-      let stackView = createRowStackView(numOfKeys)
-      parentView.insertArrangedSubview(stackView, at: 1)
-    }
-  }
-
-  /**
-   check if the game is finish: player use all the tires, then will call `gameFinish()` method
-   else will move to the next row of buttons
-   */
-  func moveToNextRowOfButtons() {
-
-    // MARK: - Increment the `tableRowIndex`
-
-    tableRowIndex += 1
-    if tableOfButtons.count <= tableRowIndex
-      || masterMindManager.numberOfBlackPins == tableOfPinsImageView.first?.count {
-      gameFinish()
-      return
-    }
-    enableRowOfButtons(tableOfButtons[tableRowIndex])
-    lastReplaceButton?.setTitle("", for: .normal)
-    currentSelectButton = tableOfButtons[tableRowIndex].first
-    lastReplaceButton = currentSelectButton
-    setButtonToSelectImage()
-  }
-
-  /**
-   - move game stat to the `FinialPopUpViewController`
-   - or move current sound and game mode to `PauselPopUpViewController`
-   - warning: Make sure have the correct `segue.identifier`
-   */
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    // send result to `FinalPopUpViewController`
-    if segue.identifier == K.endPopUpSegue {
-      if let destinationVC = segue.destination as? FinalPopUpViewController {
-        destinationVC.delegate = self
-        guard let firstPinsRow = tableOfPinsImageView.first,
-          let gameStat = gameStat
-          else {
-            return
-        }
-        destinationVC.gameStat = masterMindManager.getFinalResult(firstPinsRow.count, gameStat)
-        destinationVC.isModalInPresentation = true
-      }
-    } else if segue.identifier == K.pausePopUpSegue {
-      if let destinationVC = segue.destination as? PausePopUpViewController {
-        destinationVC.delegate = self
-        destinationVC.isSoundDisable = masterMindManager.gameSoundController.disableSound
-        destinationVC.isNormalMode = gameStat?.isNormalMode
-        destinationVC.isModalInPresentation = true
-      }
-    } else {
-      assertionFailure("Segue identifier inValid")
-    }
-  }
-
-  func startGame() {
-    /* initiate the game, check if correctKey and buttons exsist */
-    guard let correctKeyString = gameStat?.correctKey,
-      let firstRowButton = tableOfButtons.first
-      else {
-        return
-    }
-    currentSelectButton = firstRowButton.first
-    lastReplaceButton = firstRowButton.first
-    setButtonToSelectImage()
-    masterMindManager.assignKeyToCorrectKey(correctKeyString)
-    masterMindManager.gameSoundController.playBackgroundSong()
   }
 
   // MARK: - Check if app is on background/forground
@@ -347,7 +325,30 @@ class BaseGameViewController: UIViewController {
     timerLabel.text = "Timer: \(currentTime)"
   }
 
+  // MARK: - Buttons support Function
 
+
+  /**
+   check if the game is finish: player use all the tires, then will call `gameFinish()` method
+   else will move to the next row of buttons
+   */
+  func moveToNextRowOfButtons() {
+
+    // MARK: - Increment the `tableRowIndex`
+
+    tableRowIndex += 1
+    if tableOfButtons.count <= tableRowIndex
+      || masterMindManager.numberOfBlackPins == tableOfPinsImageView.first?.count {
+      gameFinish()
+      return
+    }
+    enableRowOfButtons(tableOfButtons[tableRowIndex])
+    lastReplaceButton?.setTitle("", for: .normal)
+    currentSelectButton = tableOfButtons[tableRowIndex].first
+    lastReplaceButton = currentSelectButton
+    setButtonToSelectImage()
+  }
+  
   /**
    disable entire row of buttons
    - parameter currentRowButton: bottons want to be disable
@@ -478,6 +479,35 @@ class BaseGameViewController: UIViewController {
     self.performSegue(withIdentifier: K.endPopUpSegue, sender: self)
   }
 
+  /**
+   - move game stat to the `FinialPopUpViewController`
+   - or move current sound and game mode to `PauselPopUpViewController`
+   - warning: Make sure have the correct `segue.identifier`
+   */
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    // send result to `FinalPopUpViewController`
+    if segue.identifier == K.endPopUpSegue {
+      if let destinationVC = segue.destination as? FinalPopUpViewController {
+        destinationVC.delegate = self
+        guard let firstPinsRow = tableOfPinsImageView.first,
+          let gameStat = gameStat
+          else {
+            return
+        }
+        destinationVC.gameStat = masterMindManager.getFinalResult(firstPinsRow.count, gameStat)
+        destinationVC.isModalInPresentation = true
+      }
+    } else if segue.identifier == K.pausePopUpSegue {
+      if let destinationVC = segue.destination as? PausePopUpViewController {
+        destinationVC.delegate = self
+        destinationVC.isSoundDisable = masterMindManager.gameSoundController.disableSound
+        destinationVC.isNormalMode = gameStat?.isNormalMode
+        destinationVC.isModalInPresentation = true
+      }
+    } else {
+      assertionFailure("Segue identifier inValid")
+    }
+  }
 }
 
 extension UIImageView {
@@ -510,7 +540,7 @@ extension UIButton {
 }
 
 
-extension BaseGameViewController: resetGameDelegate {
+extension GameViewController: resetGameDelegate {
 
   // MARK: - protocol call for reset `GameViewController`
 
@@ -540,7 +570,7 @@ extension BaseGameViewController: resetGameDelegate {
   }
 }
 
-extension BaseGameViewController: PasuePopUpViewControllerDelegate {
+extension GameViewController: PasuePopUpViewControllerDelegate {
 
   // MARK: - protocol call for `PasuePopUpViewControllerDelegate`
 

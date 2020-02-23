@@ -29,7 +29,9 @@ class StartViewController: UIViewController {
   var correctKeyHardMode: String?
   var name: String?
   var isNormal: Bool?
+  var attempNumber = 10
 
+  @IBOutlet weak var attemptLabel: UILabel!
   @IBOutlet weak var nameTextField: UITextField!
 
   /**
@@ -89,6 +91,12 @@ class StartViewController: UIViewController {
     self.performSegue(withIdentifier: K.normalModeSegue, sender: self)
   }
 
+  @IBAction func attemptSlider(_ sender: UISlider) {
+    /* update slider label and save the current value to `attempNumber` */
+    attempNumber = Int(sender.value)
+    let attemNuberString = String(format: "%02d", attempNumber)
+    attemptLabel.text = "#attempt: \(attemNuberString)"
+  }
   /**
    make sure the name is not to long
    - parameter textField: UITextField that will be check
@@ -112,30 +120,19 @@ class StartViewController: UIViewController {
         return
     }
     if segue.identifier == K.normalModeSegue {
-      if let destinationVC = segue.destination as? BaseGameViewController {
-        if isNormal == true {
-          guard let correctKeyNormalMode = correctKeyNormalMode
-            else {
-              return
-          }
-          let gameStat = GameStat(userName: name,
-                                  correctKey: correctKeyNormalMode,
-                                  isNormalMode: true,
-                                  numOfRows: 10,
-                                  numOfKeys: 4)
-          destinationVC.gameStat = gameStat
-        } else {
-          guard let correctKeyHardMode = correctKeyHardMode
-            else {
-              return
-          }
-          let gameStat = GameStat(userName: name,
-                                  correctKey: correctKeyHardMode,
-                                  isNormalMode: false,
-                                  numOfRows: 12,
-                                  numOfKeys: 6)
-          destinationVC.gameStat = gameStat
+      if let destinationVC = segue.destination as? GameViewController {
+        guard let correctKeyNormalMode = correctKeyNormalMode,
+          let correctKeyHardMode = correctKeyHardMode,
+          let isNormal = isNormal
+          else {
+            return
         }
+        let gameStat = GameStat(userName: name,
+                                correctKey: isNormal == true ? correctKeyNormalMode : correctKeyHardMode,
+                                isNormalMode: isNormal,
+                                numOfRows: attempNumber,
+                                numOfKeys: isNormal == true ? 4 : 6)
+        destinationVC.gameStat = gameStat
       }
     }
   }

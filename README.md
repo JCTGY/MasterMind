@@ -19,9 +19,8 @@ Implement a mastermind game, which can be played by a user who tries to guess th
   * LeaderboardCell.xib is the template of tableView cell
 - Controller
   * StartViewController: Entry point of the game can direct to Normal/Hard Game Mode
-  * BaseGameViewContrloller: super class for both game mode ViewController class, contain the logic of moving selected buttons
-  * NormalGameViewController: Normal game mode that inheritance from BaseGameViewContrloller have control for the table of buttons and pins
-  * HardGameViewController: Same as NormalGameViewController, but is for hard game mode
+  * GameViewContrloller: viewController for both Normal/Hard game mode, contain the logic of creating correct rows of game board \
+  	moving selected buttons, and game reset. Is the core of the game.
   * RuleViewController: Display the rule of the game, can be accesses from StartViewController/PausePopUpViewController
   * PausePopUpViewController: pop up view that can pase the game and change some game setting
   * FinalPopUpViewController: End of the current game. Can press continue/end game

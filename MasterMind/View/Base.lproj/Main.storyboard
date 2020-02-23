@@ -49,7 +49,7 @@
                                 </subviews>
                             </stackView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JuP-Qp-w6r">
-                                <rect key="frame" x="110" y="265" width="194" height="59"/>
+                                <rect key="frame" x="110" y="150" width="194" height="59"/>
                                 <color key="backgroundColor" red="0.88533577510000006" green="0.88937019269999995" blue="0.90147344559999998" alpha="0.60398327466619717" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -85,6 +85,26 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="l11-tz-93u">
+                                <rect key="frame" x="129" y="254.99999999999997" width="160" height="75.666666666666657"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="#attempt: 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZ8-he-jgd">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="17.666666666666668"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="17"/>
+                                        <color key="textColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <size key="shadowOffset" width="1" height="1"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="8" maxValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="9km-Pe-xuV">
+                                        <rect key="frame" x="-2" y="45.666666666666686" width="164" height="31"/>
+                                        <color key="tintColor" red="0.47173935169999998" green="0.12023073200000001" blue="0.16461926809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="attemptSlider:" destination="2XJ-ue-iCR" eventType="valueChanged" id="vzI-3M-oa1"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -92,18 +112,23 @@
                             <constraint firstItem="ZOT-HF-mM7" firstAttribute="centerY" secondItem="bcJ-4B-msE" secondAttribute="centerY" id="70J-kt-nom"/>
                             <constraint firstItem="xub-iM-wf0" firstAttribute="top" secondItem="bcJ-4B-msE" secondAttribute="top" id="8mi-kT-6jV"/>
                             <constraint firstItem="JuP-Qp-w6r" firstAttribute="leading" secondItem="Oiv-6v-eKI" secondAttribute="leading" constant="110" id="9Qm-DI-apO"/>
-                            <constraint firstItem="JuP-Qp-w6r" firstAttribute="top" secondItem="Oiv-6v-eKI" secondAttribute="top" constant="265" id="ByC-RM-4Xw"/>
+                            <constraint firstItem="JuP-Qp-w6r" firstAttribute="top" secondItem="Oiv-6v-eKI" secondAttribute="top" constant="150" id="ByC-RM-4Xw"/>
+                            <constraint firstItem="Oiv-6v-eKI" firstAttribute="trailing" secondItem="l11-tz-93u" secondAttribute="trailing" constant="125" id="DBW-Nq-vvk"/>
                             <constraint firstItem="xub-iM-wf0" firstAttribute="leading" secondItem="bcJ-4B-msE" secondAttribute="leading" id="FKz-0A-BPf"/>
                             <constraint firstItem="Oiv-6v-eKI" firstAttribute="trailing" secondItem="JuP-Qp-w6r" secondAttribute="trailing" constant="110" id="OHq-Cp-iXv"/>
+                            <constraint firstItem="l11-tz-93u" firstAttribute="top" secondItem="JuP-Qp-w6r" secondAttribute="bottom" constant="46" id="WoC-3E-eZe"/>
                             <constraint firstItem="WBg-3s-HaH" firstAttribute="centerX" secondItem="ZOT-HF-mM7" secondAttribute="centerX" id="Zss-z6-AmD"/>
                             <constraint firstItem="WBg-3s-HaH" firstAttribute="leading" secondItem="Oiv-6v-eKI" secondAttribute="leading" constant="159" id="cXN-sA-1cL"/>
+                            <constraint firstItem="l11-tz-93u" firstAttribute="leading" secondItem="Oiv-6v-eKI" secondAttribute="leading" constant="129" id="k7j-4k-z8e"/>
                             <constraint firstAttribute="bottom" secondItem="xub-iM-wf0" secondAttribute="bottom" id="kKU-3i-dcD"/>
                             <constraint firstItem="Oiv-6v-eKI" firstAttribute="bottom" secondItem="WBg-3s-HaH" secondAttribute="bottom" constant="34" id="puM-Z7-Pj5"/>
                             <constraint firstItem="xub-iM-wf0" firstAttribute="trailing" secondItem="bcJ-4B-msE" secondAttribute="trailing" id="rXb-MD-0hL"/>
+                            <constraint firstItem="ZOT-HF-mM7" firstAttribute="top" secondItem="l11-tz-93u" secondAttribute="bottom" constant="8.6699999999999999" id="rgQ-iK-6wM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Oiv-6v-eKI"/>
                     </view>
                     <connections>
+                        <outlet property="attemptLabel" destination="tZ8-he-jgd" id="fhi-Qw-9OY"/>
                         <outlet property="nameTextField" destination="JuP-Qp-w6r" id="DrO-0P-hiZ"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToNormalMode" id="IZ7-ky-OoI"/>
                         <segue destination="S2x-dx-iI5" kind="presentation" identifier="goToRule" id="36F-uV-8vY"/>
@@ -111,7 +136,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhn-GS-dIU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-491.304347826087" y="941.51785714285711"/>
+            <point key="canvasLocation" x="-491" y="909"/>
         </scene>
         <!--Rule View Controller-->
         <scene sceneID="KqL-QO-CRQ">
@@ -143,7 +168,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RuleImage" translatesAutoresizingMaskIntoConstraints="NO" id="WuT-Tx-Xw3">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414.00000000000023" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="rnI-qU-eVL"/>
                                 </constraints>
@@ -271,12 +296,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXg-KS-s2D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="906" y="138"/>
+            <point key="canvasLocation" x="906" y="135"/>
         </scene>
-        <!--Base Game View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="BaseGameViewController" customModule="MasterMind" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="GameViewController" customModule="MasterMind" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -444,7 +469,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-491" y="115"/>
+            <point key="canvasLocation" x="-491" y="135"/>
         </scene>
         <!--Final Pop Up View Controller-->
         <scene sceneID="6Ll-mZ-OlP">
@@ -580,7 +605,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ax5-Rs-7p2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="905.79710144927549" y="1672.7678571428571"/>
+            <point key="canvasLocation" x="-491" y="1745"/>
         </scene>
     </scenes>
     <resources>
