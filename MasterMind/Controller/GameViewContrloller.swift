@@ -166,6 +166,8 @@ class GameViewController: UIViewController {
     stackView.translatesAutoresizingMaskIntoConstraints = false
     let label = createRowUIlable()
     stackView.addArrangedSubview(label)
+    label.addConstraint(NSLayoutConstraint(item: label, attribute: .width, relatedBy: .equal,
+    toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 25))
     let buttons = createButtonArray(numOfKeys)
     buttons.forEach {
       stackView.addArrangedSubview($0)
@@ -209,6 +211,7 @@ class GameViewController: UIViewController {
       button.addTarget(self,
                        action: #selector(GameViewController.unselectColorButtons(_:)),
                        for: .touchUpInside)
+      button.isUserInteractionEnabled = false
       buttons.append(button)
     }
     return buttons
